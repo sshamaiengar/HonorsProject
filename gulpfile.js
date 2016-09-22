@@ -16,7 +16,7 @@ gulp.task('default', function(){
 });
 
 gulp.task('watch', function(){
-	watch(['app/pages/**/*.+(html)','app/templates/*.html', 'app/partials/*.html', 'app/css/*.css'], batch(function(events, done){
+	watch(['docs/pages/**/*.+(html)','docs/templates/*.html', 'docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
 		gulp.start('nunjucks', done);
 	}));
 });
@@ -25,18 +25,18 @@ gulp.task('watch', function(){
 gulp.task('nunjucks', function() {
 
 	// configuring the templates folder for nunjucks
-	// nunjucksRender.nunjucks.configure(['app/templates/', 'app/partials/']);
+	// nunjucksRender.nunjucks.configure(['docs/templates/', 'docs/partials/']);
 
 	// get the pages files
-	return gulp.src('app/pages/**/*.+(html)')
+	return gulp.src('docs/pages/**/*.+(html)')
 	.pipe(nunjucksRender({
-		path: ['app/templates/', 'app/partials/']
+		path: ['docs/templates/', 'docs/partials/']
 	}))
-	.pipe(gulp.dest('app'))
+	.pipe(gulp.dest('docs'))
 });
 
 gulp.task('publish', ['nunjucks'], function() {
-  return buildBranch({ folder: 'app' });
+  return buildBranch({ folder: 'docs' });
 });
 
 gulp.on('err', function(e) {
