@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link href="./css/page-content.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<!-- Page Content -->
+
+<div class="container-fluid">
+	<div class="row" style = "text-align:center;">
+		<h1 class = "page-header">Select a track</h1>
+	</div>
+	<div class="row" style = "position:relative;">
+		<!--
+		<div class="col-lg-8 col-lg-offset-2">
+			<h1 class="page-header">Awesome Bootstrap 3 Sidebar Navigation</h1>  
+			<p class="lead">Originally authored by <a href="http://bootsnipp.com/maridlcrmn">maridlcrmn</a> on Bootsnipp and then converted to Less and customized further by <a href="http://twiter.com/j_holtslander">j_holtslander</a> who is building a <a href="http://codepen.io/collection/nJGkWV" target="_new">collection</a> of great Bootstrap 3 navbars.</p>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+			<h3>A heading in the mix.</h3>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			<blockquote>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</blockquote>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+			<h3>Another heading for typography's sake.</h3>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+		</div>
+		-->
+		<div class = "col-lg-4">
+			<a href = "probsolve.html">
+				<div class = "jumbotron" style="background-color:#2c3e50;">
+					<h3>Problem-Solving</h3>
+					<div class="icon"><i class="fa fa-code fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Solve math-related problems using the Python programming language.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class = "col-lg-4">
+			<a href = "#">
+				<div class = "jumbotron" style="background-color:#c0392b;">
+					<h3>Web Development</h3>
+					<div class="icon"><i class="fa fa-desktop fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Create a personal website while learning HTML and CSS.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class = "col-lg-4">
+			<a href = "#">
+				<div class = "jumbotron" style="background-color:#27ae60;">
+					<h3>Game Development</h3>
+					<div class="icon"><i class="fa fa-gamepad fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Learn JavaScript and game development by building a classic arcade game clone with the Phaser.io game engine.
+					</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	function setJumbotronHeights(){
+		var maxHeight = 0;
+		$(".jumbotron").each(function(){
+			if ($(this).height() > maxHeight){
+				maxHeight = $(this).height();
+			}
+		})
+		$(".jumbotron").each(function(){
+			$(this).height(maxHeight);
+		})
+	}
+
+	$(document).ready(function () {
+		setJumbotronHeights();
+		$(".jumbotron").resize(setJumbotronHeights);
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{
+  "name": "artofcode",
+  "version": "1.0.0",
+  "description": "A platform for students to learn programming interactively through different tracks including scientific programming, web development, and game development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Shamaiengar",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "3.1.0",
+    "bootstrap": "3.3.6",
+    "nunjucks": "2.4.2",
+    "brython": "3.2.7",
+    "codemirror": "5.16.0"
+  },
+  "devDependencies": {
+    "flat-ui": "^2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-batch": "^1.0.5",
+    "gulp-build-branch": "^0.1.4",
+    "gulp-less": "^3.1.0",
+    "gulp-nunjucks-render": "2.0.0",
+    "gulp-watch": "4.3.8",
+    "jquery": "^2.2.4"
+  }
+}

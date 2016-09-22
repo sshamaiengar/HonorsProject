@@ -1,0 +1,94 @@
+body, html {
+	background-color: #2c3e50;
+}
+
+body h1,
+body h2,
+body h3,
+body h4 {
+  color: rgba(255, 255, 255, 1.0);
+}
+body p,
+body blockquote {
+  color: rgba(255, 255, 255, 1.0);
+}
+
+body a {
+  color: #3498db;
+  text-decoration: underline;
+}
+body a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#editor {
+	position: relative;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-size:16px;
+	height: 300px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#console {
+	position: relative;
+	height: 200px;
+	display:none;
+	margin-top:10px;
+	margin-bottom:10px;
+	/*background-color: black;*/
+	/*color:yellow;*/
+	/*height:auto;*/
+	/*min-height: 50px;*/
+	/*padding: 15px; */
+	font-family: Menlo, Consolas, monospace;
+	font-size:14px;
+}
+
+/* The inner console element. */
+.jqconsole {
+    padding: 10px;
+}
+/* The cursor. */
+.jqconsole-cursor {
+    background-color: gray;
+}
+/* The cursor color when the console looses focus. */
+.jqconsole-blurred .jqconsole-cursor {
+    background-color: #666;
+}
+/* The current prompt text color */
+.jqconsole-prompt {
+    color: #0d0;
+}
+/* The command history */
+.jqconsole-old-prompt {
+    color: #0b0;
+    font-weight: normal;
+}
+/* The text color when in input mode. */
+.jqconsole-input {
+    color: #dd0;
+}
+/* Previously entered input. */
+.jqconsole-old-input {
+    color: #bb0;
+    font-weight: normal;
+}
+/* The text color of the output. */
+.jqconsole-output {
+    color: white;
+}
+
+.jqconsole-error {
+	color:#e74c3c;
+}
+
+pre {
+	background-color: black;
+	border-radius:0px;
+	border:none;
+	font-family: Menlo, Consolas, monospace;
+	font-size:14px;
+}

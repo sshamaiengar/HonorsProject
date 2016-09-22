@@ -1,0 +1,42 @@
+body,
+html {
+  /*
+  background: -moz-linear-gradient(270deg, #3498db 0%, #34495e 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3498db), color-stop(100%, #34495e));
+  background: -webkit-linear-gradient(270deg, #3498db 0%, #34495e 100%);
+  background: -o-linear-gradient(270deg, #3498db 0%, #34495e 100%);
+  background: -ms-linear-gradient(270deg, #3498db 0%, #34495e 100%);
+  background: linear-gradient(180deg, #3498db 0%, #34495e 100%);
+  */
+  background: #011627;
+}
+body h1,
+body h2,
+body h3,
+body h4 {
+  color: rgba(255, 255, 255, 1.0);
+}
+body p,
+body blockquote {
+  color: rgba(255, 255, 255, 1.0);
+}
+
+body a {
+  color: rgba(255, 255, 255, 1.0);
+  text-decoration: none;
+}
+body a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.jumbotron:hover {
+  -webkit-box-shadow: 0px 0px 29px 0px rgba(255,255,255,0.75);
+  -moz-box-shadow: 0px 0px 29px 0px rgba(255,255,255,0.75);
+  box-shadow: 0px 0px 29px 0px rgba(255,255,255,0.75);
+}
+
+.jumbotron * {
+  color: #white;
+  text-align: center;
+}

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>THE ART OF CODE</title>
+
+		<!-- Bootstrap -->
+
+		<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- 		<link href="../node_modules/flat-ui/css/flat-ui.css" rel = "stylesheet">
+-->		<link href="./css/sidebar.css" rel="stylesheet">
+		
+		
+<link href="./css/page-content.css" rel="stylesheet">
+
+		<!-- <link href="./css/sidebar.css" rel="stylesheet">
+		<link href="./css/page-content.css" rel="stylesheet"> -->
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="../node_modules/brython/www/src/brython.js"></script>
+
+		<!-- Ace Editor -->
+		<script src="../node_modules/ace-editor-builds/src/ace.js"></script>
+		<script src="../node_modules/ace-editor-builds/src/theme-ocean.dark.js"></script>
+
+		<!-- CodeMirror -->
+		<script src="../node_modules/codemirror/lib/codemirror.js"></script>
+		<script src="../node_modules/codemirror/addon/edit/closebrackets.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src = "../node_modules/jquery/dist/jquery.min.js" type = "text/javascript"></script>
+
+		<script src="../node_modules/jq-console/jqconsole.min.js"></script>
+
+		<link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="../node_modules/codemirror/theme/rubyblue.css">
+		<script src="../node_modules/codemirror/mode/python/python.js"></script>
+		<script src="../node_modules/codemirror/mode/clike/clike.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="overlay"></div>
+			<!-- Sidebar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+	<ul class="nav sidebar-nav">
+		<li class="sidebar-brand">
+			<a href="index.html"><strong>
+				The Art <br>of Code
+				</strong>
+			</a>
+		</li>
+		<li>
+			<a href="index.html">Home</a>
+		</li>
+		<li class="dropdown">
+			<a href="probsolve.html" class="dropdown-toggle" data-toggle="dropdown">
+				Problem-Solving
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="probsolve.html">Introduction</a></li>
+				<li><a href="#">Hello, World!</a></li>
+				<li><a href="#">Variables and Types</a></li>
+				<li><a href="#">Control Flow</a></li>
+				<li><a href="#">Loops</a></li>
+				<li><a href="#">More</a></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Web Development
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#">Introduction</a></li>
+				<li><a href="#">Lesson 1</a></li>
+				<li><a href="#">Lesson 2</a></li>
+				<li><a href="#">Lesson 3</a></li>
+				<li><a href="#">Lesson 4</a></li>
+				<li><a href="#">Lesson 5</a></li>
+				<li><a href="#">Lesson 6</a></li>
+				<li><a href="#">Lesson 7</a></li>
+				<li><a href="#">Lesson 8</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Game Development
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#">Introduction</a></li>
+				<li><a href="#">Lesson 1</a></li>
+				<li><a href="#">Lesson 2</a></li>
+				<li><a href="#">Lesson 3</a></li>
+				<li><a href="#">Lesson 4</a></li>
+				<li><a href="#">Lesson 5</a></li>
+				<li><a href="#">Lesson 6</a></li>
+				<li><a href="#">Lesson 7</a></li>
+				<li><a href="#">Lesson 8</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Further Resources</a>
+		</li>
+		<li>
+			<a href="#">About</a>
+		</li>
+	</ul>
+</nav>
+<!-- /#sidebar-wrapper -->
+
+			<div id="page-content-wrapper">
+				<button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+					<span class="hamb-top"></span>
+					<span class="hamb-middle"></span>
+					<span class="hamb-bottom"></span>
+				</button>
+				
+<!-- Page Content -->
+
+<div class="container-fluid">
+	<div class="row" style = "text-align:center;">
+		<h1 class = "page-header">Select a track</h1>
+	</div>
+	<div class="row" style = "position:relative;">
+		<!--
+		<div class="col-lg-8 col-lg-offset-2">
+			<h1 class="page-header">Awesome Bootstrap 3 Sidebar Navigation</h1>  
+			<p class="lead">Originally authored by <a href="http://bootsnipp.com/maridlcrmn">maridlcrmn</a> on Bootsnipp and then converted to Less and customized further by <a href="http://twiter.com/j_holtslander">j_holtslander</a> who is building a <a href="http://codepen.io/collection/nJGkWV" target="_new">collection</a> of great Bootstrap 3 navbars.</p>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+			<h3>A heading in the mix.</h3>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			<blockquote>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</blockquote>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+			<h3>Another heading for typography's sake.</h3>
+			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Sed posuere consectetur est at lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+			<p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+		</div>
+		-->
+		<div class = "col-lg-4">
+			<a href = "probsolve.html">
+				<div class = "jumbotron" style="background-color:#2c3e50;">
+					<h3>Problem-Solving</h3>
+					<div class="icon"><i class="fa fa-code fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Solve math-related problems using the Python programming language.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class = "col-lg-4">
+			<a href = "#">
+				<div class = "jumbotron" style="background-color:#c0392b;">
+					<h3>Web Development</h3>
+					<div class="icon"><i class="fa fa-desktop fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Create a personal website while learning HTML and CSS.
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class = "col-lg-4">
+			<a href = "#">
+				<div class = "jumbotron" style="background-color:#27ae60;">
+					<h3>Game Development</h3>
+					<div class="icon"><i class="fa fa-gamepad fa-3x" aria-hidden="true"></i></div>
+					<hr>
+					<p class = "lead">
+						Learn JavaScript and game development by building a classic arcade game clone with the Phaser.io game engine.
+					</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+			</div>
+			<!-- /#page-content-wrapper -->
+
+			
+		</div>
+		<!-- /#wrapper -->
+
+		
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		
+<script>
+	function setJumbotronHeights(){
+		var maxHeight = 0;
+		$(".jumbotron").each(function(){
+			if ($(this).height() > maxHeight){
+				maxHeight = $(this).height();
+			}
+		})
+		$(".jumbotron").each(function(){
+			$(this).height(maxHeight);
+		})
+	}
+
+	$(document).ready(function () {
+		setJumbotronHeights();
+		$(".jumbotron").resize(setJumbotronHeights);
+	});
+</script>
+
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var trigger = $('.hamburger'),
+				overlay = $('.overlay'),
+				isClosed = false;
+
+				trigger.click(function () {
+					hamburger_cross();      
+				});
+
+				function hamburger_cross() {
+
+					if (isClosed == true) {          
+						overlay.hide();
+						trigger.removeClass('is-open');
+						trigger.addClass('is-closed');
+						isClosed = false;
+					} else {   
+						overlay.show();
+						trigger.removeClass('is-closed');
+						trigger.addClass('is-open');
+						isClosed = true;
+					}
+				}
+
+				$('[data-toggle="offcanvas"]').click(function () {
+					$('#wrapper').toggleClass('toggled');
+				});
+			});
+			$('.navbar .dropdown').hover(function() {
+			    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+			}, function() {
+			    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+			});
+		</script>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur stdDeviation="5" />
+				</filter>
+			</defs>
+		</svg>
+	</body>
+</html>

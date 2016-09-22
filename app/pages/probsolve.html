@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link href="./css/probsolve.css" rel="stylesheet">
+<link href="./css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8">
+			<h1 class="page-header">Problem-Solving</h1>  
+			<p class = "lead">The ability to do mathematical calculations and operations was one of the largest factors in people's desire to build computers. Programming languages were developed in order to give instructions to these new machines. Nowadays, computers have far surpassed humans' ability to do calculations. These lessons will teach you to make your own computer programs that solve problems related to math and computer science.</p>
+			<br>
+			<p>We will be using the <a href="http://www.python.org" target="_blank">Python</a> programming language. It is one of the most popular programming languages in use today because it makes reading and writing code very easy.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<p>Programs that take several lines in a language like Java can be written in Python in one line.</p>
+		</div>
+		
+		<div id="codeMirrorEx1" class = "col-lg-6"><h4>Java</h4></div>
+
+		<div id="codeMirrorEx2" class = "col-lg-6"><h4>Python</h4></div>
+	</div>
+	<div class="row">
+		<div id="editorContainer" class="editor col-lg-6">
+			<div id="editor">def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+fib(1000)</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset" class="btn bstn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div id = "console"></div>
+		</div>
+
+	<!--
+		<div id="editor" class="editor col-lg-6">
+			<div id = "codeMirror"></div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset" class="btn bstn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<div id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></div>
+			<div id = "console"></div>
+		</div>
+		-->
+	</div>
+	
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	var myCodeMirror2 = CodeMirror($("#codeMirrorEx1").get(0), {
+		value: "public class HelloWorld {\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"Hello, World\");\n\t}\n}",
+		theme: "rubyblue",
+		readOnly: true,
+		mode:  "text/x-java",
+		lineNumbers: true
+	});
+	var myCodeMirror3 = CodeMirror($("#codeMirrorEx2").get(0), {
+		value: "print(\"Hello, World!\")",
+		mode:  {name:"python",version:3},
+		theme: "rubyblue",
+		readOnly: true,
+		lineNumbers:true
+	});
+	// var myCodeMirror = CodeMirror($("#codeMirror").get(0), {
+	// 	value: "print(\"Hello, World!\")",
+	// 	mode:  {name:"python",version:3},
+	// 	theme: "rubyblue",
+	// 	readOnly: false,
+	// 	autoCloseBrackets: true
+	// });
+	// myCodeMirror.on("change", function(){
+		// $("#editorContent").html(myCodeMirror.getValue());
+	// });
+
+	var editor = ace.edit("editor");
+	editor.setTheme("ace/theme/rubyblue");
+	editor.setHighlightActiveLine(false);
+	editor.setShowPrintMargin(false);
+	editor.container.style.lineHeight = 1.7
+	editor.renderer.updateFontSize()
+    editor.getSession().setMode("ace/mode/python");
+	editor.getSession().on('change', function(e) {
+		$("#editorContent").html(editor.getValue());
+	});
+	$(document).ready(function(){
+		$("#run").click(function(){
+			// $("#editorContent").html(myCodeMirror.getValue());
+			$("#editorContent").html(editor.getValue());
+			$("#console").show();
+			// $("#console").empty()
+			brython({debug:1, ipy_id:['editorContent']})
+		});
+		$("#reset").click(function(){
+			editor.setValue("");
+			window.jqconsole.Reset();
+		})
+	});
+
+	$(function () {
+		window.jqconsole = $('#console').jqconsole('Python console\n', '>');
+		// var startPrompt = function () {
+		// 	// Start the prompt with history enabled. 
+		// 	jqconsole.Prompt(true, function (input) {
+		// 		// Output input with the class jqconsole-output. 
+		// 		jqconsole.Write(input + '\n', 'jqconsole-output');
+		// 		// Restart the prompt. 
+		// 		startPrompt();
+		// 	});
+		// };
+		// startPrompt();
+	});
+	
+</script>
+{% endblock %}
