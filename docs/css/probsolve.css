@@ -31,6 +31,24 @@ body a:hover {
 	margin-bottom:10px;
 }
 
+#demo1editor {
+	position: relative;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-size:16px;
+	height: 150px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#demo2editor {
+	position: relative;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-size:16px;
+	height: 150px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
 #console {
 	position: relative;
 	height: 200px;

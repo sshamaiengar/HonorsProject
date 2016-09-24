@@ -11,12 +11,12 @@ gulp.task("fui-less", function() {
        .pipe(gulp.dest("node_modules/flat-ui/css"));
 });
 
-gulp.task('default', function(){
+gulp.task('default', ['nunjucks'], function(){
 
 });
 
 gulp.task('watch', function(){
-	watch(['docs/pages/**/*.+(html)','docs/templates/*.html', 'docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
+	watch(['docs/pages/*.html','docs/templates/*.html', 'docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
 		gulp.start('nunjucks', done);
 	}));
 });

@@ -29,7 +29,6 @@
 
 		<!-- Ace Editor -->
 		<script src="./node_modules/ace-editor-builds/src/ace.js"></script>
-		<script src="./node_modules/ace-editor-builds/src/theme-ocean.dark.js"></script>
 
 		<!-- CodeMirror -->
 		<script src="./node_modules/codemirror/lib/codemirror.js"></script>
@@ -41,7 +40,10 @@
 
 		<link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
 		<link rel="stylesheet" href="./node_modules/codemirror/theme/rubyblue.css">
+		<link rel="stylesheet" href="./node_modules/codemirror/theme/mdn-like.css">
 		<script src="./node_modules/codemirror/mode/python/python.js"></script>
+		<script src="./node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="./node_modules/codemirror/mode/css/css.js"></script>
 		<script src="./node_modules/codemirror/mode/clike/clike.js"></script>
 	</head>
 	<body>
@@ -79,7 +81,7 @@
 				<span class="caret"></span>
 			</a>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">Introduction</a></li>
+				<li><a href="webdev.html">Introduction</a></li>
 				<li><a href="#">Lesson 1</a></li>
 				<li><a href="#">Lesson 2</a></li>
 				<li><a href="#">Lesson 3</a></li>
@@ -155,7 +157,7 @@
 			<a href = "probsolve.html">
 				<div class = "jumbotron" style="background-color:#2c3e50;">
 					<h3>Problem-Solving</h3>
-					<div class="icon"><i class="fa fa-code fa-3x" aria-hidden="true"></i></div>
+					<div class="icon"><i class="fa fa-terminal fa-3x" aria-hidden="true"></i></div>
 					<hr>
 					<p class = "lead">
 						Solve math-related problems using the Python programming language.
@@ -164,7 +166,7 @@
 			</a>
 		</div>
 		<div class = "col-lg-4">
-			<a href = "#">
+			<a href = "webdev.html">
 				<div class = "jumbotron" style="background-color:#c0392b;">
 					<h3>Web Development</h3>
 					<div class="icon"><i class="fa fa-desktop fa-3x" aria-hidden="true"></i></div>
@@ -254,6 +256,7 @@
 			});
 			$('.navbar .dropdown').hover(function() {
 			    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+
 			}, function() {
 			    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 			});

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link href="./css/webdev.css" rel="stylesheet">
+<link href="./css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8">
+			<h1 class="page-header">Web Development</h1>  
+			<p class = "lead">Websites like this one are created using several different technologies. 
+			<br><strong>HTML</strong> (HyperText Markup Language) gives structure and content to websites; it creates elements including the text, images, links, buttons, and other forms of input. 
+			<br><strong>CSS</strong> (Cascading StyleSheets) adds additional style to HTML; attributes of style include colors, fonts, shadows, element sizes, text alignment and much more. 
+			<br>These lessons will teach you to make your own website.</p>
+			<br>
+			<p>Try resizing this window. The ability of the text to resize automatically comes from CSS.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 style = "font-family:serif;font-size:1.0em;text-align:left;color:yellow;">This text was created with the following code.</h1>
+		</div>
+		
+		<div id="demo1" class = "col-lg-6">
+			<h4>HTML</h4>
+			<div id="demo1editor"></div>
+		</div>
+
+		<div id="demo2" class = "col-lg-6">
+			<h4>CSS</h4>
+			<div id="demo2editor">html {
+	color: yellow;
+}
+h1 {
+	font-family: serif;
+}</div>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+	var demo1text = "<!DOCTYPE html>\n\
+<html>\n\t\
+	<body>\n\t\t\
+		<h1>This text was created with the following code.</h1>\n\t\
+	</body>\n\
+</html>";
+	var demo1 = ace.edit("demo1editor");
+	demo1.setTheme("ace/theme/snappy-light");
+	// demo1.setTheme("ace/theme/rubyblue");
+	demo1.setHighlightActiveLine(false);
+	demo1.setShowPrintMargin(false);
+	demo1.container.style.lineHeight = 1.7
+	demo1.renderer.updateFontSize()
+	demo1.setReadOnly(true);
+    demo1.getSession().setValue(demo1text);
+    demo1.getSession().setTabSize(2);
+    demo1.getSession().setMode("ace/mode/html");
+
+    var demo2 = ace.edit("demo2editor");
+	demo2.setTheme("ace/theme/snappy-light");
+	// demo2.setTheme("ace/theme/rubyblue");
+	demo2.setHighlightActiveLine(false);
+	demo2.setShowPrintMargin(false);
+	demo2.container.style.lineHeight = 1.7
+	demo2.renderer.updateFontSize()
+	demo2.setReadOnly(true);
+    demo2.getSession().setMode("ace/mode/css");
+	
+</script>
+{% endblock %}

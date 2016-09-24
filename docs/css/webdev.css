@@ -1,0 +1,41 @@
+body, html {
+	background-color: #c0392b;
+}
+
+body h1,
+body h2,
+body h3,
+body h4 {
+  color: rgba(255, 255, 255, 1.0);
+}
+body p,
+body blockquote {
+  color: rgba(255, 255, 255, 1.0);
+}
+
+body a {
+  color: #3498db;
+  text-decoration: underline;
+}
+body a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#demo1editor {
+	position: relative;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-size:16px;
+	height: 200px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+#demo2editor {
+	position: relative;
+	font-family: Menlo, Monaco, Consolas, monospace;
+	font-size:16px;
+	height: 200px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
