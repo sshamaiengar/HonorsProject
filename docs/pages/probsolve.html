@@ -10,9 +10,24 @@
 	<div class="row">
 		<div class="col-lg-8">
 			<h1 class="page-header">Problem-Solving</h1>  
-			<p class = "lead">The ability to do mathematical calculations and operations was one of the largest factors in people's desire to build computers. Programming languages were developed in order to give instructions to these new machines. Nowadays, computers have far surpassed humans' ability to do calculations. These lessons will teach you to make your own computer programs that solve problems related to math and computer science.</p>
+			<p class = "lead">The ability to do mathematical calculations and operations was one of the greatest factors driving the creation of computers. Programming languages were developed in order to give instructions to these new machines. Nowadays, computers have far surpassed humans' ability to do calculations. These lessons will teach you to take advantage of this fact and make your own computer programs that solve problems related to math and computer science.</p>
 			<br>
-			<p>We will be using the <a href="http://www.python.org" target="_blank">Python</a> programming language. It is one of the most popular programming languages in use today because it makes reading and writing code very easy.</p>
+			<p>We will be using the <a href="http://www.python.org" target="_blank">Python</a> programming language. It's one of the most popular programming languages in use today because it makes reading and writing code very easy.</p>
+		</div>
+		<div id="editorContainer" class="editor col-md-12 col-lg-4">
+			<div id="editor">def fib(n):
+    a, b = 0, 1
+    while a < n:
+        print(a, end=' ')
+        a, b = b, a+b
+    print()
+fib(1000)</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div id = "console"></div>
 		</div>
 	</div>
 	<div class="row">
@@ -40,7 +55,7 @@
 
 	</div>
 	<div class="row">
-		<div id="editorContainer" class="editor col-lg-6">
+		<!-- <div id="editorContainer" class="editor col-lg-4">
 			<div id="editor">def fib(n):
     a, b = 0, 1
     while a < n:
@@ -50,11 +65,11 @@
 fib(1000)</div>
 			<div class = "btn-group" role="group" aria-label="Editor Buttons">
 				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset" class="btn bstn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+				<button id="reset" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
 			</div>
 			<p id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></p>
 			<div id = "console"></div>
-		</div>
+		</div> -->
 
 	<!--
 		<div id="editor" class="editor col-lg-6">
@@ -68,7 +83,9 @@ fib(1000)</div>
 		</div>
 		-->
 	</div>
-	
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "#" class="btn btn-lg btn-block btn-info" style="text-decoration:none;"><h4>Coming Soon</h4></a>
+	</div>
 </div>
 {% endblock %}
 

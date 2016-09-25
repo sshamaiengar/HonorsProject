@@ -1,5 +1,5 @@
 body, html {
-	background-color: #c0392b;
+	background-color: #27ae60;
 }
 
 body h1,
@@ -14,7 +14,7 @@ body blockquote {
 }
 
 body a {
-  color: #3498db;
+  color: #12e66c;
   text-decoration: underline;
 }
 body a:hover {
@@ -22,20 +22,21 @@ body a:hover {
   text-decoration: underline;
 }
 
+figure {
+	margin-top:20px;
+}
+
+figcaption {
+	margin-top:20px;
+	color:white;
+	font-weight: normal;
+}
+
 #demo1editor {
 	position: relative;
 	font-family: Menlo, Monaco, Consolas, monospace;
 	font-size:16px;
-	height: 250px;
-	margin-top:10px;
-	margin-bottom:10px;
-}
-
-#demo2editor {
-	position: relative;
-	font-family: Menlo, Monaco, Consolas, monospace;
-	font-size:16px;
-	height: 200px;
+	height: 300px;
 	margin-top:10px;
 	margin-bottom:10px;
 }
