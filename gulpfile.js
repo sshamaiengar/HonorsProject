@@ -16,8 +16,11 @@ gulp.task('default', ['nunjucks'], function(){
 });
 
 gulp.task('watch', function(){
-	watch(['docs/pages/*.html','docs/templates/*.html', 'docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
-		gulp.start('nunjucks', done);
+	watch(['docs/pages/*.html','docs/pages/probsolve/*.html','docs/pages/webdev/*.html','docs/pages/gamedev/*.html','docs/templates/*.html','docs/templates/probsolve/*.html', 'docs/templates/webdev/*.html', 'docs/templates/gamedev*.html','docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
+		gulp.start('nunjucks');
+		gulp.start('nunjucks-ps');
+		gulp.start('nunjucks-wd');
+		gulp.start('nunjucks-gd');
 	}));
 });
 
@@ -28,11 +31,36 @@ gulp.task('nunjucks', function() {
 	// nunjucksRender.nunjucks.configure(['docs/templates/', 'docs/partials/']);
 
 	// get the pages files
-	return gulp.src('docs/pages/**/*.+(html)')
+	return gulp.src('docs/pages/*.+(html)')
 	.pipe(nunjucksRender({
 		path: ['docs/templates/', 'docs/partials/']
 	}))
 	.pipe(gulp.dest('docs'))
+});
+
+gulp.task('nunjucks-ps', function(){
+
+	return gulp.src('docs/pages/probsolve/*.+(html)')
+	.pipe(nunjucksRender({
+		path: ['docs/templates/probsolve/', 'docs/partials/']
+	}))
+	.pipe(gulp.dest('docs/probsolve'))
+});
+
+gulp.task('nunjucks-wd', function(){
+	return gulp.src('docs/pages/webdev/*.+(html)')
+	.pipe(nunjucksRender({
+		path: ['docs/templates/webdev/', 'docs/partials/']
+	}))
+	.pipe(gulp.dest('docs/webdev'))
+});
+
+gulp.task('nunjucks-gd', function(){
+	return gulp.src('docs/pages/gamedev/*.+(html)')
+	.pipe(nunjucksRender({
+		path: ['docs/templates/gamedev/', 'docs/partials/']
+	}))
+	.pipe(gulp.dest('docs/gamedev'))
 });
 
 gulp.task('publish', ['nunjucks'], function() {
