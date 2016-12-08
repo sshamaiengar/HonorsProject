@@ -16,16 +16,14 @@ gulp.task('default', ['nunjucks'], function(){
 });
 
 gulp.task('watch', function(){
-	watch(['docs/pages/*.html','docs/pages/probsolve/*.html','docs/pages/webdev/*.html','docs/pages/gamedev/*.html','docs/templates/*.html','docs/templates/probsolve/*.html', 'docs/templates/webdev/*.html', 'docs/templates/gamedev*.html','docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
+	return gulp.watch(['docs/pages/*.html','docs/pages/probsolve/*.html','docs/pages/webdev/*.html','docs/pages/gamedev/*.html','docs/templates/*.html','docs/templates/probsolve/*.html', 'docs/templates/webdev/*.html', 'docs/templates/gamedev/*.html','docs/partials/*.html', 'docs/css/*.css'], batch(function(events, done){
 		gulp.start('nunjucks');
-		gulp.start('nunjucks-ps');
-		gulp.start('nunjucks-wd');
-		gulp.start('nunjucks-gd');
+		done();
 	}));
 });
 
 // writing up the gulp nunjucks task
-gulp.task('nunjucks', function() {
+gulp.task('nunjucks', ['nunjucks-ps', 'nunjucks-wd', 'nunjucks-gd'], function() {
 
 	// configuring the templates folder for nunjucks
 	// nunjucksRender.nunjucks.configure(['docs/templates/', 'docs/partials/']);
@@ -61,10 +59,6 @@ gulp.task('nunjucks-gd', function(){
 		path: ['docs/templates/gamedev/', 'docs/partials/']
 	}))
 	.pipe(gulp.dest('docs/gamedev'))
-});
-
-gulp.task('publish', ['nunjucks'], function() {
-  return buildBranch({ folder: 'docs' });
 });
 
 gulp.on('err', function(e) {

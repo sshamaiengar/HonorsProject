@@ -22,10 +22,10 @@ body a:hover {
   text-decoration: underline;
 }
 
-#editor {
+.editor {
 	position: relative;
 	font-family: Menlo, Monaco, Consolas, monospace;
-	font-size:16px;
+	font-size:16px !important;
 	height: 300px;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -49,7 +49,7 @@ body a:hover {
 	margin-bottom:10px;
 }
 
-#console {
+.console {
 	position: relative;
 	height: 200px;
 	display:none;
@@ -109,4 +109,13 @@ pre {
 	border:none;
 	font-family: Menlo, Consolas, monospace;
 	font-size:14px;
+}
+
+.panel {
+	background-color: #2980b9;
+	margin:20px;
+}
+
+.row {
+	margin-bottom:40px;
 }

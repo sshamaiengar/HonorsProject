@@ -102,11 +102,8 @@
 					$('#wrapper').toggleClass('toggled');
 				});
 			});
-			$('.navbar .dropdown').hover(function() {
-			    $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-
-			}, function() {
-			    $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+			$('.navbar .dropdown').click(function() {
+			    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
 			});
 		</script>
 
