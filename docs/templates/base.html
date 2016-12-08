@@ -101,10 +101,11 @@
 				$('[data-toggle="offcanvas"]').click(function () {
 					$('#wrapper').toggleClass('toggled');
 				});
+				$('.navbar .dropdown').click(function() {
+				    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+				});
 			});
-			$('.navbar .dropdown').click(function() {
-			    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
-			});
+			
 		</script>
 
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
