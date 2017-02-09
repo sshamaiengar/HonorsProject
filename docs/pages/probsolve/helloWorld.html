@@ -1,0 +1,67 @@
+{% extends "ps_base.html" %}
+
+{% block css %}
+<link href="../css/probsolve.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Hello, World!</h1>  
+			<p class='lead'>Most common programs (in languages such as Java, C++, etc.) are run on a command line (such as Terminal on Mac or Command Prompt on Windows). A staple of learning any programming language is the "Hello, World!" program, which simply outputs the greeting to the console (similar to the command line). In Python, this is as simple as: </p>
+			<pre>print("Hello, World!")</pre>
+			<br>
+			<p class='lead'>Try the following exercise.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Hello, You!</h3>
+			<p>Greet yourself by printing "Hello, " followed by your name to the console.</p>
+			<p hidden id="answer1">Hello,</p>
+			<div class='editor' id="editor1"># type your code on the next line</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Notice how the first line in the previous exercise didn't affect the program. This is called a <b>comment</b>. Comments are useful for annotating your code to make it clear to yourself and others what is going on. They are ignored by the computer when running the program.
+			<br>
+			Single-line comments are created with a <b>#</b> at the beginning of the line.
+			</p>
+			<pre># this is a single-line comment</pre>
+			<p class='lead'>Multi-line comments are created with triple quotation marks.
+			<pre>"""
+This
+is
+a
+multi-line
+comment
+"""</pre>
+		</div>
+	</div>
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "variables.html" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		activateEditor(1);
+	});
+</script>
+{% endblock %}

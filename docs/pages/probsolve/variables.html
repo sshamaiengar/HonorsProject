@@ -1,0 +1,128 @@
+{% extends "ps_base.html" %}
+
+{% block css %}
+<link href="../css/probsolve.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class='container'>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Variables and Types</h1>  
+			<p class='lead'>Variables can be thought of as named containers for data. The data that a variable holds can be changed, compared with other data, or even assigned to another variable, much like variables in mathematics. </p> 
+			<pre>x = 2</pre>
+			<p class='lead'>This line <b>declares</b>, or creates, a variable named <span class='codeText'>x</span> and gives it a value of 2. <br>Variables in Python can hold various <b>data types</b>, including:</p>
+			<ul>
+				<li><p class='lead'><b>int</b> (integer): a whole number like <span class='codeText'>2</span></p></li>
+				<li><p class='lead'><b>long</b> (long integer): a very large whole number like <span class='codeText'>2,134,141,736,908</span></p></li>
+				<li><p class='lead'><b>float</b> (floating point): a decimal number like <span class='codeText'>3.14159265359</span></p></li>
+				<li><p class='lead'><b>bool</b> (boolean): <span class='codeText'>True</span> or <span class='codeText'>False</span></p></li>
+				<li><p class='lead'><b>str</b> (string): a collection of characters like <span class='codeText'>"Th1s I5 a s7r|n6"</span></p></li>
+			</ul>
+			<p class='lead'>Variables of all types are declared similarly to the above example, by naming the variable and setting it equal to a value. Since variables are just named containers of data, their values can be assigned to other variables:</p>
+			<pre>age = 18
+yourAge = age</pre>
+			<p class='lead'>Now, the variable <span class='codeText'>yourAge</span> has a value of 18.</p>
+			
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Declaring Variables</h3>
+			<p>Assign appropriate values to the following variables, and output them to the console.</p>
+			<p hidden id="answer1"></p>
+			<div class='editor' id="editor1">myName = 
+myAge = 
+
+# think yes = True, no = False
+iAmAlive = 
+print(myName)
+print(myAge)
+print(iAmAlive)</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>As you can see from the last exercise, variables' values can be printed by naming them within the parentheses in <span class='codeText'>print()</span>.<br><br>
+			Variables can also be assigned a value that is input by the user when the program is running. This will prompt the user to enter a value through the command line (a popup window on this site due to technical limitations), which will then be assigned to a variable <b>as a string</b>.
+			</p>
+			<pre>name = input("What is your name?")</pre>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Taking Input</h3>
+			<p>Use input() to assign values to the variables while the program is running.</p>
+			<p hidden id="answer2"></p>
+			<div class='editor' id="editor2">myName = input("What is your name?")
+myAge = 
+iAmAlive = 
+print(myName)
+print(myAge)
+print(iAmAlive)</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Variables, or their values, can be added together. With numerical variables, this is arithmetic (covered in the next lesson). With strings, however, two sets of characters can be combined into one using the <span class='codeText'>+</span> operator.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise3">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator3" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Combining Strings</h3>
+			<p>Use input() to get the user's name and the + operator to customize the greeting</p>
+			<p hidden id="answer3"></p>
+			<div class='editor' id="editor3">myName = input("What is your name?")
+
+# hint: ADD your name to the greeting
+customGreeting = "Hello, "
+
+print(customGreeting)</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run3" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset3" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent3" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console3"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "#" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		activateEditor(1);
+		activateEditor(2);
+		activateEditor(3);
+	});
+</script>
+{% endblock %}

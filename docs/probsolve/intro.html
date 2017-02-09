@@ -69,8 +69,8 @@
 			</a>
 			<ul class="dropdown-menu" role="menu">
 				<li><a href="../probsolve/intro.html">Introduction</a></li>
-				<li><a href="#">Hello, World!</a></li>
-				<li><a href="#">Variables and Types</a></li>
+				<li><a href="../probsolve/helloWorld.html">Hello, World!</a></li>
+				<li><a href="../probsolve/helloWorld.html">Variables and Types</a></li>
 				<li><a href="#">Basic Math</a></li>
 				<li><a href="#">Control Flow</a></li>
 				<li><a href="#">Loops</a></li>
@@ -141,11 +141,14 @@
 			
 		</div>
 	</div>
+
+	<!-- EXERCISE -->
 	<div class='row' id = "exercise1">
 		<p>The following is an example of a problem you will solve:</p>
 		<div id="editorContainer" class="col-lg-12 panel panel-primary">
-			<h3>Fibonacci Numbers</h3>
-			<p>Print the Fibonacci numbers up to and including 1,000</p>
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Fibonacci Numbers</h3>
+			<p>Print the Fibonacci numbers less than or equal to 1,000</p>
+			<p hidden id="answer1">987</p>
 			<div class='editor' id="editor1">def fib(n):
     a, b = 0, 1
     while a < n:
@@ -161,6 +164,8 @@ fib(1000)</div>
 			<div class = 'console' id = "console1"></div>
 		</div>
 	</div>
+	<!-- END EXERCISE -->
+
 	<br>
 	<div class="row">
 		<div class="col-lg-12">
@@ -216,7 +221,7 @@ fib(1000)</div>
 		-->
 	</div>
 	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "#" class="btn btn-lg btn-block btn-info" style="text-decoration:none;"><h4>Coming Soon</h4></a>
+		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-info" style="text-decoration:none;"><h4>Get Started</h4></a>
 	</div>
 </div>
 
@@ -231,9 +236,8 @@ fib(1000)</div>
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
 		
-<script type='text/javascript' src='../js/interact.js'></script>
+		
 <script type="text/javascript">
 	var demo1 = ace.edit("demo1editor");
 	// demo1.setTheme("ace/theme/snappy-light");
@@ -305,6 +309,7 @@ fib(1000)</div>
 	
 </script>
 
+		<script type='text/javascript' src='../js/interact.js'></script>
 
 		<script type="text/javascript">
 			$(document).ready(function () {

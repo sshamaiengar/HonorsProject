@@ -34,10 +34,19 @@ function activateEditor(number){
 		$("#editorContent"+number).html(editor.getValue());
 		$("#console"+number).slideDown();
 		brython({debug:1, ipy_id:['editorContent'+number]})
+		var correct = window['jqconsole'+number].Dump().indexOf($("#answer"+number).text()) != -1 ? true : false;
+		if (correct){
+			$("#indicator"+number).removeClass("fa-times").addClass("fa-check");
+			$("#indicator"+number).css('display', 'inline');
+		} else {
+			$("#indicator"+number).removeClass("fa-check").addClass("fa-times");
+			$("#indicator"+number).css('display', 'inline');
+		}
 	});
 	$("#reset"+number).click(function(){
 		editor.setValue("");
 		window['jqconsole'+number].Reset();
 		$("#console"+number).slideUp();
+		$("#indicator"+number).removeClass("fa-check").removeClass("fa-times").css('display', 'none');
 	})
 }
