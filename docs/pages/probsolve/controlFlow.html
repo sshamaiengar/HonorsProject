@@ -1,0 +1,186 @@
+{% extends "ps_base.html" %}
+
+{% block css %}
+<link href="../css/probsolve.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class='container'>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Control Flow</h1>
+			<p class='lead'>Often in a program, different things should happen depending on certain <b>conditions</b>. For example, if a number is divisible by 2, the program should print "Even", but if it's not, the program should print "Odd". In Python, and in many other programming languages, this is done using <b>control flow statements</b>, or more specifically <b>if</b>, <b>else</b>, and <b>elif</b> (else if) statements.</p>
+			<pre>x = int(input("Enter a number:"))
+if x % 2 == 0:
+	print("This number is even")
+else:
+	print("This number is odd")</pre>
+			<p class='lead'>There's a lot of new concepts going on here, so we'll break it down.<br><br>
+			<b>If</b>, <b>else</b>, and <b>elif</b> statements can be thought of as branches or forks in the road as the program runs. They consist of <b>conditions</b> and <b>blocks</b> of code that should be run if each condition is true. </p><br><br>
+			<pre>x = int(input("Enter a number:"))
+if x % 2 == 0: 				# CONDITION
+	print("This number is even")	# BLOCK
+else:					# CONDITION
+	print("This number is odd")	# BLOCK
+
+print("Thanks for entering a number")</pre><br>
+			<p class='lead'>When the computer reaches these statements, it follows only the path, or block, for which the condition is true. If multiple conditions are true, it will take only the first one. Then, it will continue running the code outside of the control flow statements.</p><br><br>
+			<p class='lead'>Blocks can be thought of as groups of lines of code, or statements. They can have the same types of statements as can occur anywhere else, such as variable declarations, function calls (to be covered later), and even <b>more if, else, and elif statements</b>. This leads to <b>nested</b> statements:</p>
+			<pre>x = int(input("Enter a number:"))
+if x % 2 == 0:
+	if x > 0:
+		print("This number is even and positive")</pre>
+			<p class='lead'>All lines within a block <b>must</b> be indented once from the previous control flow statement.<br><br>
+			Conditions are expressions that evaluate to <b>True</b> or <b>False</b>. Formally, these are called <b>Boolean expressions</b>. They must be followed by a colon to indicate the start of the block.<br>
+			In the previous example, you saw the use of <span class='codeText'>==</span>. This differs from <span class='codeText'>=</span> in that it is used for comparison of two values, rather than assignment of a value to a variable.<br>If the values on either side of <span class='codeText'>==</span> are equal, the entire expression will have a value of <span class='codeText'>True</span>.</p>
+			<pre>print(2 == 2)
+print("Hello" == "hello")
+print(True == True)</pre>
+			<p class='lead'><span class='codeText'>==</span> can be used to compare variables and values of any types. This example would print <span class='codeText'>True</span>, <span class='codeText'>False</span>, and <span class='codeText'>True</span> to the console.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Boolean Expressions</h3>
+			<p>Change the code so that False is output to the console.</p>
+			<p hidden id="answer1">False</p>
+			<div class='editor' id="editor1">x = 3
+print(x % 2 == 1)
+</div>
+			<p hidden id="defaultCode1">x = 3
+print(x % 2 == 1)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>The counterpart to <span class='codeText'>==</span> is <span class='codeText'>!=</span>. An expression is True when the values on either side of <span class='codeText'>!=</span> are unequal:</p>
+			<pre>print("hello" != "goodbye")</pre>
+			<p class='lead'>This would print True because the two strings are not equal in value.<br><br>
+			Several other comparators are available for use with <b>numeric values</b>:</p>
+			<ul>
+				<li><p class='lead'><b><span class='codeText'>></span></b> : True if left value is <b>greater than</b> right value</p></li>
+				<li><p class='lead'><b><span class='codeText'>>=</span></b> : True if left value is <b>greater than or equal to</b> right value</p></li>
+				<li><p class='lead'><b><span class='codeText'><</span></b> : True if left value is <b>less than</b> right value</p></li>
+				<li><p class='lead'><b><span class='codeText'><=</span></b> : True if left value is <b>less than or equal to</b> right value</p></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Comparing Ages</h3>
+			<p>Use input() to get the user's age. If the user is 18 or over, print that they are an adult. If not, print that they are a minor.</p>
+			<p hidden id="answer2">You are a</p>
+			<div class='editor' id="editor2">x = 
+# hint: add in the missing condition
+if ....:
+	print("You are an adult")
+else:
+	print("You are a minor")</div>
+			<p hidden id="defaultCode2">x = 
+# hint: add in the missing condition
+if ....:
+	print("You are an adult")
+else:
+	print("You are a minor")</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>As you have seen in the previous examples, else statements don't have a specified condition. Their condition is simply the opposite of the condition in the <b>if</b> statement. So in the last exercise, when a user's age is not over 18, the <b>else</b> statement is True and its block runs.<br><br>
+			<b>Elif</b> statements require a condition, just like <b>if</b>. They allow for more than two paths in the program.</p>
+			<pre>x = int(input("Enter your age: "))
+if x <= 0:
+	print("You haven't been born yet")
+elif x < 18:
+	print("You are a minor")
+else:
+	print("You are an adult")</pre>
+			<p class='lead'>In this example, <span class='codeText'>You are a minor</span> is printed when the inputted age is between 0 and 18.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise3">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator3" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Change Calculator</h3>
+			<p>Calculate the amount of change, if any, that should be given based on the cost of some items and the amount paid. If the payment is not enough, print that.</p>
+			<p hidden id="answer3">Change due:</p>
+			<div class='editor' id="editor3">cost = 9.99
+payment = 20.00
+
+# hint: replace the .... in these conditions to compare the cost and payment appropriately
+if ....: # payment is too much
+	print("Change due: " + str(payment - cost))
+elif ....: # payment is equal
+	print("No change due")
+else:
+	print("The payment is not enough")</div>
+			<p hidden id="defaultCode3">cost = 9.99
+payment = float(input("How much was paid?"))
+
+# hint: replace the .... in these conditions to compare the cost and payment appropriately
+if ....:
+	print("Change due: " + str(payment - cost))
+elif ....:
+	print("No change due")
+else:
+	print("The payment is not enough")</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run3" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset3" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent3" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console3"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Conditions can be made more complex using <b>logical operators</b>, which allow for the combination of multiple different conditions. In Python, these are <span class='codeText'>and</span> and <span class='codeText'>or</span>.</p>
+			<pre>x = -2
+print(x % 2 == 0 and x > 0)</pre>
+			<p class='lead'>When combining two conditions with <span class='codeText'>and</span>, the combined expression is True <b>only when both conditions are True</b>. So in this example, False would be printed to the console because -2 is even but is not positive.</p>
+			<pre>x = -2
+print(x % 2 == 0 or x > 0)</pre>
+			<p class='lead'>When combining two conditions with <span class='codeText'>or</span>, the combined expression is True <b>when at least one of the conditions is True</b>. So in this example, True would be printed to the console.</p>
+		</div>
+	</div>
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "loops.html" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		activateEditor(1);
+		activateEditor(2);
+		activateEditor(3);
+	});
+</script>
+{% endblock %}

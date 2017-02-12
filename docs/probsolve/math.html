@@ -132,37 +132,47 @@
 					<span class="hamb-bottom"></span>
 				</button>
 				
-<div class="container">
+<div class='container'>
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Problem-Solving</h1>  
-			<p class = "lead">The ability to do mathematical calculations and operations was one of the greatest factors driving the creation of computers. Programming languages were developed in order to give instructions to these new machines. Nowadays, computers have far surpassed humans' ability to do calculations. These lessons will teach you to take advantage of this fact and make your own computer programs that solve problems related to math and computer science.</p>
+			<h1 class="page-header">Math</h1>
+			<p class='lead'>Doing math in Python looks a lot like written math. Operations (like addition, subtraction, multiplication, division, exponentiation, etc.) can be done on numbers as well as numeric variables, such as <b>ints</b>, <b>floats</b>, and <b>longs</b>. When a program is run, the computer evaluates written math expressions following standard order of operations (remember PEMDAS?) and uses the calculated value.<br>
+			For example,...</p>
+			<pre>x = 2 + 5 - 4</pre>
+			<p class='lead'>...gives <span class="codeText">x</span> a value of 3. <br>Multiplication is done using <span class="codeText">*</span>, and division is done using <span class="codeText">/</span>, like so:</p>
+			<pre>x = 20 * 4 / 8</pre>
+			<p class='lead'><span class="codeText">x</span> now has a value of 10.<br> As mentioned before, these operations can also be done on variables:</p>
+			<pre>x = 3
+y = 8
+print(x * y)</pre>
+			<p class='lead'>This will print out <span class='codeText'>24</span> to the console.</p>
 			<br>
-			
+			<p class='lead'>Parentheses can also be used for grouping, just like in written math:</p>
+			<pre>x = 3
+y = (x + 2) / 5
+print(y)</pre>
+			<p class='lead'>The program will print <span class='codeText'>1</span> to the console.</p>
 		</div>
 	</div>
 
 	<!-- EXERCISE -->
 	<div class='row' id = "exercise1">
-		<p>The following is an example of a problem you will solve:</p>
 		<div id="editorContainer" class="col-lg-12 panel panel-primary">
-			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Fibonacci Numbers</h3>
-			<p>Print the Fibonacci numbers less than or equal to 1,000</p>
-			<p hidden id="answer1">987</p>
-			<div class='editor' id="editor1">def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</div>
-			<p id='defaultCode1' hidden>def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</p>
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Doing Arithmetic</h3>
+			<p>Print to the console the number of seconds in a 365-day year.</p>
+			<p hidden id="answer1">31536000</p>
+			<div class='editor' id="editor1">secondsPerMinute = 60
+minutesPerHour = 60
+hoursPerDay = 24
+daysPerYear = 365
+# hint: use print() and the * operator
+</div>
+			<p hidden id="defaultCode1">secondsPerMinute = 60
+minutesPerHour = 60
+hoursPerDay = 24
+daysPerYear = 365
+# hint: use print() and the * operator
+</p>
 			<div class = "btn-group" role="group" aria-label="Editor Buttons">
 				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
 				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
@@ -173,63 +183,83 @@ fib(1000)</p>
 	</div>
 	<!-- END EXERCISE -->
 
-	<br>
 	<div class="row">
 		<div class="col-lg-12">
-			<p>You will be using the <a href="http://www.python.org" target="_blank">Python</a> programming language. It's one of the most popular programming languages in use today because it makes reading and writing code very easy. <br>Programs that take several lines in a language like Java can be written in Python in one line.</p>
+			<p class='lead'>Another important mathematical operator is <b>%</b>, called the <b>modulus</b> operator. It is used to give the remainder of division between two numbers.</p>
+			<pre>x = 15 % 4</pre>
+			<p class='lead'>This gives <span class='codeText'>x</span> a value of 3, because 4 goes into 15 three times, with a remainder of 3.<br>
+			<b>Modulus</b> is often used when checking divisibility of a number. </p>
+			<pre>x = 16
+print(x % 2)</pre>
+			<p class='lead'>In this example, <span class='codeText'>0</span> will be printed to the console because 16 is even and 2 goes into it with no remainder.</p><br><br>
+			<p class='lead'> Another important operation is exponentiation, or raising a number to a certain power. This is done using <span class='codeText'>**</span>.</p>
+			<pre>y = 3
+x = 4
+print(y ** x)</pre>
+			<p class='lead'><span class='codeText'>81</span> will be printed because 3 to the fourth power (or 3 times 3 times 3 times 3) is 81.<br><br>
+			In the following exercise, you will allow a user to input two numbers. This is done using <span class='codeText'>input()</span> as described in the previous lesson. However, recall that this sets the value of the variable to a <b>string</b>. If you try to do this:</p>
+			<pre>a = "3"
+b = "4"
+print(a + b)</pre>
+			<p class='lead'>...the printed result will be <span class='codeText'>34</span> because that is the combination of those two strings. What needs to be done is <b>converting</b> the string value of <span class='codeText'>input()</span> to an <b>int</b> or <b>float</b> data type. This is done using <span class='codeText'>int()</span> or <span class='codeText'>float()</span>.</p>
+			<pre>x = int(input("Enter a number: "))
+y = int(input("Enter another number: "))
+print(x + y)</pre>
+			<p class='lead'>In this example, the values of <span class='codeText'>input()</span> are converted to ints so that addition can be done on them. The printed result will be the sum of the two user-inputted values.<br><br>
+			Say you wanted to print a number accompanied with text:</p>
+			<pre>x = 3
+y = 4
+print("3 + 4 = " + (3+4))</pre>
+			<p class='lead'>The above code would result in an error because it is attempting to do addition of a number (<span class='codeText'>7</span>) and a string. In this case, <span class='codeText'>str()</span> must be used to convert the number back to a string so that it can be combined with another string:</p>
+			<pre>print("3 + 4 = " + str(3+4))</pre>
+			<p class='lead'>With all this in mind, try the next exercise.</p>
 		</div>
-		<!-- 
-		<div id="codeMirrorEx1" class = "col-lg-6"><h4>Java</h4></div>
-
-		<div id="codeMirrorEx2" class = "col-lg-6"><h4>Python</h4></div> -->
-
-		<div id="demo1" class = "col-lg-6">
-			<h4>Java</h4>
-			<div id="demo1editor">public class HelloWorld {
-	public static void main(String[] args){
-		System.out.println("Hello, World!");
-	}
-}</div>
-		</div>
-
-		<div id="demo2" class = "col-lg-6">
-			<h4>Python</h4>
-			<div id="demo2editor">print("Hello, World!")</div>
-		</div>
-
 	</div>
-	<div class="row">
-		<!-- <div id="editorContainer" class="editor col-lg-4">
-			<div id="editor">def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</div>
-			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
-			</div>
-			<p id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></p>
-			<div id = "console"></div>
-		</div> -->
 
-	<!--
-		<div id="editor" class="editor col-lg-6">
-			<div id = "codeMirror"></div>
+
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Calculator</h3>
+			<p>Allow the user to enter two numbers, and print out the result of adding, subtracting, multiplying, dividing, and exponentiating those numbers.</p>
+			<p hidden id="answer2"></p>
+			<div class='editor' id="editor2"># hint: use input() and don't forget to convert the value to a number
+num1 = 
+num2 = 
+
+# hint: replace the ... with the appropriate operations and conversions
+print(str(num1) + " + " + str(num2) + " = " + ...)
+print(str(num1) + " - " + str(num2) + " = " + ...)
+print(str(num1) + " * " + str(num2) + " = " + ...)
+print(str(num1) + " / " + str(num2) + " = " + ...)
+print(str(num1) + "^" + str(num2) + " = " + ...)
+</div>
 			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset" class="btn bstn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
 			</div>
-			<div id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></div>
-			<div id = "console"></div>
+			<p hidden id = "defaultCode2"># hint: use input() and don't forget to convert the value to a number
+num1 = 
+num2 = 
+
+# hint: replace the ... with the appropriate operations and conversions
+print(str(num1) + " + " + str(num2) + " = " + ...)
+print(str(num1) + " - " + str(num2) + " = " + ...)
+print(str(num1) + " * " + str(num2) + " = " + ...)
+print(str(num1) + " / " + str(num2) + " = " + ...)
+print(str(num1) + "^" + str(num2) + " = " + ...)</p>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
 		</div>
-		-->
 	</div>
+	<!-- END EXERCISE -->
+
 	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-info" style="text-decoration:none;"><h4>Get Started</h4></a>
+		<a href = "controlFlow.html" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
 	</div>
+
+
 </div>
 
 			</div>
@@ -245,75 +275,11 @@ fib(1000)</div>
 		<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		
 		
-<script type="text/javascript">
-	var demo1 = ace.edit("demo1editor");
-	// demo1.setTheme("ace/theme/snappy-light");
-	demo1.setTheme("ace/theme/rubyblue");
-	demo1.setHighlightActiveLine(false);
-	demo1.setShowPrintMargin(false);
-	demo1.container.style.lineHeight = 1.7
-	demo1.renderer.updateFontSize()
-	demo1.setReadOnly(true);
-    demo1.getSession().setMode("ace/mode/java");
-
-    var demo2 = ace.edit("demo2editor");
-	// demo2.setTheme("ace/theme/snappy-light");
-	demo2.setTheme("ace/theme/rubyblue");
-	demo2.setHighlightActiveLine(false);
-	demo2.setShowPrintMargin(false);
-	demo2.container.style.lineHeight = 1.7
-	demo2.renderer.updateFontSize()
-	demo2.setReadOnly(true);
-    demo2.getSession().setMode("ace/mode/python");
-	// var myCodeMirror2 = CodeMirror($("#codeMirrorEx1").get(0), {
-	// 	value: "public class HelloWorld {\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"Hello, World\");\n\t}\n}",
-	// 	theme: "rubyblue",
-	// 	readOnly: true,
-	// 	mode:  "text/x-java",
-	// 	lineNumbers: true
-	// });
-	// var myCodeMirror3 = CodeMirror($("#codeMirrorEx2").get(0), {
-	// 	value: "print(\"Hello, World!\")",
-	// 	mode:  {name:"python",version:3},
-	// 	theme: "rubyblue",
-	// 	readOnly: true,
-	// 	lineNumbers:true
-	// });
-
-	// var editor = ace.edit("editor1");
-	// // editor.setTheme("ace/theme/snappy-light");
-	// editor.setTheme("ace/theme/rubyblue");
-	// editor.setHighlightActiveLine(false);
-	// editor.setShowPrintMargin(false);
-	// editor.container.style.lineHeight = 1.7
-	// editor.renderer.updateFontSize()
- //    editor.getSession().setMode("ace/mode/python");
-	// editor.getSession().on('change', function(e) {
-	// 	$("#editorContent1").html(editor.getValue());
-	// });
+<script>
 	$(document).ready(function(){
 		activateEditor(1);
-		// activateEditor(2);
-		// window.jqconsole = $('#console1').jqconsole('Python console\n', '>');
-		// $("#run1").click(function(){
-		// 	// $("#editorContent").html(myCodeMirror.getValue());
-		// 	window.jqconsole.Reset();
-		// 	$("#editorContent1").html(editor.getValue());
-		// 	$("#console1").slideDown();
-		// 	// $("#console1").empty()
-		// 	brython({debug:1, ipy_id:['editorContent1']})
-		// });
-		// $("#reset1").click(function(){
-		// 	editor.setValue("");
-		// 	window.jqconsole.Reset();
-		// 	$("#console1").slideUp();
-		// })
+		activateEditor(2);
 	});
-
-	// $(function () {
-	// 	window.jqconsole = $('#console1').jqconsole('Python console\n', '>');
-	// });
-	
 </script>
 
 		<script type='text/javascript' src='../js/interact.js'></script>

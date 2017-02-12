@@ -1,0 +1,147 @@
+{% extends "ps_base.html" %}
+
+{% block css %}
+<link href="../css/probsolve.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class='container'>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Math</h1>
+			<p class='lead'>Doing math in Python looks a lot like written math. Operations (like addition, subtraction, multiplication, division, exponentiation, etc.) can be done on numbers as well as numeric variables, such as <b>ints</b>, <b>floats</b>, and <b>longs</b>. When a program is run, the computer evaluates written math expressions following standard order of operations (remember PEMDAS?) and uses the calculated value.<br>
+			For example,...</p>
+			<pre>x = 2 + 5 - 4</pre>
+			<p class='lead'>...gives <span class="codeText">x</span> a value of 3. <br>Multiplication is done using <span class="codeText">*</span>, and division is done using <span class="codeText">/</span>, like so:</p>
+			<pre>x = 20 * 4 / 8</pre>
+			<p class='lead'><span class="codeText">x</span> now has a value of 10.<br> As mentioned before, these operations can also be done on variables:</p>
+			<pre>x = 3
+y = 8
+print(x * y)</pre>
+			<p class='lead'>This will print out <span class='codeText'>24</span> to the console.</p>
+			<br>
+			<p class='lead'>Parentheses can also be used for grouping, just like in written math:</p>
+			<pre>x = 3
+y = (x + 2) / 5
+print(y)</pre>
+			<p class='lead'>The program will print <span class='codeText'>1</span> to the console.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Doing Arithmetic</h3>
+			<p>Print to the console the number of seconds in a 365-day year.</p>
+			<p hidden id="answer1">31536000</p>
+			<div class='editor' id="editor1">secondsPerMinute = 60
+minutesPerHour = 60
+hoursPerDay = 24
+daysPerYear = 365
+# hint: use print() and the * operator
+</div>
+			<p hidden id="defaultCode1">secondsPerMinute = 60
+minutesPerHour = 60
+hoursPerDay = 24
+daysPerYear = 365
+# hint: use print() and the * operator
+</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Another important mathematical operator is <b>%</b>, called the <b>modulus</b> operator. It is used to give the remainder of division between two numbers.</p>
+			<pre>x = 15 % 4</pre>
+			<p class='lead'>This gives <span class='codeText'>x</span> a value of 3, because 4 goes into 15 three times, with a remainder of 3.<br>
+			<b>Modulus</b> is often used when checking divisibility of a number. </p>
+			<pre>x = 16
+print(x % 2)</pre>
+			<p class='lead'>In this example, <span class='codeText'>0</span> will be printed to the console because 16 is even and 2 goes into it with no remainder.</p><br><br>
+			<p class='lead'> Another important operation is exponentiation, or raising a number to a certain power. This is done using <span class='codeText'>**</span>.</p>
+			<pre>y = 3
+x = 4
+print(y ** x)</pre>
+			<p class='lead'><span class='codeText'>81</span> will be printed because 3 to the fourth power (or 3 times 3 times 3 times 3) is 81.<br><br>
+			In the following exercise, you will allow a user to input two numbers. This is done using <span class='codeText'>input()</span> as described in the previous lesson. However, recall that this sets the value of the variable to a <b>string</b>. If you try to do this:</p>
+			<pre>a = "3"
+b = "4"
+print(a + b)</pre>
+			<p class='lead'>...the printed result will be <span class='codeText'>34</span> because that is the combination of those two strings. What needs to be done is <b>converting</b> the string value of <span class='codeText'>input()</span> to an <b>int</b> or <b>float</b> data type. This is done using <span class='codeText'>int()</span> or <span class='codeText'>float()</span>.</p>
+			<pre>x = int(input("Enter a number: "))
+y = int(input("Enter another number: "))
+print(x + y)</pre>
+			<p class='lead'>In this example, the values of <span class='codeText'>input()</span> are converted to ints so that addition can be done on them. The printed result will be the sum of the two user-inputted values.<br><br>
+			Say you wanted to print a number accompanied with text:</p>
+			<pre>x = 3
+y = 4
+print("3 + 4 = " + (3+4))</pre>
+			<p class='lead'>The above code would result in an error because it is attempting to do addition of a number (<span class='codeText'>7</span>) and a string. In this case, <span class='codeText'>str()</span> must be used to convert the number back to a string so that it can be combined with another string:</p>
+			<pre>print("3 + 4 = " + str(3+4))</pre>
+			<p class='lead'>With all this in mind, try the next exercise.</p>
+		</div>
+	</div>
+
+
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Calculator</h3>
+			<p>Allow the user to enter two numbers, and print out the result of adding, subtracting, multiplying, dividing, and exponentiating those numbers.</p>
+			<p hidden id="answer2"></p>
+			<div class='editor' id="editor2"># hint: use input() and don't forget to convert the value to a number
+num1 = 
+num2 = 
+
+# hint: replace the ... with the appropriate operations and conversions
+print(str(num1) + " + " + str(num2) + " = " + ...)
+print(str(num1) + " - " + str(num2) + " = " + ...)
+print(str(num1) + " * " + str(num2) + " = " + ...)
+print(str(num1) + " / " + str(num2) + " = " + ...)
+print(str(num1) + "^" + str(num2) + " = " + ...)
+</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p hidden id = "defaultCode2"># hint: use input() and don't forget to convert the value to a number
+num1 = 
+num2 = 
+
+# hint: replace the ... with the appropriate operations and conversions
+print(str(num1) + " + " + str(num2) + " = " + ...)
+print(str(num1) + " - " + str(num2) + " = " + ...)
+print(str(num1) + " * " + str(num2) + " = " + ...)
+print(str(num1) + " / " + str(num2) + " = " + ...)
+print(str(num1) + "^" + str(num2) + " = " + ...)</p>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "controlFlow.html" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		activateEditor(1);
+		activateEditor(2);
+	});
+</script>
+{% endblock %}

@@ -44,7 +44,7 @@ function activateEditor(number){
 		}
 	});
 	$("#reset"+number).click(function(){
-		editor.setValue("");
+		editor.setValue($("#defaultCode"+number).text());
 		window['jqconsole'+number].Reset();
 		$("#console"+number).slideUp();
 		$("#indicator"+number).removeClass("fa-check").removeClass("fa-times").css('display', 'none');
