@@ -74,8 +74,8 @@
 				<li><a href="../probsolve/math.html">Basic Math</a></li>
 				<li><a href="../probsolve/controlFlow.html">Control Flow</a></li>
 				<li><a href="../probsolve/loops.html">Loops</a></li>
-				<li><a href="#">Data Structures</a></li>
-				<li><a href="#">Functions</a></li>
+				<li><a href="../probsolve/dataStructures.html">Data Structures</a></li>
+				<li><a href="../probsolve/functions.html">Functions</a></li>
 				<li><a href="#">Advanced Topics</a></li>
 			</ul>
 		</li>
@@ -209,9 +209,9 @@ print(x + y)</pre>
 			Say you wanted to print a number accompanied with text:</p>
 			<pre>x = 3
 y = 4
-print("3 + 4 = " + (3+4))</pre>
+print("3 + 4 = " + (x+y))</pre>
 			<p class='lead'>The above code would result in an error because it is attempting to do addition of a number (<span class='codeText'>7</span>) and a string. In this case, <span class='codeText'>str()</span> must be used to convert the number back to a string so that it can be combined with another string:</p>
-			<pre>print("3 + 4 = " + str(3+4))</pre>
+			<pre>print("3 + 4 = " + str(x+y))</pre>
 			<p class='lead'>With all this in mind, try the next exercise.</p>
 		</div>
 	</div>
@@ -227,7 +227,6 @@ print("3 + 4 = " + (3+4))</pre>
 			<div class='editor' id="editor2"># hint: use input() and don't forget to convert the value to a number
 num1 = 
 num2 = 
-
 # hint: replace the ... with the appropriate operations and conversions
 print(str(num1) + " + " + str(num2) + " = " + ...)
 print(str(num1) + " - " + str(num2) + " = " + ...)

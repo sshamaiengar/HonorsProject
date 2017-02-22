@@ -10,15 +10,309 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Loops</h1>
+			<p class='lead'>Loops are ways of repeating actions or statements in the code for <b>a certain number of times</b> or <b>while a certain condition is true</b>. Loops are used heavily in all types of programming and will be needed to solve the math-based problems presented in this tutorial.</p><br><br>
+			<p class='lead'>The first type of loop we will look at is called the <b>for</b> loop. Its structure is shown below, and it behaves like "for every ... in ..., do ...".</p>
+			<pre>for ....:
+	# BLOCK of code</pre>
+			<p class='lead'>The for loop is created by writing "for" and then an expression that iterates over something, such as a range of numbers or a <b>list</b> of values (lists will be discussed in the next lesson).<br>
+			Iterating over a range of numbers is done like so:</p>
+			<pre> for i in range(0,10):
+	print(i)
+# other code down here</pre>
+			<p class='lead'>Here, <span class='codeText'>i</span> is a temporary variable. <span class='codeText'>range(a, b)</span> creates a range of numbers starting at the number <span class='codeText'>a</span> and ending at the greatest number less than <span class='codeText'>b</span>.<br>
+			In this loop, <span class='codeText'>i</span> starts out with a value of <span class='codeText'>0</span>. The indented block of code is then executed, printing out <span class='codeText'>0</span>. Then, the program returns to the line declaring the loop, and <span class='codeText'>i</span> is set to the next value in the range: <span class='codeText'>1</span>. The indented block is executed again, printing out <span class='codeText'>1</span>. This process continues until <span class='codeText'>9</span> has been printed. Then, the loop is complete and the program continues below it.<br><br>
+			So, rather than writing...
+			<pre>print(0)
+print(1)
+print(2)
+print(3)
+print(4)
+print(5)
+print(6)
+print(7)
+print(8)
+print(9)</pre>
+			<p class='lead'>...we can write just two lines and accomplish the same thing.</p>
 		</div>
 	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">For Loops</h3>
+			<p>Change the code so that the numbers from 1 to 50 are printed out.</p>
+			<p hidden id="answer1">50</p>
+			<div class='editor' id="editor1"># hint: remember the range(A,B) is not inclusive, so i will never have the value B
+for i in range(0,50):
+	print(i)</div>
+			<p hidden id="defaultCode1"># hint: remember the range(A,B) is not inclusive, so i will never have the value B
+for i in range(0,50):
+	print(i)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Printing out numbers in a range is far from the most important use of for loops. A better use of it is for doing mathematical operations over a range of numbers:</p>
+			<pre>sum = 0
+for i in range(1,10):
+	sum = sum + i
+print(sum)</pre>
+			<p class='lead'>In this example, <span class='codeText'>sum</span> is created and set to a value of <span class='codeText'>0</span>. It will keep track of a sum of numbers through each iteration of the loop.<br>
+			<span class='codeText'>i</span> starts out with a value of <span class='codeText'>1</span>. Then, the indented block is executed; sum (currently with a value of <span class='codeText'>0</span>) is set to a new value of itself plus <span class='codeText'>i</span> (currently equal to <span class='codeText'>1</span>). Thus, <span class='codeText'>sum</span> gets a new value of <span class='codeText'>1</span>.<br>In the next iteration of the loop, <span class='codeText'>i</span> is equal to <span class='codeText'>2</span>. <span class='codeText'>sum</span> (currently equal to <span class='codeText'>1</span>) is set to itself plus <span class='codeText'>i</span>...or <span class='codeText'>sum = 1 + 2 = 3</span>. <br> This continues, with <span class='codeText'>sum</span> increasing by the new value of <span class='codeText'>i</span> in each iteration. At the end, after <span class='codeText'>i</span> becomes <span class='codeText'>9</span>, <span class='codeText'>sum</span> will be equal to the sum of the numbers <span class='codeText'>1</span> through <span class='codeText'>9</span>, which is <span class='codeText'>45</span>.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Sum from 1 to n</h3>
+			<p>Use input() to ask the user for a number. Then use a for loop to print out the sum of the numbers from 1 to the user's number.</p>
+			<p hidden id="answer2">The sum of the numbers from 1 to </p>
+			<div class='editor' id="editor2"># hint: remember to convert the input(...) to a number
+n = 
+sum = 0
+# hint: use the user-inputted value as the end number for the loop
+# hint: add 1 to the end of the range so that this value is included
+for i in range(1,....):
+	sum = sum + i
+print("The sum of the numbers from 1 to " + str(n) + " is " + str(sum))</div>
+			<p hidden id="defaultCode2"># hint: remember to convert the input(...) to a number
+n = 
+sum = 0
+# hint: use the user-inputted value as the end number for the loop
+# hint: add 1 to the end of the range so that this value is included
+for i in range(1,....):
+	sum = sum + i
+print("The sum of the numbers from 1 to " + str(n) + " is " + str(sum))</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Now, try using a for loop in a similar way, but with multiplication by <span class='codeText'>i</span> in each iteration. By starting the loop at <span class='codeText'>1</span> and ending at a number <span class='codeText'>n</span>, the final product is the mathematical operation <span class='codeText'>n!</span>, or "n factorial" (the factorial of a number is <span class='codeText'>1 × 2 × 3 × 4 × 5 × ... × (n - 1) × n</span>. For example, <span class='codeText'>4! = 24</span> and <span class='codeText'>5! = 120</span>.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise3">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator3" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">101!</h3>
+			<p>Use a for loop and multiplication to calculate the factorial of 101.</p>
+			<p hidden id="answer3">942594775983835942085162312</p>
+			<div class='editor' id="editor3"># the variable to keep track of the factorial must start at 1, because anything times 0 is 0
+factorial = 1
+# hint: make sure 101 is included in the range of the loop
+# hint: inside the loop, multiply by i instead of adding it
+for i in range(1,....):
+	factorial = ....
+print("101! = " + str(factorial))</div>
+			<p hidden id="defaultCode3"># the variable to keep track of the factorial must start at 1, because anything times 0 is 0
+factorial = 1
+# hint: make sure 101 is included in the range of the loop
+# hint: inside the loop, multiply by i instead of adding it
+for i in range(1,....):
+	factorial = ....
+print("101! = " + str(factorial))</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run3" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset3" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent3" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console3"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>You also have the option to specify the interval (other than <span class='codeText'>1</span>) by which <span class='codeText'>i</span> increases in each iteration of the loop, using <span class='codeText'>range(A,B,C)</span>. For example:</p>
+			<pre>sum = 0
+for i in range(0,1001,2):
+	sum = sum + i</pre>
+			<p class="lead">This code adds up all of the even numbers from <span class='codeText'>0</span> to <span class='codeText'>1000</span>, because <span class='codeText'>i</span> starts as <span class='codeText'>0</span> and is increased by <span class='codeText'>2</span> until it would become greater than or equal to <span class='codeText'>1001</span>.</p>
+			<br><br>
+			<p class='lead'><b>For</b> loops can also be used to iterate over a set of values. This will be discussed in the next lesson.</p>
+			<hr>
+			<p class='lead'>The next type of loop is called the <b>while</b> loop. It behaves like "while ... is true, do ...". It is written like this:</p>
+			<pre>while condition:
+	# BLOCK of code</pre>
+			<p class='lead'>The <b>condition</b> is written just like conditions in an if, else, or elif statement. Unlike <b>for</b> loops, <b>while</b> loops do not use temporary variables, so any variables used in the condition must be defined before the loop.<br><br>
+			<b>While</b> loops continue to excecute the code in the indented block <b>until the condition becomes false</b>, at which point the loop is complete and the program continues below it. Because of this, <b>while</b> loops are useful when you do not know how many times something will need to happen, but you know the conditions for when it should stop happening.<br><br>
+			<b>While</b> loops can replicate the functionality of <b>for</b> loops.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise4">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator4" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">50! with while loops</h3>
+			<p>Use a while loop and multiplication to calculate the factorial of 50.</p>
+			<p hidden id="answer4">304140932017133780436</p>
+			<div class='editor' id="editor4"># the variable to keep track of the factorial must start at 1, because anything times 0 is 0
+factorial = 1
+i = ....
+# hint: replace the .... in the condition so the loop stops when i > 50
+while ....:
+	# hint: multiply by i
+	factorial = ....
+	# hint: i should increase by 1 each iteration
+	i = ....
+print("50! = " + str(factorial))</div>
+			<p hidden id="defaultCode4"># the variable to keep track of the factorial must start at 1, because anything times 0 is 0
+factorial = 1
+i = ....
+# hint: replace the .... in the condition so the loop stops when i > 50
+while ....:
+	# hint: multiply by i
+	factorial = ....
+	# hint: i should increase by 1 each iteration
+	i = ....
+print("50! = " + str(factorial))</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run4" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset4" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent4" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console4"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>One complication of while loops is the possibility of creating infinite loops:</p>
+			<pre>i = 0
+while i < 100:
+	print(i)</pre>
+			<p class='lead'>In this example, <span class='codeText'>i</span> will never increase because a line like <span class='codeText'>i = i + 1</span> was left out. Thus, <span class='codeText'>i</span> will <b>always</b> be less than 100, and the program will endlessly print <span class='codeText'>1</span> to the console until the program is halted. Try this in one of the exercises above and you will probably have to close your browser to stop your computer from freezing...<br><br>
+			Two other important aspects of loops are the <span class='codeText'>break</span> and <span class='codeText'>continue</span> statements. The former is often used with control flow statements (if, else, elif) to "break out" of a loop before it is complete. For example:</p>
+			<pre>for i in range(1000,0,-1):
+    if i**0.5 % 1 == 0:
+        print(i)
+        break</pre>
+        	<p class='lead'>This code finds the greatest perfect square less than <span class='codeText'>1,000</span>. It uses a for loop starting at <span class='codeText'>1,000</span> and decreasing by <span class='codeText'>1</span> per iteration until it reaches <span class='codeText'>1</span>. The if statement uses the modulus operator to check if the square root of the value of <span class='codeText'>i</span> at each iteration is evenly divisible by <span class='codeText'>1</span> (that is, if it is a whole number). If so, then <span class='codeText'>i</span> is a perfect square. However, since the loop starts at 1000, we know we only want to print out the first perfect square we hit, so <span class='codeText'>break</span> allows us to exit the loop once we find that.<br><br>
+        	Similarly, <span class='codeText'>continue</span> skips to the next iteration in a loop, bypassing all of the code beneath it in a block. This is useful in selectively ignoring or skipping certain numbers in a loop, for example.</p>
+        	<pre>for i in range(0,101):
+    if i % 2 == 1:
+    	continue
+    print(i)</pre>
+    		<p class='lead'>In this example, only the even numbers from <span class='codeText'>0</span> to <span class='codeText'>100</span> are printed out. When <span class='codeText'>i</span> is odd, the if statement is true and <span class='codeText'>continue</span> is executed, thus skipping <span class='codeText'>print(i)</span> and "continuing" in the next iteration.</p>
+
+    		<p class='lead'>The following two challenges will combine everything you have learned so far. They may seem difficult at first, but the key is to break down the steps of the problem and identify where loops, control flow statements, and variable assignments should be used.</p>
+
+
+		</div>
+	</div>
+
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise5">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator5" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Prime or Composite</h3>
+			<p>Whole numbers can be classified as prime or composite. A number is <b>prime</b> if its only factors are 1 and itself (that is, only 1 and the number itself can evenly divide into the number). For example, 3 is prime because its only factors are 1 and 3. A number is <b>composite</b> if it has more than two factors. For example, 4 is prime because its factors are 1, 2, and 4. The number 1 is neither prime nor composite.<br><br>Complete the program to find and print the first prime number greater than 1500.</p>
+			<p hidden id="answer5">1511</p>
+			<div class='editor' id="editor5">prime = None
+n = 1500
+while prime != True:
+	# assume each number is prime at first, then set prime to False if it's not	
+	prime = True
+	n = n + 1
+	# hint: to check if a number is prime, check if its divisible by all the numbers less than it starting with 2
+	for i in ....:
+		if ....:
+			prime = False
+			break
+print(n)</div>
+			<p hidden id="defaultCode5">prime = None
+n = 1500
+while prime != True:
+	# assume each number is prime at first, then set prime to False if it's not	
+	prime = True
+	n = n + 1
+	# hint: to check if a number is prime, check if its divisible by all the numbers less than it starting with 2
+	for i in ....:
+		if ....:
+			prime = False
+			break
+print(n)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run5" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset5" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent5" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console5"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise6">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator6" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Collatz Function</h3>
+			<p>The Collatz function of a number <span class='codeText'>n</span> is <span class='codeText'>n/2</span> if n is even, or <span class='codeText'>3n+1</span> if n is odd. The mathematician who named this function, Collatz, conjectured that if you start at any number and repeatedly apply this function, you will always eventually reach 1, at which point there is a cycle. <br>For example, if you start at 13, which is odd, the next number is <span class='codeText'>3*13+1 = 40</span>. 40 is even, so the next number is <span class='codeText'>40/2 = 20</span>. Continuing in this way, 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1. 1 is odd, so it becomes 4, which goes back to 2 and then 1 again. So 13 took 9 iterations of the function to reach 1.<br><br>Complete the program to print the number of iterations it takes to reach 1 from 2017.</p>
+			<p hidden id="answer6">68</p>
+			<div class='editor' id="editor6">iterations = 0
+n = 2017
+# hint: the loop should continue while the current number is greater than 1
+while ....:
+	if n % 2 == 0:
+		n = ....
+	else:
+		n = ....
+	iterations = iterations + 1
+print(iterations)
+	</div>
+			<p hidden id="defaultCode6">iterations = 0
+n = 2017
+# hint: the loop should continue while the current number is greater than 1
+while ....:
+	if n % 2 == 0:
+		n = ....
+	else:
+		n = ....
+	iterations = iterations + 1
+print(iterations)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run6" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset6" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent6" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console6"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "dataStructures.html" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
 </div>
 {% endblock %}
 
 {% block js %}
 <script>
 	$(document).ready(function(){
-
+		activateEditor(1);
+		activateEditor(2);
+		activateEditor(3);
+		activateEditor(4);
+		activateEditor(5);
+		activateEditor(6);
 	});
 </script>
 {% endblock %}

@@ -24,6 +24,7 @@ function activateEditor(number){
 	editor.container.style.lineHeight = 1.7
 	editor.renderer.updateFontSize()
     editor.getSession().setMode("ace/mode/python");
+    editor.getSession().setUseSoftTabs(false);
 	editor.getSession().on('change', function(e) {
 		$("#editorContent"+number).html(editor.getValue());
 	});

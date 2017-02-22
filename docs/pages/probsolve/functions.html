@@ -1,0 +1,251 @@
+{% extends "ps_base.html" %}
+
+{% block css %}
+<link href="../css/probsolve.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class='container'>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Functions</h1>
+			<p class='lead'>A function can be thought as a miniature program (within the larger program) that performs a specific action. It can also be compared to, like functions in mathematics, a machine that takes input and does something with it to return some output. It's a way of writing code once that can be reused for many different scenarios (different input) without rewriting the same code again.<br><br>
+			You have already used many built-in functions in Python without even realizing it:</p>
+			<pre>print("Hello, World!")</pre>
+			<p class='lead'><span class='codeText'>print(...)</span> is a function that takes any value as input and outputs it to the console. It does not return anything.</p>
+			<pre>name = input("What is your name?")</pre>
+			<p class='lead'><span class='codeText'>input(...)</span> is a function that takes a prompt string as input, prints it to the console, takes in user input, and returns the input as a string.</p>
+			<pre>age = int(input("Enter your age: "))</pre>
+			<p class='lead'><span class='codeText'>int(...)</span> is a function that takes a string as input and tries to convert it to the number it represents. It returns that number if it is successful.<br>
+			There are many other examples that you can probably think of now.<br><br>
+			<b>Defining</b>, or creating, your own functions is an important part of writing clean and robust code.
+			</p>
+			<pre>def myFunction():
+	# block of code</pre>
+			<p class='lead'>The simplest function is defined using the <span class='codeText'>def</span> keyword, followed by a name, a set of parentheses, and a colon. On the next line begins the <b>indented</b> block that makes up what the function does.<br>
+			A function definition doesn't do anything, though. To make a function do something it must be called.
+			<b>Calling</b> a function is as easy as writing its name and then a set of parentheses, with <b>arguments</b> or <b>parameters</b> (forms of input) going in the parentheses if the function accepts them:</p>
+			<pre>myFunction()</pre>
+			<p class='lead'>Whatever was in the block of code in the function definition will then be executed.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise1">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Write Your Own Function</h3>
+			<p>Define and then call a function that prints out "Hello, World!"</p>
+			<p hidden id="answer1">Hello, World!</p>
+			<div class='editor' id="editor1"># define your function below
+
+
+
+# don't forget to call your function
+</div>
+			<p id='defaultCode1' hidden># define your function below
+
+
+
+# don't forget to call your function
+</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console1"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Now, that function was pretty useless because it only printed something, which can be easily done without a function. It didn't take any input or return any value either. Let's change that.<br><br>
+			Defining a function that takes parameters is as simple as giving names to the parameter(s) within the parentheses of the function definition:</p>
+			<pre>def myFunction(a):
+	# block of code that uses the value of a</pre>
+			<p class='lead'>For multiple parameters, the names must be comma-separated. When the function is called, a variable or value is put in the parentheses in the place of that parameter's name in the definition. Then, that value is used for that parameter throughout the code in the function.</p>
+			<pre>def add(a,b):
+	print(str(a) + " + " + str(b) + " = " + str(a+b))
+add(2,2)</pre>
+			<p class='lead'>This function takes two values as input. Then, it prints out their equation and sum. This example would print <span class='codeText'>2 + 2 = 4</span>.<br><br>
+			<b>Returning</b> a value simply means that the function call (like <span class='codeText'>myFunction()</span>) will have a value that comes from within the function when the program is run. Thus, setting a variable equal to a function call is just giving that variable the value of whatever comes out of the function. To return a value, use the <span class='codeText'>return</span> statement. For example:</p>
+			<pre>def add(a,b):
+	return a + b
+x = add(2,2)</pre>
+			<p class='lead'>Here, rather than printing the result of adding 2 and 2, the sum is returned and stored in a variable.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise2">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator2" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Sum of Factorials</h3>
+			<p>Define a function to calculate the factorial of a number (see the Loops lesson). Use this to add up the factorials of the numbers from 1 to 10.</p>
+			<p hidden id="answer2">4037913</p>
+			<div class='editor' id="editor2"># define your factorial function below that accepts a number as input
+# remember to return the final value
+....
+
+sumOfFactorials = 0
+for i in range(1,10):
+	# add the factorial of the current value in the loop to the sum
+	sumOfFactorials = ....
+
+print(sumOfFactorials)</div>
+			<p id='defaultCode2' hidden># define your factorial function below that accepts a number as input
+# remember to return the final value
+....
+
+sumOfFactorials = 0
+for i in range(1,10):
+	# add the factorial of the current value in the loop to the sum
+	sumOfFactorials = ....
+
+print(sumOfFactorials)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console2"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>When a function returns a value, the function is complete and any lines of code after the return statement in the function are not run. This is useful for exiting a function earlier than usual depending on the input. For example, when writing a function to check if a number is prime, it could first check if the number (a parameter) is less than or equal to 1. If so, it could return False, because negative numbers, 0, and 1 are not considered prime.<br><br>
+			Multiple <span class='codeText'>return</span> statements can appear in the block of a function if some of them are within control flow statements. For example:</p>
+			<pre>def isAdult(age):
+	if age < 18:
+		return False
+	return True</pre>
+			<p class="lead">This is the same as putting <span class="codeText">return True</span> in an else statement because either way, <span class="codeText">True</span> will only be returned if age is greater than or equal to 18.<br><br>
+			Now, about that prime number function...</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise3">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator3" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Sum of Primes Under 10,000</h3>
+			<p>Define a function to return True if an inputted number is prime and false if it isn't (see the exercise on Loops). Use this in a for loop to calculate and print the sum of the prime numbers under 10,000</p>
+			<p hidden id="answer3">5736396</p>
+			<div class='editor' id="editor3"># define your prime function here...
+
+
+sumOfPrimes = 0
+# complete the range and the condition in the loop
+for i in ....:
+	if ....:
+		sumOfPrimes = sumOfPrimes + i
+print(sumOfPrimes)</div>
+			<p hidden id="defaultCode3"># define your prime function here...
+
+
+sumOfPrimes = 0
+# complete the range and the condition in the loop
+for i in ....:
+	if ....:
+		sumOfPrimes = sumOfPrimes + i
+print(sumOfPrimes)</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run3" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset3" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent3" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console3"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Now, you could have just as easily written the block of code in your <span class='codeText'>prime</span> function directly in the for loop...but isn't it much cleaner to have it defined elsewhere and ready to use for any number in one line? Yes.<br></p>
+			<br><hr><br>
+
+			<p class='lead'>As you have seen, functions can call other functions inside of them, like a greeting function calling <span class='codeText'>print(...)</span>. When a function calls itself, it is called <b>recursion</b>. This is an advanced topic, so only the basics will be provided here. Recursion usually looks like this:</p>
+			<pre>def myFunction(a):
+	# block of code
+	myFunction(b)
+	# rest of block</pre>
+			<p class='lead'>Or like this:</p>
+			<pre>def myFunction(a):
+	# block of code
+	return myFunction(b)</pre>
+			<p class='lead'>Now, you would think that doing this would end up almost like an infinite loop...with a function calling itself which calls itself which calls itself which calls itself which calls itself...and so on. What stops this from happening is the use of a <b>base case</b>. Typical uses of recursion occur where a problem relies on the answers to a previous or smaller problem. The <b>base case</b> is where the problem is already defined and no solution needs to be found. The example we will look at, which is most relevant to you in these lessons, is the Fibonacci sequence:</p>
+			<pre>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...</pre>
+			<p class='lead'>If you haven't learned about this before, try to look at the numbers and figure out the pattern on your own.<br><br>
+			The first two terms in the sequence are defined to be 0 and 1. After that, each term is the sum of the previous two terms. <br><span class='codeText'>1 = 0 + 1</span><br><span class='codeText'>2 = 1 + 1</span><br><span class='codeText'>3 = 1 + 2</span><br><span class='codeText'>5 = 2 + 3</span><br>...and so on.<br><br>
+			This is the essence of recursion. The base cases here are 0 and 1. They are defined as the zeroth and first terms. All subsequent terms rely on those values. For example, to calculate the fourth term in the sequence:<br>
+			<span class='codeText'>a<sub>n</sub></span> is the n<sup>th</sup> term in the sequence.<br>
+			<span class='codeText'>a<sub>4</sub> = a<sub>3</sub> + a<sub>2</sub><br>
+			 = (a<sub>2</sub> + a<sub>1</sub>) + (a<sub>1</sub> + a<sub>0</sub>)<br>
+			 = ((a<sub>1</sub> + a<sub>0</sub>) + a<sub>1</sub>) + (a<sub>1</sub> + a<sub>0</sub>)<br>
+			</span>
+			Since <span class='codeText'>a<sub>1</sub> = 1</span> and <span class='codeText'>a<sub>0</sub> = 0</span>, <span class='codeText'>a<sub>4</sub> = 3</span>.<br><br>
+			So overall, <span class='codeText'>a<sub>n</sub> = a<sub>n-1</sub> + a<sub>n-2</sub></span>. You can replicate this using a recursive function.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class='row' id = "exercise4">
+		<div id="editorContainer" class="col-lg-12 panel panel-primary">
+			<i id="indicator4" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">30<sup>th</sup> Fibonacci Number</h3>
+			<p>Define a function with a parameter n which calculates and returns the n<sup>th</sup> Fibonacci number recursively.<br>
+			Print the 30<sup>th</sup> Fibonacci number.</p>
+			<p hidden id="answer4">832040</p>
+			<div class='editor' id="editor4"># the parameter n is the term number
+def fibonacci(n):
+	# complete the base cases. Remember, the 0th term is 0 and the 1st term is 1.
+	if ....:
+		return 0
+	elif ....:
+		return 1
+	else:
+		# use the recursive formula here
+		return ....
+
+# print the 30th fibonacci number 
+</div>
+			<p id='defaultCode4' hidden>def fibonacci(n):
+	# complete the base cases. Remember, the 0th term is 0 and the 1st term is 1.
+	if ....:
+		return 0
+	elif ....:
+		return 1
+	else:
+		# use the recursive formula here
+		return ....
+
+# print the 30th fibonacci number 
+</p>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run4" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset4" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent4" style = "visibility:hidden;width:0px;height:0px;"></p>
+			<div class = 'console' id = "console4"></div>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "#" class="btn btn-lg btn-block btn-info" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+	$(document).ready(function(){
+		activateEditor(1);
+		activateEditor(2);
+		activateEditor(3);
+		activateEditor(4);
+	});
+</script>
+{% endblock %}

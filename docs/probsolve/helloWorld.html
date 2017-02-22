@@ -74,8 +74,8 @@
 				<li><a href="../probsolve/math.html">Basic Math</a></li>
 				<li><a href="../probsolve/controlFlow.html">Control Flow</a></li>
 				<li><a href="../probsolve/loops.html">Loops</a></li>
-				<li><a href="#">Data Structures</a></li>
-				<li><a href="#">Functions</a></li>
+				<li><a href="../probsolve/dataStructures.html">Data Structures</a></li>
+				<li><a href="../probsolve/functions.html">Functions</a></li>
 				<li><a href="#">Advanced Topics</a></li>
 			</ul>
 		</li>
@@ -136,10 +136,10 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Hello, World!</h1>  
-			<p class='lead'>Most common programs (in languages such as Java, C++, etc.) are run on a command line (such as Terminal on Mac or Command Prompt on Windows). A staple of learning any programming language is the "Hello, World!" program, which simply outputs the greeting to the console (similar to the command line). In Python, this is as simple as: </p>
+			<p class='lead'>Most common programs (in languages such as Java, C++, etc.) are run on a command line (the cryptic-looking dark screens with lots of letters, which often are tied to hacking). A staple of learning any programming language is the "Hello, World!" program, which simply outputs the greeting to the console (a part of the command line). In Python, this is as simple as: </p>
 			<pre>print("Hello, World!")</pre>
 			<br>
-			<p class='lead'>Try the following exercise.</p>
+			<p class='lead'>Pay attention to the <b>use of quotes</b> and <b>parentheses</b> in this example, and try the following exercise.</p>
 		</div>
 	</div>
 
@@ -147,11 +147,12 @@
 	<div class='row' id = "exercise1">
 		<div id="editorContainer" class="col-lg-12 panel panel-primary">
 			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Hello, You!</h3>
-			<p>Greet yourself by printing "Hello, " followed by your name to the console.</p>
+			<p>Greet yourself by printing "Hello, " and your name to the console.</p>
 			<p hidden id="answer1">Hello,</p>
 			<div class='editor' id="editor1"># type your code on the next line
 </div>
-			<p id='defaultCode1' hidden># type your code on the next line</p>
+			<p id='defaultCode1' hidden># type your code on the next line
+</p>
 			<div class = "btn-group" role="group" aria-label="Editor Buttons">
 				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
 				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
@@ -177,6 +178,7 @@ a
 multi-line
 comment
 """</pre>
+			<p class='lead'>Another thing that doesn't affect the program at all is blank lines. However, <b>whitespace at the beginning of a nonempty line of code can affect the program</b>, which will be explained later. To see this, add a second print() statement on a new line in the above exercise. Indent this new line using the Tab key, and then run the program. This should cause an error.</p>
 		</div>
 	</div>
 

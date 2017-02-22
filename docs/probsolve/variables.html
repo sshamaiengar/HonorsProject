@@ -74,8 +74,8 @@
 				<li><a href="../probsolve/math.html">Basic Math</a></li>
 				<li><a href="../probsolve/controlFlow.html">Control Flow</a></li>
 				<li><a href="../probsolve/loops.html">Loops</a></li>
-				<li><a href="#">Data Structures</a></li>
-				<li><a href="#">Functions</a></li>
+				<li><a href="../probsolve/dataStructures.html">Data Structures</a></li>
+				<li><a href="../probsolve/functions.html">Functions</a></li>
 				<li><a href="#">Advanced Topics</a></li>
 			</ul>
 		</li>
@@ -137,16 +137,24 @@
 		<div class="col-lg-12">
 			<h1 class="page-header">Variables and Types</h1>  
 			<p class='lead'>Variables can be thought of as named containers for data. The data that a variable holds can be changed, compared with other data, or even assigned to another variable, much like variables in mathematics. </p> 
+			
+			<p class='lead'>This line <b>declares</b>, or creates, a variable named <span class='codeText'>x</span> and gives it a value of 2:</p>
 			<pre>x = 2</pre>
-			<p class='lead'>This line <b>declares</b>, or creates, a variable named <span class='codeText'>x</span> and gives it a value of 2. <br>Variables in Python can hold various <b>data types</b>, including:</p>
+			<p class='lead'<br>Variables in Python can hold various <b>data types</b>, including:</p>
 			<ul>
-				<li><p class='lead'><b>int</b> (integer): a whole number like <span class='codeText'>2</span></p></li>
-				<li><p class='lead'><b>long</b> (long integer): a very large whole number like <span class='codeText'>2,134,141,736,908</span></p></li>
-				<li><p class='lead'><b>float</b> (floating point): a decimal number like <span class='codeText'>3.14159265359</span></p></li>
-				<li><p class='lead'><b>bool</b> (boolean): <span class='codeText'>True</span> or <span class='codeText'>False</span></p></li>
-				<li><p class='lead'><b>str</b> (string): a collection of characters like <span class='codeText'>"Th1s I5 a s7r|n6"</span></p></li>
+				<li><p class='lead'><b>int</b> (integer): a whole number</p>
+				<pre>x = 2</pre></li>
+				<li><p class='lead'><b>long</b> (long integer): a very large whole number</p>
+				<pre>x = 2134141736908</pre></li>
+				<li><p class='lead'><b>float</b> (floating point): a decimal number</p>
+				<pre>x = 3.1415926535</pre></li>
+				<li><p class='lead'><b>bool</b> (boolean): <span class='codeText'>True</span> or <span class='codeText'>False</span></p>
+				<pre>x = True</pre></li>
+				<li><p class='lead'><b>str</b> (string): a collection of characters</p>
+				<pre>x = "This is a string"</pre></li>
 			</ul>
-			<p class='lead'>Variables of all types are declared similarly to the above example, by naming the variable and setting it equal to a value (for strings, this value must be surrounded by quotation marks). Since variables are just named containers of data, their values can be assigned to other variables:</p>
+			<p class='lead'>Variables of all types are declared similarly to the above example, by naming the variable and setting it equal to a value (for strings, this value must be surrounded by quotation marks). It is important to remember that <b>variable names are case-sensitive</b>. That is, a variable <span class='codeText'>myVariable</span> is entirely different from <span class='codeText'>myvariable</span>.<br>
+			Since variables are just named containers of data, their values can be assigned to other variables:</p>
 			<pre>age = 18
 yourAge = age</pre>
 			<p class='lead'>Now, the variable <span class='codeText'>yourAge</span> has a value of 18.</p>
@@ -162,16 +170,14 @@ yourAge = age</pre>
 			<p hidden id="answer1"></p>
 			<div class='editor' id="editor1">myName = 
 myAge = 
-
-# think yes = True, no = False
+# hint: I am alive? True or False
 iAmAlive = 
 print(myName)
 print(myAge)
 print(iAmAlive)</div>
 			<p id='defaultCode1' hidden>myName = 
 myAge = 
-
-# think yes = True, no = False
+# hint: I am alive? True or False
 iAmAlive = 
 print(myName)
 print(myAge)
@@ -240,16 +246,12 @@ print("You are " + "John")</pre>
 			<p>Use input() to get the user's name and the + operator to customize the greeting</p>
 			<p hidden id="answer3"></p>
 			<div class='editor' id="editor3">myName = input("What is your name?")
-
-# hint: ADD your name to the end of the greeting
+# hint: ADD myName to the end of the greeting, as shown in the previous example
 customGreeting = "Hello, "
-
 print(customGreeting)</div>
 			<p id='defaultCode3' hidden>myName = input("What is your name?")
-
-# hint: ADD your name to the end of the greeting
+# hint: ADD myName to the end of the greeting, as shown in the previous example
 customGreeting = "Hello, "
-
 print(customGreeting)</p>
 			<div class = "btn-group" role="group" aria-label="Editor Buttons">
 				<button id="run3" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
