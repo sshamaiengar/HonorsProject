@@ -16,7 +16,7 @@ var Editor = function(number, title, caption, defaultCode, answerPattern){
 function activateEditor(number){
 	window['jqconsole'+number] = $('#console'+number).jqconsole('Python console\n', '>');
 	
-	console.log(window['jqconsole'+number]);
+	// console.log(window['jqconsole'+number]);
 	var editor = ace.edit("editor"+number);
 	editor.setTheme("ace/theme/rubyblue");
 	editor.setHighlightActiveLine(false);
@@ -48,6 +48,54 @@ function activateEditor(number){
 		editor.setValue($("#defaultCode"+number).text());
 		window['jqconsole'+number].Reset();
 		$("#console"+number).slideUp();
+		$("#indicator"+number).removeClass("fa-check").removeClass("fa-times").css('display', 'none');
+	})
+}
+
+function activateWebEditor(number){
+	var editor = ace.edit("editor"+number);
+	editor.setTheme("ace/theme/snappy-light");
+	editor.setHighlightActiveLine(false);
+	editor.setShowPrintMargin(false);
+	editor.container.style.lineHeight = 1.7
+	editor.renderer.updateFontSize()
+    editor.getSession().setMode("ace/mode/html");
+    editor.getSession().setUseSoftTabs(false);
+	editor.getSession().on('change', function(e) {
+		$("#editorContent"+number).html(editor.getValue());
+	});
+
+	// reset iframe using default code
+	$("#iframe"+number).remove();
+	var iframe = document.createElement("iframe");
+	iframe.id = "iframe"+number;
+	iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(editor.getValue());
+	document.getElementById("frame"+number).appendChild(iframe);
+
+	$("#run"+number).click(function(){
+		$("#iframe"+number).remove();
+		var iframe = document.createElement("iframe");
+		iframe.id = "iframe"+number;
+		iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(editor.getValue());
+		document.getElementById("frame"+number).appendChild(iframe);
+		var correct = editor.getValue().indexOf($("#answer"+number).text()) != -1 ? true : false;
+		console.log(editor.getValue());
+		console.log($("#answer"+number).text());
+		if (correct){
+			$("#indicator"+number).removeClass("fa-times").addClass("fa-check");
+			$("#indicator"+number).css('display', 'inline');
+		} else {
+			$("#indicator"+number).removeClass("fa-check").addClass("fa-times");
+			$("#indicator"+number).css('display', 'inline');
+		}
+	});
+	$("#reset"+number).click(function(){
+		editor.setValue($("#defaultCode"+number).text());
+		$("#iframe"+number).remove();
+		var iframe = document.createElement("iframe");
+		iframe.id = "iframe"+number;
+		iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(editor.getValue());
+		document.getElementById("frame"+number).appendChild(iframe);
 		$("#indicator"+number).removeClass("fa-check").removeClass("fa-times").css('display', 'none');
 	})
 }

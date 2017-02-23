@@ -132,103 +132,26 @@
 					<span class="hamb-bottom"></span>
 				</button>
 				
-<div class="container">
+<div class='container'>
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Problem-Solving</h1>  
-			<p class = "lead">The ability to do mathematical calculations and operations was one of the greatest factors driving the creation of computers. Programming languages were developed in order to give instructions to these new machines. Nowadays, computers have far surpassed humans' ability to do calculations. These lessons will teach you to take advantage of this fact and make your own computer programs that solve problems related to math and computer science.</p>
+			<h1 class="page-header">Advanced Topics</h1>
+			<p class='lead'>There are many more topics related to general Python programming and to mathematical problem solving that are outside the scope of these lessons.<br><br>Following is a list of several of these topics and some good resources for learning about them.</p>
+			<ul>
+				<li><a class='lead' target="_blank" href='https://python.swaroopch.com/oop.html'>Object-Oriented Programming</a></li>
+				<li><a class='lead' target="_blank" href='https://python.swaroopch.com/modules.html'>Modules</a></li>
+				<li><a class='lead' target="_blank" href='https://python.swaroopch.com/exceptions.html'>Exceptions and Error Handling</a></li>
+				<li><a class='lead' target="_blank" href='https://docs.python.org/3.6/tutorial/datastructures.html#list-comprehensions'>List Comprehensions</a></li>
+				<li><a class='lead' target="_blank" href='https://developers.google.com/edu/python/regular-expressions'>Regular Expressions</a></li>
+				<li><a class='lead' target="_blank" href='https://pythonspot.com/python-lambda/'>Lambda Expressions</a></li>
+				<li><a class='lead' target="_blank" href='https://realpython.com/blog/python/primer-on-python-decorators/'>Decorators</a></li>
+				<li><a class='lead' target="_blank" href='https://snakify.org/lessons/two_dimensional_lists_arrays/'>Multidimensional Lists</a></li>
+			</ul>
 			<br>
-			
+			<p class='lead'>The problems and the content in these lessons were heavily inspired by the style of problems found on the website <a href='http://www.projecteuler.net' target='_blank'>Project Euler</a>. For more challenging problems like those you did throughout these lessons, go to this website and make an account.<br><br>
+			Also, if you wish to continue working with Python, you should download and install it on your computer. This process is relatively straightforward and is described in depth <a href='https://wiki.python.org/moin/BeginnersGuide/Download' target='_blank'>here</a>.</p>
+
 		</div>
-	</div>
-
-	<!-- EXERCISE -->
-	<div class='row' id = "exercise1">
-		<p>The following is an example of a problem you will solve:</p>
-		<div id="editorContainer" class="col-lg-12 panel panel-primary">
-			<i id="indicator1" style="color:white;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:inline-block;">Fibonacci Numbers</h3>
-			<p>Print the Fibonacci numbers less than or equal to 1,000</p>
-			<p hidden id="answer1">987</p>
-			<div class='editor' id="editor1">def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</div>
-			<p id='defaultCode1' hidden>def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</p>
-			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run1" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset1" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
-			</div>
-			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
-			<div class = 'console' id = "console1"></div>
-		</div>
-	</div>
-	<!-- END EXERCISE -->
-
-	<br>
-	<div class="row">
-		<div class="col-lg-12">
-			<p>You will be using the <a href="http://www.python.org" target="_blank">Python</a> programming language. It's one of the most popular programming languages in use today because it makes reading and writing code very easy. <br>Programs that take several lines in a language like Java can be written in Python in one line.</p>
-		</div>
-		<!-- 
-		<div id="codeMirrorEx1" class = "col-lg-6"><h4>Java</h4></div>
-
-		<div id="codeMirrorEx2" class = "col-lg-6"><h4>Python</h4></div> -->
-
-		<div id="demo1" class = "col-lg-6">
-			<h4>Java</h4>
-			<div id="demo1editor">public class HelloWorld {
-	public static void main(String[] args){
-		System.out.println("Hello, World!");
-	}
-}</div>
-		</div>
-
-		<div id="demo2" class = "col-lg-6">
-			<h4>Python</h4>
-			<div id="demo2editor">print("Hello, World!")</div>
-		</div>
-
-	</div>
-	<div class="row">
-		<!-- <div id="editorContainer" class="editor col-lg-4">
-			<div id="editor">def fib(n):
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
-fib(1000)</div>
-			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset" class="btn btn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
-			</div>
-			<p id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></p>
-			<div id = "console"></div>
-		</div> -->
-
-	<!--
-		<div id="editor" class="editor col-lg-6">
-			<div id = "codeMirror"></div>
-			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run" class="btn btn-med btn-info">Run <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset" class="btn bstn-med btn-inverse">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
-			</div>
-			<div id = "editorContent" style = "visibility:hidden;width:0px;height:0px;"></div>
-			<div id = "console"></div>
-		</div>
-		-->
-	</div>
-	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-info" style="text-decoration:none;"><h4>Get Started</h4></a>
 	</div>
 </div>
 
@@ -245,75 +168,10 @@ fib(1000)</div>
 		<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		
 		
-<script type="text/javascript">
-	var demo1 = ace.edit("demo1editor");
-	// demo1.setTheme("ace/theme/snappy-light");
-	demo1.setTheme("ace/theme/rubyblue");
-	demo1.setHighlightActiveLine(false);
-	demo1.setShowPrintMargin(false);
-	demo1.container.style.lineHeight = 1.7
-	demo1.renderer.updateFontSize()
-	demo1.setReadOnly(true);
-    demo1.getSession().setMode("ace/mode/java");
-
-    var demo2 = ace.edit("demo2editor");
-	// demo2.setTheme("ace/theme/snappy-light");
-	demo2.setTheme("ace/theme/rubyblue");
-	demo2.setHighlightActiveLine(false);
-	demo2.setShowPrintMargin(false);
-	demo2.container.style.lineHeight = 1.7
-	demo2.renderer.updateFontSize()
-	demo2.setReadOnly(true);
-    demo2.getSession().setMode("ace/mode/python");
-	// var myCodeMirror2 = CodeMirror($("#codeMirrorEx1").get(0), {
-	// 	value: "public class HelloWorld {\n\tpublic static void main(String[] args){\n\t\tSystem.out.println(\"Hello, World\");\n\t}\n}",
-	// 	theme: "rubyblue",
-	// 	readOnly: true,
-	// 	mode:  "text/x-java",
-	// 	lineNumbers: true
-	// });
-	// var myCodeMirror3 = CodeMirror($("#codeMirrorEx2").get(0), {
-	// 	value: "print(\"Hello, World!\")",
-	// 	mode:  {name:"python",version:3},
-	// 	theme: "rubyblue",
-	// 	readOnly: true,
-	// 	lineNumbers:true
-	// });
-
-	// var editor = ace.edit("editor1");
-	// // editor.setTheme("ace/theme/snappy-light");
-	// editor.setTheme("ace/theme/rubyblue");
-	// editor.setHighlightActiveLine(false);
-	// editor.setShowPrintMargin(false);
-	// editor.container.style.lineHeight = 1.7
-	// editor.renderer.updateFontSize()
- //    editor.getSession().setMode("ace/mode/python");
-	// editor.getSession().on('change', function(e) {
-	// 	$("#editorContent1").html(editor.getValue());
-	// });
+<script>
 	$(document).ready(function(){
-		activateEditor(1);
-		// activateEditor(2);
-		// window.jqconsole = $('#console1').jqconsole('Python console\n', '>');
-		// $("#run1").click(function(){
-		// 	// $("#editorContent").html(myCodeMirror.getValue());
-		// 	window.jqconsole.Reset();
-		// 	$("#editorContent1").html(editor.getValue());
-		// 	$("#console1").slideDown();
-		// 	// $("#console1").empty()
-		// 	brython({debug:1, ipy_id:['editorContent1']})
-		// });
-		// $("#reset1").click(function(){
-		// 	editor.setValue("");
-		// 	window.jqconsole.Reset();
-		// 	$("#console1").slideUp();
-		// })
-	});
 
-	// $(function () {
-	// 	window.jqconsole = $('#console1').jqconsole('Python console\n', '>');
-	// });
-	
+	});
 </script>
 
 		<script type='text/javascript' src='../js/interact.js'></script>
