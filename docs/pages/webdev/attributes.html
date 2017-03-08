@@ -1,0 +1,84 @@
+{% extends "wd_base.html" %}
+
+{% block css %}
+<link href="../css/webdev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">HTML Attributes</h1>
+			<p class='lead'> HTML attributes are things specified in the opening tag of an HTML element that give more information about that element. You have already seen and used some examples of HTML elements. For example:</p>
+			<pre>&lt;a href="http://www.google.com"&gt;Google search&lt;/a&gt;</pre>
+			<p class='lead'><b>href</b> is an attribute that specifies the address for a link. Similarly:</p>
+			<pre>&lt;img src="picture.jpg"&gt;</pre>
+			<p class='lead'><b>src</b> is an attribute that specifies where to find the actual file for an image element.<br><br>
+			Almost all attributes include the attribute name, an equals sign, and then the value of the attribute, either a number or a sequence of characters surrounded by quotes.<br><br>
+			Some attributes can be used for all elements, and others can only be used for specific elements. One universally applicable attribute is <b>title</b>. It can be used to specify text that will pop up when a user hovers over that element. This is also useful for giving further information about an image and link when it is hovered over. For example:<br><a href="http://www.google.com" title="Google">Click here</a><br><br>
+			The <b>align</b> attribute can be used on paragraphs and other text elements to make them align to a certain side or to the center of the screen. There are three possible values for it: <span class='codeText'>left</span>, <span class='codeText'>center</span>, and <span class='codeText'>right</span>.
+			For example, the following code would produce the paragraph below it:</p>
+			<pre>&lt;p align='center'&gt;The quick brown fox jumps over the lazy dog.&lt;/p&gt;</pre>
+			<p align='center'>The quick brown fox jumps over the lazy dog.</p><br><br>
+			<p class='lead'>Two attributes that only apply to certain block elements (images, tables, table cells, etc.) are <b>height</b> and <b>width</b>. They take numeric values specifying the number of pixels wide and tall the element should be on the screen. They are useful for resizing images and other elements. For example, compare the following two code examples and the resulting images:</p>
+			<pre>&lt;img src='polarBear.jpg'&gt;</pre>
+			<img src='polarBear.jpg'><br><br>
+			<pre>&lt;img src='polarBear.jpg' height=240 width=180&gt;</pre>
+			<img src='polarBear.jpg' height=240 width=180>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Using Attributes</h3>
+			<p style="color:red">Use the <b>align</b> attribute to center the heading. Add a center-aligned paragraph below that with a brief introduction to yourself and your website. Then, in the image, replace the ... with the <b>height</b> and <b>width</b> to specify an appropriate size for the image.</p>
+			<p hidden id="answer1">&lt;ul&gt;[\s\S]+a\s+href[\s\S]+&lt;\/li&gt;</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- center the heading below --&gt;
+		&lt;h1 ...&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- put your centered paragraph and resized image below --&gt;
+		
+		&lt;img src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/7/1360244431114/Computer-coding-008.jpg' style='margin:auto;display:block;'&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- center the heading below --&gt;
+		&lt;h1 ...&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- put your centered paragraph and resized image below --&gt;
+		
+		&lt;img src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/7/1360244431114/Computer-coding-008.jpg' style='margin:auto;display:block;'&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 	});
+</script>
+{% endblock %}

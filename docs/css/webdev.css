@@ -68,3 +68,31 @@ iframe {
 .row {
 	margin-bottom:40px;
 }
+
+.codeText {
+	font-family: Menlo, Consolas, monospace;
+	font-size:1em;
+}
+
+pre {
+	background-color: #ecf0f1;
+	border-radius:0px;
+	border:none;
+	font-family: Menlo, Consolas, monospace;
+	font-size:1em;
+	color:#555555;
+}
+
+li {
+	color:white;
+}
+
+table {
+	color:white;
+	border:1px solid white;
+}
+
+td {
+	padding:10px;
+	border: 1px solid white;
+}

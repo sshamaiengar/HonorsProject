@@ -1,0 +1,129 @@
+{% extends "wd_base.html" %}
+
+{% block css %}
+<link href="../css/webdev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Basic Elements</h1>
+			<p class='lead'>In the previous lesson we covered some commonly used <b>elements</b> such as <b>p</b> (paragraphs) and <b>h1</b> (large headings). Other commonly used elements include the smaller headings (<b>h2</b>, <b>h3</b>, ..., <b>h6</b>), links, and images.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Headings and Subheadings</h3>
+			<p style="color:red">Add one of each size heading to the code, just like h1.</p>
+			<p hidden id="answer1">(?:&lt;h\d[\s\S]+){6}</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;p&gt;Welcome to my website.&lt;/p&gt;
+		&lt;!-- put the other headings below --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;p&gt;Welcome to my website.&lt;/p&gt;
+		&lt;!-- put the other headings below --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Links are created using the <b>a</b> tag, which stands for "anchor". Within the opening tag, <span class='codeText'>href="..."</span> is an <b>attribute</b> used to specify the destination of the link. The text of the link goes between the opening and closing tags. For example:</p>
+			<pre>&lt;a href="http://www.google.com"&gt;Click here&lt;/a&gt;</pre>
+			<p class='lead'>This would create a link like the following, without the extra styling and hover effects: <br><a href="http://www.google.com">Click here</a><br><br>
+			Images are included using the <b>img</b> tag. This is one tag that comes without a closing tag. The image to display is specified using the <b>src</b> attribute, which can be set to an image filename on your computer or even on a website. For example:</p>
+			<pre>&lt;img src="https://cdn.kinsights.com/cache/2f/a0/2fa05bebbd843b9aa91e348a7e77d5c2.jpg"&gt;</pre>
+			<p class='lead'>This places the following image of a cat in the page.</p>
+			<img src="https://cdn.kinsights.com/cache/2f/a0/2fa05bebbd843b9aa91e348a7e77d5c2.jpg"><br><br>
+			<p class='lead'>Images and links can be combined so that when an image (which could be a button, a logo, etc.) is clicked on, the user is taken to another page. This is done simply by placing the <b>img</b> tag between the opening and closing <b>a</b> tags. Try it for yourself!</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise2">
+		<div id="editorContainer2" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator2" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Image Links</h3>
+			<p style="color:red">Place an img tag between the opening and closing tags of a link to make an image that will take the user to a new page when clicked on.<br>
+			Find an image of your choice or use the following image of a baby polar bear. <a href="https://s-media-cache-ak0.pinimg.com/736x/05/60/34/056034020b1d4186ef0f09776bef74c8.jpg">Copy this link address</a>. <br><br>
+			Be aware that some websites (including Google, Apple, etc.) do not allow themselves to be loaded in a frame like the one below, so the link will not work. Try a different website, such as this website.</p>
+			<p hidden id="answer2">&lt;a\s+href[\s\S]+&lt;img\s+src[\s\S]+&lt;\/a&gt;</p>
+			<div id="editor2" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;p&gt;Welcome to my website.&lt;/p&gt;
+		&lt;!-- put the image link below --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode2">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;p&gt;Welcome to my website.&lt;/p&gt;
+		&lt;!-- put the image link below --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame2" class="col-lg-6">
+				<iframe id="iframe2" name="iframe2" sandbox="allow-top-navigation"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "otherElements.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 		activateWebEditor(2);
+ 	});
+</script>
+{% endblock %}

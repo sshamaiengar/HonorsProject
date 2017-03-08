@@ -70,6 +70,7 @@ function activateWebEditor(number){
 	var iframe = document.createElement("iframe");
 	iframe.id = "iframe"+number;
 	iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(editor.getValue());
+	iframe.setAttribute("name", "iframe"+number);
 	document.getElementById("frame"+number).appendChild(iframe);
 
 	$("#run"+number).click(function(){
@@ -77,10 +78,12 @@ function activateWebEditor(number){
 		var iframe = document.createElement("iframe");
 		iframe.id = "iframe"+number;
 		iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(editor.getValue());
+		iframe.setAttribute("name", "iframe"+number);
 		document.getElementById("frame"+number).appendChild(iframe);
-		var correct = editor.getValue().indexOf($("#answer"+number).text()) != -1 ? true : false;
-		console.log(editor.getValue());
-		console.log($("#answer"+number).text());
+
+		var answerRegex = new RegExp($("#answer"+number).text());
+		// var correct = editor.getValue().indexOf($("#answer"+number).text()) != -1 ? true : false;
+		var correct = editor.getValue().match(answerRegex) != null ? true: false;
 		if (correct){
 			$("#indicator"+number).removeClass("fa-times").addClass("fa-check");
 			$("#indicator"+number).css('display', 'inline');

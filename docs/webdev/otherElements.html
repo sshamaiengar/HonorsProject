@@ -135,30 +135,106 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Hello, World!</h1>
-			<p class='lead'>We'll begin with an example of a very basic HTML page giving the well-known programmer's greeting, "Hello, World!", to visitors of your new website. The HTML code is on the left, and the result in the browser is on the right.</p>
+			<h1 class="page-header">More Elements</h1>
+			<p class='lead'>There are many, many elements available to put into your website. Some of them are ways of containing and organizing other basic elements like paragraphs, links, and headings.<br><br>
+			The first such element you will learn is the <b>list</b>. There are two types of lists in HTML: ordered and unordered. Ordered lists are created using the <b>ol</b> tag. <b>List items</b> are added with <b>li</b> tags in between the opening and closing <b>ol</b> tags. List items may have any kind of other element in them, even other lists. In an ordered list, list items have numbers in front of them to show order. In an unordered list, made with an <b>ul</b> tag, the list items have bullets next to them. Look at the following example.</p>
+			<pre>&lt;ol&gt;
+	&lt;li&gt;&lt;p&gt;This is one list item&lt;/p&gt;&lt;/li&gt;
+	&lt;li&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;p&gt;This is another list&lt;/p&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;p&gt;This is another item in the other list&lt;/p&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ol&gt;</pre>
+			<p class='lead'>The above HTML code would produce roughly the following:</p>
+			<ol>
+				<li><p>This is one list item</p></li>
+				<li>
+					<ul>
+						<li><p>This is another list</p></li>
+						<li><p>This is another item in the other list</p></li>
+					</ul>
+				</li>
+			</ol>
 		</div>
 	</div>
 
 	<!-- EXERCISE -->
 	<div class="row" id = "exercise1">
-		<div id="editorContainer1" class = "col-lg-12" style = "background-color:#ecf0f1; padding-bottom:10px;">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">List for a Navigation Bar</h3>
+			<p style="color:red">It was mentioned in the introduction that CSS can be used to alter the style and positioning of HTML elements. Here, the CSS has been added already that will turn any <b>unordered list</b>  and its list items into a nicely formatted horizontal navigation bar at the top of the page.<br>
+			Add an unordered list and list items containing links to your favorite websites.</p>
+			<p hidden id="answer1">&lt;ul&gt;[\s\S]+a\s+href[\s\S]+&lt;\/li&gt;</p>
 			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			body &gt; ul {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			
+			body &gt; ul li {
+			    display: inline-block;
+			    width:60px;
+			    text-align:center;
+			    padding:20px;
+			    background-color:#ecf0f1;
+			    color:#2c3e50;
+			    font-weight:bold;
+			}
+			body &gt; ul a {
+			text-decoration:none;
+			color:inherit;
+			}
+			body &gt; ul li:hover{
+			background-color:#2ecc71;
+			}
+		&lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
+		&lt;!-- put your list (navigation bar) above everything else --&gt;
+		
 		&lt;h1&gt;Hello, World!&lt;/h1&gt;
 		&lt;p&gt;Welcome to my website.&lt;/p&gt;
 	&lt;/body&gt;
 &lt;/html&gt;</div>
-			<p hidden id='defaultCode1'>&lt;!DOCTYPE html&gt;
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			body &gt; ul {
+			    list-style-type: none;
+			    margin: 0;
+			    padding: 0;
+			}
+			
+			body &gt; ul li {
+			    display: inline-block;
+			    width:60px;
+			    text-align:center;
+			    padding:20px;
+			    background-color:#ecf0f1;
+			    color:#2c3e50;
+			    font-weight:bold;
+			}
+			body &gt; ul a {
+			text-decoration:none;
+			color:inherit;
+			}
+			body &gt; ul li:hover{
+			background-color:#2ecc71;
+			}
+		&lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
+		&lt;!-- put your list (navigation bar) above everything else --&gt;
+		
 		&lt;h1&gt;Hello, World!&lt;/h1&gt;
 		&lt;p&gt;Welcome to my website.&lt;/p&gt;
 	&lt;/body&gt;
@@ -177,22 +253,55 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<p class='lead'>you'll notice that there seems to be lots of words surrounded by angled brackets. These are called <b>tags</b>. Tags define the <b>elements</b> that will appear on the webpage or important data about the webpage. Almost all tags come in pairs, opening <code>&lt;...&gt;</code> and closing <code>&lt;/...&gt;</code>. <br><br>The first tag is <code>&lt;!DOCTYPE html&gt;</code>. It is good practice to include this in your HTML files, as it declares the file to be HTML.<br><br>
-			Next is the <b>html</b> element. This is the root of the page, inside of which everything else is contained.<br><br>
-			The <b>head</b> element holds <b>meta information</b> about the website, such as the <b>title</b> (that appears at the top of the browser tab), the page description and keywords (used by search engines), and more. Nothing within the head tag appears on the page.<br><br>
-			The <b>body</b> element contains all the visible content of the page. That is, all of the visible elements on the page are defined between the opening and closing tags of this element.<br><br>
-			The <b>h1</b> element is called a <b>large heading</b>. Text written between its tags is prominent on a page. However, headings should not be used just to make text big and bold because they are also used by search engines to identify the structure of websites. There are multiple types of headings, from <b>h1</b> to <b>h6</b>, with the latter being the least "important" or the smallest.<br><br>
-			The <b>p</b> element defines a paragraph of text.<br><br>
-			Now, using your new knowledge of some basic elements, add a personal note to your website.</p>
+			<p class='lead'>You may have noticed in the previous exercise that the list of links works if you put the <b>a</b> tag between the <b>li</b> tags or vice versa. However, when the <b>a</b> tag is on the outside, it makes the entire list item (the gray block) clickable.<br><hr><br></p>
+			<p class='lead'>
+			Another way of organizing content on a page is through the use of <b>tables</b>. Within the opening and closing <b>table</b> tags can be multiple <b>tr</b>, (table row) tags. Within each of these can be multiple <b>td</b> (table data) tags, representing columns of information. For example:</p>
+			<pre>&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Language/Technology&lt;/td&gt;
+		&lt;td&gt;Usage&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;HTML&lt;/td&gt;
+		&lt;td&gt;Defining website structure and content&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;CSS&lt;/td&gt;
+		&lt;td&gt;Changing website content look and feel&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;JS&lt;/td&gt;
+		&lt;td&gt;Making content dynamic, responsive and interactive&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;</pre>
+			<table>
+				<tr>
+					<td>Language/Technology</td>
+					<td>Usage</td>
+				</tr>
+				<tr>
+					<td>HTML</td>
+					<td>Defining website structure and content</td>
+				</tr>
+				<tr>
+					<td>CSS</td>
+					<td>Changing website content look and feel</td>
+				</tr>
+				<tr>
+					<td>JS</td>
+					<td>Making content dynamic, responsive and interactive</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 
 	<!-- EXERCISE -->
 	<div class="row" id = "exercise2">
 		<div id="editorContainer2" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
-			<i id="indicator2" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Hello, You!</h3>
-			<p style="color:red">Add another p element to the body to introduce yourself, including your name and age.</p>
-			<p hidden id="answer2">(?:&lt;p&gt;[\s\S]+){2}</p>
+			<i id="indicator2" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Picture Grid</h3>
+			<p style="color:red">Like list items, table data elements can hold any other elements within them.<br>
+			Create a table with two rows and two columns and an image within each cell. Use Google Images to find small, icon-sizes images to use.</p>
+			<p hidden id="answer2">&lt;table[\s\S]+?(&lt;tr&gt;[\s\S]+?&lt;td&gt;[\s\S]+?&lt;img\s+src[\s\S]+?&lt;\/tr&gt;\s+){2}</p>
 			<div id="editor2" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
@@ -201,7 +310,7 @@
 	&lt;body&gt;
 		&lt;h1&gt;Hello, World!&lt;/h1&gt;
 		&lt;p&gt;Welcome to my website.&lt;/p&gt;
-		&lt;!-- put another paragraph below here --&gt;
+		&lt;!-- put your picture grid (table) here --&gt;
 		
 	&lt;/body&gt;
 &lt;/html&gt;</div>
@@ -213,7 +322,7 @@
 	&lt;body&gt;
 		&lt;h1&gt;Hello, World!&lt;/h1&gt;
 		&lt;p&gt;Welcome to my website.&lt;/p&gt;
-		&lt;!-- put another paragraph below here --&gt;
+		&lt;!-- put your picture grid (table) here --&gt;
 		
 	&lt;/body&gt;
 &lt;/html&gt;</p>
@@ -229,17 +338,9 @@
 	</div>
 	<!-- END EXERCISE -->
 
-	<div class="row">
-		<div class="col-lg-12">
-			<p class='lead'>The <code>&lt;!-- ... --&gt;</code> tag on line 9 is a <b>comment</b>. It allows you to write notes in the HTML code explaining or describing certain things without those notes showing up in the actual page. Comments are ignored by the browser when rendering the page.</p>
-		</div>
-	</div>
-
 	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "basicElements.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+		<a href = "attributes.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
 	</div>
-
-
 </div>
 
 			</div>
@@ -256,16 +357,6 @@
 		
 		
 <script type="text/javascript">
-	// var demo1 = ace.edit("editor1");
-	// demo1.setTheme("ace/theme/snappy-light");
-	// // demo1.setTheme("ace/theme/rubyblue");
-	// demo1.setHighlightActiveLine(false);
-	// demo1.setShowPrintMargin(false);
-	// demo1.container.style.lineHeight = 1.7
-	// demo1.renderer.updateFontSize()
-	// demo1.setReadOnly(false);
- //    demo1.getSession().setTabSize(4);
- //    demo1.getSession().setMode("ace/mode/html");
  	$(document).ready(function(){
  		activateWebEditor(1);
  		activateWebEditor(2);

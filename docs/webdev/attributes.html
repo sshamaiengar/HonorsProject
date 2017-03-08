@@ -135,39 +135,69 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Web Development</h1>  
-			<p class = "lead">Websites like this one are created using several different technologies. 
-			<br><strong>HTML</strong> (HyperText Markup Language) gives structure and content to websites; it creates elements including the text, images, links, buttons, and other forms of input. 
-			<br><strong>CSS</strong> (Cascading StyleSheets) adds additional style to HTML, including colors, fonts, shadows, element sizes, text alignment and much more. CSS also gives the text and objects on this page the ability to resize when the window changes size. <strong>Try it!</strong>
-			<br>These lessons will teach you to make your own website.</p>
-			<br>
+			<h1 class="page-header">HTML Attributes</h1>
+			<p class='lead'> HTML attributes are things specified in the opening tag of an HTML element that give more information about that element. You have already seen and used some examples of HTML elements. For example:</p>
+			<pre>&lt;a href="http://www.google.com"&gt;Google search&lt;/a&gt;</pre>
+			<p class='lead'><b>href</b> is an attribute that specifies the address for a link. Similarly:</p>
+			<pre>&lt;img src="picture.jpg"&gt;</pre>
+			<p class='lead'><b>src</b> is an attribute that specifies where to find the actual file for an image element.<br><br>
+			Almost all attributes include the attribute name, an equals sign, and then the value of the attribute, either a number or a sequence of characters surrounded by quotes.<br><br>
+			Some attributes can be used for all elements, and others can only be used for specific elements. One universally applicable attribute is <b>title</b>. It can be used to specify text that will pop up when a user hovers over that element. This is also useful for giving further information about an image and link when it is hovered over. For example:<br><a href="http://www.google.com" title="Google">Click here</a><br><br>
+			The <b>align</b> attribute can be used on paragraphs and other text elements to make them align to a certain side or to the center of the screen. There are three possible values for it: <span class='codeText'>left</span>, <span class='codeText'>center</span>, and <span class='codeText'>right</span>.
+			For example, the following code would produce the paragraph below it:</p>
+			<pre>&lt;p align='center'&gt;The quick brown fox jumps over the lazy dog.&lt;/p&gt;</pre>
+			<p align='center'>The quick brown fox jumps over the lazy dog.</p><br><br>
+			<p class='lead'>Two attributes that only apply to certain block elements (images, tables, table cells, etc.) are <b>height</b> and <b>width</b>. They take numeric values specifying the number of pixels wide and tall the element should be on the screen. They are useful for resizing images and other elements. For example, compare the following two code examples and the resulting images:</p>
+			<pre>&lt;img src='polarBear.jpg'&gt;</pre>
+			<img src='polarBear.jpg'><br><br>
+			<pre>&lt;img src='polarBear.jpg' height=240 width=180&gt;</pre>
+			<img src='polarBear.jpg' height=240 width=180>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-lg-12">
-			<h3 style = "font-family:Arial;text-align:left;color:yellow;">You can learn to do this easily!</h3>
-		</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Using Attributes</h3>
+			<p style="color:red">Use the <b>align</b> attribute to center the heading. Add a center-aligned paragraph below that with a brief introduction to yourself and your website. Then, in the image, replace the ... with the <b>height</b> and <b>width</b> to specify an appropriate size for the image.</p>
+			<p hidden id="answer1">&lt;ul&gt;[\s\S]+a\s+href[\s\S]+&lt;\/li&gt;</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- center the heading below --&gt;
+		&lt;h1 ...&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- put your centered paragraph and resized image below --&gt;
 		
-		<div id="demo1" class = "col-lg-6">
-			<code>index.html</code>
-			<div id="demo1editor"></div>
-		</div>
-
-		<div id="demo2" class = "col-lg-6">
-			<code>index.css</code>
-			<div id="demo2editor">html {
-	color: yellow;
-}
-h3 {
-	font-family: Arial;
-}</div>
+		&lt;img src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/7/1360244431114/Computer-coding-008.jpg' style='margin:auto;display:block;'&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;!-- center the heading below --&gt;
+		&lt;h1 ...&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- put your centered paragraph and resized image below --&gt;
+		
+		&lt;img src='http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/2/7/1360244431114/Computer-coding-008.jpg' style='margin:auto;display:block;'&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
 		</div>
 	</div>
-
-	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-danger" style="text-decoration:none;"><h4>Get Started</h4></a>
-	</div>
-	
+	<!-- END EXERCISE -->
 </div>
 
 			</div>
@@ -184,37 +214,9 @@ h3 {
 		
 		
 <script type="text/javascript">
-	var demo1text = "<!DOCTYPE html>\n\
-<html>\n\t\
-	<head>\n\t\t\
-		<link rel = \"stylesheet\" href = \"index.css\">\n\t\
-	</head>\n\t\
-	<body>\n\t\t\
-		<h3>You can learn to do this easily!</h3>\n\t\
-	</body>\n\
-</html>";
-	var demo1 = ace.edit("demo1editor");
-	demo1.setTheme("ace/theme/snappy-light");
-	// demo1.setTheme("ace/theme/rubyblue");
-	demo1.setHighlightActiveLine(false);
-	demo1.setShowPrintMargin(false);
-	demo1.container.style.lineHeight = 1.7
-	demo1.renderer.updateFontSize()
-	demo1.setReadOnly(true);
-    demo1.getSession().setValue(demo1text);
-    demo1.getSession().setTabSize(2);
-    demo1.getSession().setMode("ace/mode/html");
-
-    var demo2 = ace.edit("demo2editor");
-	demo2.setTheme("ace/theme/snappy-light");
-	// demo2.setTheme("ace/theme/rubyblue");
-	demo2.setHighlightActiveLine(false);
-	demo2.setShowPrintMargin(false);
-	demo2.container.style.lineHeight = 1.7
-	demo2.renderer.updateFontSize()
-	demo2.setReadOnly(true);
-    demo2.getSession().setMode("ace/mode/css");
-	
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 	});
 </script>
 
 		<script type='text/javascript' src='../js/interact.js'></script>
