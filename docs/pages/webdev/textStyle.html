@@ -1,0 +1,85 @@
+{% extends "wd_base.html" %}
+
+{% block css %}
+<link href="../css/webdev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Text Style</h1>
+			<p class='lead'>The main stylistic choices made for text elements are regarding the font. There are many such properties:</p>
+			<ul>
+				<li><p class='lead'><span class='codeText'>font-family</span>: The specific font or family of fonts in which the text will display. Possible values include generic font families like <span style='font-family: serif'>serif</span>, <span style='font-family: sans-serif'>sans-serif</span>, and <span style='font-family: monospace'>monospace</span>, and specific fonts like <span style='font-family: Times New Roman'>Times New Roman</span>, <span style='font-family: Georgia'>Georgia</span>, <span style='font-family: Helvetica'>Helvetica</span>, <span style='font-family: Verdana'>Verdana</span>, <span style='font-family: Courier New'>Courier New</span>, and <span style='font-family: Menlo'>Menlo</span>.</p></li>
+				<li><p class='lead'><span class='codeText'>font-size</span>: The size of the font in units of <b>pt</b>, <b>em</b>, or <b>px</b>. <b>pt</b> is the standard font size unit used in word processing. However, <b>em</b> is used increasingly in web development as it is relative to the user's default browser font size (allows users to adjust the font size for readability). For example, this paragraph is 1 em, while <span class='codeText'>font-size:2.0em;</span> would produce text like <span style="font-size: 2.0em;">this</span>.</p></li>
+				<li><p class='lead'><span class='codeText'>font-weight</span>: The thickness of font to use. Some fonts have thicknesses based on numbers like 100, 200, 300. Most commonly, the value will just be <span class='codeText'>normal</span> or <span class='codeText'>bold</span>.</p></li>
+				<li><p class='lead'><span class='codeText'>font-style</span>: Most often used to italicize text using the value <span class='codeText'>italic</span>, which produces text like <span style='font-style: italic'>this</span>.</p></li>
+				<li><p class='lead'><span class='codeText'>text-decoration</span>: Most often used for underlining or striking through text with the values <span class='codeText'>underline</span> and <span class='codeText'>line-through</span>.</p></li>
+				<li><p class='lead'><span class='codeText'>color</span>: The color of the text. This can be a color word, like <span style='color:green;'>green</span>, <span style='color:skyblue;'>skyblue</span>, or <span style='color:lightsalmon;'>lightsalmon</span>, or a hexidecimal color code, like #000000 for black, or an RGB component color, like <span style="color:rgb(35, 115, 195);">rgb(35, 115, 195)</span>. Colors are a big topic, so go <a href='https://www.w3schools.com/css/css_colors.asp' target='_blank'>here</a> for more information.</p></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Styling Text</h3>
+			<p style="color:red">Create three paragraphs with different IDs, and add three CSS rules to the style element to give each paragraph a different look.</p>
+			<p hidden id="answer1">#([\S]+)\s*{[\s\S]+#([\S]+)\s*{[\s\S]+#([\S]+)\s*{[\s\S]+&lt;p\s+id\s*=\s*['"](?:\1|\2|\3)[\s\S]+&lt;p\s+id\s*=\s*['"](?:\1|\2|\3)[\s\S]+&lt;p\s+id\s*=\s*['"](?:\1|\2|\3)[\s\S]+</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			/* add your CSS rules here */
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;!-- add your paragaphs  here --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			/* add your CSS rules here */
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;!-- add your paragaphs  here --&gt;
+		
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "blockStyle.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 	});
+</script>
+{% endblock %}

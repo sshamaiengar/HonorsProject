@@ -83,6 +83,8 @@ function activateWebEditor(number){
 
 		var answerRegex = new RegExp($("#answer"+number).text());
 		// var correct = editor.getValue().indexOf($("#answer"+number).text()) != -1 ? true : false;
+		console.log(editor.getValue());
+		console.log(editor.getValue().match(answerRegex));
 		var correct = editor.getValue().match(answerRegex) != null ? true: false;
 		if (correct){
 			$("#indicator"+number).removeClass("fa-times").addClass("fa-check");

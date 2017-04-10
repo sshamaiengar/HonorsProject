@@ -24,8 +24,8 @@
 			<p class='lead'>Two attributes that only apply to certain block elements (images, tables, table cells, etc.) are <b>height</b> and <b>width</b>. They take numeric values specifying the number of pixels wide and tall the element should be on the screen. They are useful for resizing images and other elements. For example, compare the following two code examples and the resulting images:</p>
 			<pre>&lt;img src='polarBear.jpg'&gt;</pre>
 			<img src='polarBear.jpg'><br><br>
-			<pre>&lt;img src='polarBear.jpg' height=240 width=180&gt;</pre>
-			<img src='polarBear.jpg' height=240 width=180>
+			<pre>&lt;img src='polarBear.jpg' height="240" width="180"&gt;</pre>
+			<img src='polarBear.jpg' height="240" width="180">
 		</div>
 	</div>
 
@@ -34,7 +34,7 @@
 		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
 			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Using Attributes</h3>
 			<p style="color:red">Use the <b>align</b> attribute to center the heading. Add a center-aligned paragraph below that with a brief introduction to yourself and your website. Then, in the image, replace the ... with the <b>height</b> and <b>width</b> to specify an appropriate size for the image.</p>
-			<p hidden id="answer1">&lt;ul&gt;[\s\S]+a\s+href[\s\S]+&lt;\/li&gt;</p>
+			<p hidden id="answer1">&lt;h1\s+align\s*=['"]center["'][\s\S]+&lt;p\s+align\s*=['"]center["'][\s\S]+&lt;img\s+(?:height|width)=\s*["']*\d+["']*\s+(?:height|width)=\s*["']*\d+["']*</p>
 			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
@@ -72,6 +72,80 @@
 		</div>
 	</div>
 	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Some examples of attributes that can be used for all elements are <b>id</b>, <b>class</b>, and <b>style</b>. With these attributes, we begin our transition to learning about Cascading Stylesheets, or CSS.<br><br>
+			Using CSS, you can specify styles to apply to certain types of elements or elements with specific <b>classes</b> and <b>IDs</b>. Also, JavaScript, a language used in web development to make websites more interactive and dynamic, can also target and modify elements based on their class and/or ID.<br><br>
+			Giving an element a class or ID is as simple as adding the attribute and value to the opening tag, like so:</p>
+			<pre>&lt;p class="intro" id="first"&gt;This is the first introductory paragraph.&lt;/p&gt;</pre>
+			<p class='lead'>Note that a single class can be used for multiple elements, and a single element can have multiple classes, separated by spaces all within the quotes. However, a single ID can only be used for one element, and an element can only have one ID.<br><br>The usage of CSS with classes and IDs will be demonstrated in the following lesson.<br><br>
+			CSS styles can be also applied to one specific element using the <b>style</b> attribute. This is done by writing CSS code within the quotes for the attribute's value. For example:</p>
+			<pre>&lt;p style="font-family:Arial Black;"&gt;This is a styled paragraph.&lt;/p&gt;</pre>
+			<p style='font-family:Arial Black;'>This is a styled paragraph.</p><br><br>
+			<p class='lead'>
+		</div>
+	</div>	
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise2">
+		<div id="editorContainer2" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator2" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Using Attributes with CSS</h3>
+			<p style="color:red">CSS has been added to the code so that elements with the class "intro" will have their text change font, size, and color.<br>Give the paragraph a class of "intro".</p>
+			<p hidden id="answer2"><p\s+class\s*=["']intro["']</p>
+			<div id="editor2" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			.intro {
+				color:blue;
+				font-family:sans-serif;
+				font-size:1.0em;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- add the intro class to the paragraph below --&gt;
+		&lt;p ...&gt;Welcome to my website!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode2">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			.intro {
+				color:blue;
+				font-family:sans-serif;
+				font-size:1.0em;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1&gt;Hello, World!&lt;/h1&gt;
+		&lt;!-- add the intro class to the paragraph below --&gt;
+		&lt;p ...&gt;Welcome to my website!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame2" class="col-lg-6">
+				<iframe id="iframe2"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "style.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
 </div>
 {% endblock %}
 
@@ -79,6 +153,7 @@
 <script type="text/javascript">
  	$(document).ready(function(){
  		activateWebEditor(1);
+ 		activateWebEditor(2);
  	});
 </script>
 {% endblock %}

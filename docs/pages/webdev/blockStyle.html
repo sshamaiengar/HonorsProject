@@ -1,0 +1,167 @@
+{% extends "wd_base.html" %}
+
+{% block css %}
+<link href="../css/webdev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Block Element Style</h1>
+			<p class='lead'>Block elements are those that, by default, drop down to a new line on the webpage and take up as much width as possible. They are called blocks because the shape that they take up on the page is a block or box. You can see this by changing the <span class='codeText'>background-color</span> property of a block element:</p>
+			<p style='background-color:blue'>This paragraph is a block.</p>
+			<p class='lead'>So, examples of block elements are <b>paragraphs</b>, <b>headings</b>, and a new element we will look at called a <b>div</b> (for division). The opposite of block elements are <b>inline</b> elements, those that take up only as much width as is necessary and start on the same line as preceding inline elements. Examples are <b>links</b>.<br><br>
+			In this lesson, we will look at CSS properties that apply primarily to block elements (although some can also be used with inline elements).<br><br></p>
+
+			<h3>Width and Height</h3>
+			<p class='lead'>We used these properties earlier as attributes to resize images. They are more commonly used as CSS properties. As expected, they allow you to specify an exact width or height of an element, usually in <b>px</b> (pixels) or <b>%</b> (percent). The latter will make the element take up a space proportional to the maximum area it could take up. Thus, using percents is ideal for making your website <b>responsive</b>, or able to respond to the user's environment (screen size, orientation, device, etc.)<br><br>
+			For example, the CSS rule below will produce paragraphs like the following:</p>
+			<pre>p {
+	width:50%;
+	height:60px;
+	background-color:black;
+}</pre>
+			<p style="width:50%; height:80px; background-color: black;">This is a resized paragraph.</p>
+			<br>
+			<h3>Margin</h3>
+			<p class='lead'>The margin is the space between each side of an element's bounding box and the elements next to and/or around it. Its value can be in <b>px</b> or <b>%</b>, or it can be <b>auto</b>, which means the browser will calculate the margin for the element. <span class='codeText'>margin</span> can be used as a property to apply to the margins on all sides, or you can specify the margin for single sides using the properties <span class='codeText'>margin-left</span>, <span class='codeText'>margin-right</span>, <span class='codeText'>margin-top</span>, and <span class='codeText'>margin-bottom</span>. You can also give four values in one for <span class='codeText'>margin</span>, which will correspond to the top, right, bottom, and left sides respectively. For example:</p>
+			<pre> p {
+	width:250px;
+	margin: 30px auto 30px auto;
+	background-color:black;
+}</pre>
+			<p style='width:250px;margin: 30px auto 30px auto;background-color:black;'>This is a centered paragraph.</p><br><br>
+			<p class='lead'>In this example, the paragraph is shrunk to 250 pixels, but the value of <span class='codeText'>auto</span> centers it (the block, not the text) horizontally.  This is a useful trick that works for all block elements. The value of 30 pixels on top and bottom provides spacing between that paragraph, this one, and the code above.<br><br></p>
+
+			<h3>Padding</h3>
+			<p class='lead'>Padding is similar to margin except it affects the spacing within the element. For an element like a paragraph, padding is the space between the text and the outer edge of the bounding box. For an element like a div, which is used as a container for other elements, padding is the space between the outer edge of the div and the outer edges of the elements within it. Padding, like margin, is specified in <b>px</b> or <b>%</b> and can be applied to all sides at once or each side differently, using the four-value shorthand or the related properties (<span class='codeText'>padding-top</span>, etc.) For example:</p>
+			<pre> p {
+	width:250px;
+	margin: 30px auto 30px auto;
+	padding: 15px;
+	background-color:black;
+}</pre>
+			<p style='width:250px;margin: 30px auto 30px auto;background-color:black;padding:15px'>This is a centered, padded paragraph.</p><br><br>
+			<p class='lead'>Notice how this paragraph looks much nicer and more polished than the one in the preceding example. Padding and margin are very important properties for giving your website a clean look.</p><br>
+
+			<h3>Border</h3>
+			<p class='lead'>Border is exactly what it sounds like. It controls the shape and look of the border on the edges of block elements. The <span class='codeText'>border</span> property is typically used as shorthand for several other properties, including <span class='codeText'>border-width</span>, <span class='codeText'>border-style</span>, and <span class='codeText'>border-color</span>. The three values used with this property are:
+			<ol style='font-size:1.2em;'> 
+				<li><p class='lead'>The width in <b>px</b>, <b>pt</b>, or <b>em</b> usually</p></li>
+				<li><p class='lead'>The style, one of several different options, such as <span class='codeText'>solid</span>, <span class='codeText'>dashed</span>, <span class='codeText'>double</span>, and others (see <a href='https://www.w3schools.com/css/css_border.asp'>here</a>)</p></li>
+				<li><p class='lead'>The color, a word such as <span class='codeText'>red</span>, <span class='codeText'>gray</span>, etc.</p></li>
+			</ol>
+			<p class='lead'>To add to our nice paragraph above:</p>
+			<pre> p {
+	width:250px;
+	margin: 30px auto 30px auto;
+	padding: 15px;
+	background-color:black;
+	border: 1px solid white;
+}</pre>
+			<p style='width:250px;margin: 30px auto 30px auto;background-color:black;padding:15px;border: 1px solid white;'>This is a centered, padded paragraph.</p><br><br>
+
+			<p class='lead'>Another property related to borders is <span class='codeText'>border-radius</span>. Setting this to a value greater than 0 gives the appearance of rounded corners:</p>
+			<pre> p {
+	width:250px;
+	margin: 30px auto 30px auto;
+	padding: 15px;
+	background-color:black;
+	border: 1px solid white;
+	border-radius:10px;
+}</pre>
+			<p style='width:250px;margin: 30px auto 30px auto;background-color:black;padding:15px;border: 1px solid white;border-radius:10px;'>This is a centered, padded paragraph.</p><br><br>
+
+			<h3>Background Color</h3>
+			<p class='lead'>As you have seen throughout this lesson, the property <span class='codeText'>background-color</span> will make the element's entire bounding box take a color such as <span class='codeText'>red</span>, <span class='codeText'>#000000</span> (black), or <span class='codeText'>rgb(0,255,0)</span> (blue).</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Nice Buttons</h3>
+			<p style="color:red">Make a CSS rule that applies to a link with a specific ID. Use the width, height, margin, padding, border, and border-radius properties in this rule to turn the link into a nice-looking button.</p>
+			<p hidden id="answer1">&lt;style&gt;[\s\S]+?#([\s\S]+)\s+{(?=[\s\S]*width)(?=[\s\S]*height)(?=[\s\S]*border)(?=[\s\S]*padding)(?=[\s\S]*border-radius)(?=[\s\S]*margin)[\s\S]+&lt;a[\s\S]+id\s*=\s*['"]\1['"]</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			/* add your CSS rule here */
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;!-- add an id to the link  here --&gt;
+		&lt;a href="#"&gt;Click here&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			/* add your CSS rule here */
+			
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;!-- add an id to the link  here --&gt;
+		&lt;a href="#"&gt;Click here&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>Divs</h3>
+			<p class='lead'>As mentioned before, the div is an HTML element that is used as a container for other elements. By default, it has no visible appearance or effect on the elements on the page. But this element is far from useless. The nature of Cascading Style Sheets is that styles created for one element apply to all the elements contained within it. So, for example, you can use divs to make a group of elements all have a large margin and padding:</p>
+			<pre>&lt;div id='group'&gt;
+	&lt;h1&gt;Hello!&lt;/h1&gt;
+	&lt;p&gt;Welcome to my website.&lt;/p&gt;
+&lt;/div&gt;</pre> 
+			<pre>#group {
+	margin:20px;
+	text-align:center;
+	font-family:sans-serif;
+	background-color:skyblue;
+}</pre>
+			<p class='lead'>If the CSS rule above was applied to the div above, it would produce the following:</p>
+			<div style="margin:20px; text-align:center; font-family:sans-serif; background-color: skyblue;">
+				<h1>Hello!</h1>
+				<p>Welcome to my website.</p>
+			</div>
+			<br><br>
+			<p class='lead'>As you can see, using the div allowed multiple styles to be applied to all the elements within it. As you will see in the next lesson, divs can also be used as containers to allow elements to occupy different spaces on the page, such as with columns or a navigation bar.</p>
+		</div>
+	</div>
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "layout.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 	});
+</script>
+{% endblock %}

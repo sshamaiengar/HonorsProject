@@ -135,39 +135,93 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Web Development</h1>  
-			<p class = "lead">Websites like this one are created using several different technologies. 
-			<br><strong>HTML</strong> (HyperText Markup Language) gives structure and content to websites; it creates elements including the text, images, links, buttons, and other forms of input. 
-			<br><strong>CSS</strong> (Cascading StyleSheets) adds additional style to HTML, including colors, fonts, shadows, element sizes, text alignment and much more. CSS also gives the text and objects on this page the ability to resize when the window changes size. <strong>Try it!</strong>
-			<br>These lessons will teach you to make your own website.</p>
-			<br>
+			<h1 class="page-header">Style</h1>
+			<p class='lead'>As described previously, style refers to different aspects of the appearance of HTML elements, such as their size, color, position, border, shadow, and more. Style is added to HTML using another technology called CSS.
+
+			CSS, like HTML for content, is more a unique syntax for describing things on a website than it is a programming language. It is often best practice to write CSS in separate <span class='codeText'>.css</span> files, which can then be linked to HTML documents using a special <b>link</b> element within the <b>head</b> element.<br><br>
+			Alternatively, CSS can be written directly inside of a <b>style</b> element placed in the <b>head</b> element. This was done in the previous exercise and will be used in all further exercises. We'll start off with an example, assuming the style element is placed in the head.</p>
+			<pre>&lt;style&gt;
+	p {
+		font-family: sans-serif;
+		font-size: 1.0em;
+		color: white;
+		font-weight: bold;
+		background-color:black;
+	}
+&lt;/style&gt;</pre>
+			<p class='lead'>Everything between the style tags is CSS code. CSS is made entirely of <b>rules</b>. Rules include one or more <b>selectors</b> (the part before the opening curly brace), and <b>properties</b> and their <b>values</b> within the curly braces. <br><br>
+			<b>Selectors</b> are what they sound like. They select which elements will be affected by the rule attached to them. In the above example, <span class='codeText'>p</span> will select all paragraph elements, so any and all paragraphs in an HTML document with that style attribute will</p>
+			<p style='font-family: sans-serif;font-size: 1.0em;color: white;font-weight: bold;background-color:black;'>look like this.</p>
+			<p class='lead'><b>Selectors for a specific class are created with a period in front of the class name</b>; thus, in the previous exercise, the rule beginning with <span class='codeText'>.intro</span> applied to all elements with the class <span class='codeText'>intro</span>.<br>Similarly, <b>selectors for a specific ID are created with a hashtag in front of the ID name.</b> For example, a selector <span class='codeText'>#first</span> would apply to the element with ID <span class='codeText'>first</span>.<br><br>
+			Multiple selectors can be combined into one by writing them together separated by commas. For example, the selector <span class='codeText'>.intro, p, h1</span> would apply to all elements that have the class <span class='codeText'>intro</span>, are paragraphs, or are large headings.<br><br>
+			Class and ID selectors can be combined with element names to select only the elements of that type that have that class or ID. For example, the selector <span class='codeText'>p.intro</span> would apply only to paragraphs that have the <span class='codeText'>intro</span> class, and the <span class='codeText'>p#intro</span> selector would apply on to the paragraphs that have the ID <span class='codeText'>intro</span>.</p>
 		</div>
 	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Using Selectors</h3>
+			<p style="color:red">Fill in the ... with the appropriate selector to target only the heading with ID "main" and the paragraph with class "intro".</p>
+			<p hidden id="answer1">(?:p.intro|h1#main)\s*,\s*(?:p.intro|h1#main)</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			... {
+				color:blue;
+				font-family:sans-serif;
+				font-size:2.0em;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1 id='main'&gt;Hello, World!&lt;/h1&gt;
+		&lt;p class='intro'&gt;Welcome to my website!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			... {
+				color:blue;
+				font-family:sans-serif;
+				font-size:2.0em;
+			}
+		&lt;/style&gt; 
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;h1 id='main'&gt;Hello, World!&lt;/h1&gt;
+		&lt;p class='intro'&gt;Welcome to my website!&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p> 
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
 	<div class="row">
 		<div class="col-lg-12">
-			<h3 style = "font-family:Arial;text-align:left;color:yellow;">You can learn to do this easily!</h3>
-		</div>
-		
-		<div id="demo1" class = "col-lg-6">
-			<code>index.html</code>
-			<div id="demo1editor"></div>
-		</div>
-
-		<div id="demo2" class = "col-lg-6">
-			<code>index.css</code>
-			<div id="demo2editor">html {
-	color: yellow;
-}
-h3 {
-	font-family: Arial;
-}</div>
+			<p class='lead'>You have already used <b>properties</b> and <b>values</b>. They are written within a set of curly braces in pairs, and they specify different aspects of the style of the elements determined by the selector. The property name is always followed by a colon and the value, which is always followed by a semicolon.<br><br>
+			There are many, many different properties available in CSS, and they all have specific uses and specific accepted values. In the following lessons, we will examine properties that are useful for text elements and block-level elements.</p>
 		</div>
 	</div>
 
 	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-danger" style="text-decoration:none;"><h4>Get Started</h4></a>
+		<a href = "textStyle.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
 	</div>
-	
 </div>
 
 			</div>
@@ -184,37 +238,9 @@ h3 {
 		
 		
 <script type="text/javascript">
-	var demo1text = "<!DOCTYPE html>\n\
-<html>\n\t\
-	<head>\n\t\t\
-		<link rel = \"stylesheet\" href = \"index.css\">\n\t\
-	</head>\n\t\
-	<body>\n\t\t\
-		<h3>You can learn to do this easily!</h3>\n\t\
-	</body>\n\
-</html>";
-	var demo1 = ace.edit("demo1editor");
-	demo1.setTheme("ace/theme/snappy-light");
-	// demo1.setTheme("ace/theme/rubyblue");
-	demo1.setHighlightActiveLine(false);
-	demo1.setShowPrintMargin(false);
-	demo1.container.style.lineHeight = 1.7
-	demo1.renderer.updateFontSize()
-	demo1.setReadOnly(true);
-    demo1.getSession().setValue(demo1text);
-    demo1.getSession().setTabSize(2);
-    demo1.getSession().setMode("ace/mode/html");
-
-    var demo2 = ace.edit("demo2editor");
-	demo2.setTheme("ace/theme/snappy-light");
-	// demo2.setTheme("ace/theme/rubyblue");
-	demo2.setHighlightActiveLine(false);
-	demo2.setShowPrintMargin(false);
-	demo2.container.style.lineHeight = 1.7
-	demo2.renderer.updateFontSize()
-	demo2.setReadOnly(true);
-    demo2.getSession().setMode("ace/mode/css");
-	
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 	});
 </script>
 
 		<script type='text/javascript' src='../js/interact.js'></script>

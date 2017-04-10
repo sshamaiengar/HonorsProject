@@ -1,0 +1,252 @@
+{% extends "wd_base.html" %}
+
+{% block css %}
+<link href="../css/webdev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+{% endblock %}
+
+{% block pageContent %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Layout and Position</h1>
+			<p class='lead'>CSS properties can be used to affect the way elements are laid out on the webpage, as well as their positions relative to other elements.<br><br>
+			In the previous lesson, you learned about the differences between <b>inline</b> and <b<block</b> elements. Sometimes, it may be in your interest to make an inline element display on the page like a block element, or vice versa. This can be accomplished using the <span class='codeText'>display</span> property. For example, images are inline elements by default, so they will be placed immediately next to any previous inline elements. Take these Twitter logos:</p>
+			<img src='Twitter_Logo_Blue.png' width='100' height='100'>
+			<img src='Twitter_Logo_White_On_Blue.png' width='100' height='100'>
+			<p class="lead">If you would prefer that these logos show up on separate lines (like block elements), then just add the <span class='codeText'>display</span> property set to the value of <span class='codeText'>block</span> property to their CSS rules:</p>
+			<pre>img {
+	display: block;
+	width: 100px;
+	height: 100px;
+}</pre>
+			<img src='Twitter_Logo_Blue.png' style='display:block;width:100px;height:100px;'>
+			<img src='Twitter_Logo_White_On_Blue.png' style='display:block;width:100px;height:100px;'>
+			<br>
+			<p class='lead'>To make block elements display like inline ones, use the value <span class='codeText'>inline</span>. There are several other possible values, explained <a href='https://www.w3schools.com/cssref/pr_class_display.asp'>here</a>.</p>
+			<br><br>
+			<p class='lead'>The next major property affecting the positions of elements is aptly named <span class='codeText'>position</span>. With this property you can specify the method used to figure out where an element should go. The default value is <span class='codeText'>static</span>, meaning elements appear on the page in the order they are in the HTML code.</p>
+			<br>
+			<p class='lead'>Another value for this property is <span class='codeText'>relative</span>. This makes an element appear on the page in a specific position relative to where it would appear normally (with <span class='codeText'>position: static</span>). For example, it could be shifted 20px to the right and 20px down from its normal position.</p>
+			
+			<br>
+			<p class='lead'>Another value for this property is <span class='codeText'>absolute</span>. This makes an element appear on the page in a specific position relative to its first parent element (element that contains this one) that is also positioned relatively or absolutely. This value removes an element from the normal flow of the page because it allows you to place an element exactly where you want it. Refer to the following example to see what <span class='codeText'>absolute</span> and <span class='codeText'>relative</span> positioning can do.</p>
+			<p>CSS (in &lt;style&gt; element)</p>
+			<pre>
+div {
+	position:relative;
+	left:100px;
+	background-color: black;
+	height:100px;
+}
+p {
+	position:absolute;
+	background-color: white;
+	color:black;
+	right:200px;
+}</pre>
+			<pre>&lt;div&gt;
+	&lt;p&gt;This is positioned absolutely.&lt;/p&gt;
+&lt;/div&gt;</pre><br>
+			<div style='position:relative;left:100px;background-color: black;height:100px'>
+				<p style='position:absolute;background-color: white; color:black;right:200px;'>This is positioned absolutely.</p>
+			</div><br><br>
+			<p class='lead'>As you can see, the div is shifted 100px to the left of where it would normally be. Since the div is positioned relatively, the paragraph inside it is positioned 200px to the right of the edge of the div.</p><br><br>
+			<p class='lead'>The last main value for this property is <span class='codeText'>fixed</span>. This option is self-explanatory. It leaves the element in one position on the screen even while the rest of the page is moved or scrolled around. This is especially useful for things you want to always be visible on the screen, such as navigation bars.</p>
+			<br>
+			<p class='lead' id='fixed' style='background-color: black; z-index:1; width:100%; padding:20px;position: static; bottom:0;left:0;'>Position: <span class='codeText'> static</span>. Click to toggle. Try scrolling.</p><br><br>
+			<p class='lead'>In the previous example, you saw the use of two other CSS properties, <span class='codeText'>left</span> and <span class='codeText'>right</span>. Along with <span class='codeText'>top</span> and <span class='codeText'>bottom</span>, these properties are how you describe the position of elements that have the <span class='codeText'>position</span> property set to a value other than <span class='codeText'>static</span>. These properties take values in <b>px</b> (pixels), <b>%</b>, <b>pt</b> (points) and others. Just like with these units for height and width, using percents is better for making your website adaptable to different screen sizes, while using pixels or points will maintain the same position (relative to the properties/sides you use) regardless of screen size.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator1" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Fixed Navigation Bar</h3>
+			<p style="color:red">Fill in the CSS rules to make a nice-looking navigation bar that stays in place while the page is scrolled. Use <b>position</b> and the directional properties to fix the bar to the top of the screen, and the <b>display</b> property to make the navigation tabs (paragraphs) line up in one line.</p>
+			<p hidden id="answer1">#navbar\s*{(?=[\s\S]*position:\s*fixed)(?=[\s\S]*top:\s*0)(?=[\s\S]*left:|[\s\S]*right:)</p>
+			<div id="editor1" class='editor col-lg-6'>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			#navbar {
+				/* add the position and directional properties here */
+				
+				z-index:1; /* This makes the navbar float above other elements */
+				background-color:lightblue;
+				width:100%;
+				padding:20px;
+			}
+			#navbar a {
+				text-decoration:none;
+				color:black;
+				margin:0px;
+				padding:20px;
+			}
+			#navbar a:hover {
+				background-color:skyblue;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id="navbar"&gt;
+			&lt;a href='#'&gt;Home&lt;/a&gt;
+			&lt;a href='#'&gt;About&lt;/a&gt;
+			&lt;a href='#'&gt;Contact&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;p style='position:relative;top:60px;height:800px;font-size:1.5em;width:80%;margin:auto;'&gt;Lorem ipsum dolor sit amet, ius solum persius omnesque id, error veniam maiorum mel ut, ipsum assueverit sea at. Per an augue similique, admodum inciderint sed te, sit id delenit dolores nominati. Est ne meis iudico. Te eos dolore vulputate, mei ne mazim veritus qualisque. Semper elaboraret mediocritatem in vix, sit cu explicari conceptam voluptatibus.
+Ullum electram pro id. Mea sonet aperiam ea, noster expetendis scribentur pri ut. No erant aperiam est. Eius tritani omittam vel id, cu quo soleat graece, mentitum conclusionemque vis ut.
+Ignota signiferumque ei sea. Legimus liberavisse ne est, ex has appareat phaedrum. Est eius facilis in, noster dictas cu sea, nam altera invenire disputationi ne. Tota inani est at, oratio primis contentiones mel ex. Ea eam velit apeirian senserit, te movet moderatius interesset per. Eam ex sale simul concludaturque.
+Ne deleniti oporteat voluptaria eos, vis suas definitionem mediocritatem an, has copiosae inciderint delicatissimi cu. His nobis animal at, usu id putent vidisse malorum. Suas iusto qui ad. Ut dico mentitum quaerendum mea, latine quaeque sanctus at sed. Habeo expetenda interpretaris ut nam, vix virtute ponderum no.
+At nam aliquid commune, dicta fastidii iracundia ei sed. Vix molestie vulputate at, ne maiorum voluptaria qui, simul partiendo ex nec. At eam tempor euripidis. Nostrud deserunt an cum.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode1">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			#navbar {
+				/* add the position and directional properties here */
+				
+				z-index:1; /* This makes the navbar float above other elements */
+				background-color:lightblue;
+				width:100%;
+				padding:20px;
+			}
+			#navbar a {
+				text-decoration:none;
+				color:black;
+				margin:0px;
+				padding:20px;
+			}
+			#navbar a:hover {
+				background-color:skyblue;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id="navbar"&gt;
+			&lt;a href='#'&gt;Home&lt;/a&gt;
+			&lt;a href='#'&gt;About&lt;/a&gt;
+			&lt;a href='#'&gt;Contact&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;p style='position:relative;top:60px;height:800px;font-size:1.5em;width:80%;margin:auto;'&gt;Lorem ipsum dolor sit amet, ius solum persius omnesque id, error veniam maiorum mel ut, ipsum assueverit sea at. Per an augue similique, admodum inciderint sed te, sit id delenit dolores nominati. Est ne meis iudico. Te eos dolore vulputate, mei ne mazim veritus qualisque. Semper elaboraret mediocritatem in vix, sit cu explicari conceptam voluptatibus.
+Ullum electram pro id. Mea sonet aperiam ea, noster expetendis scribentur pri ut. No erant aperiam est. Eius tritani omittam vel id, cu quo soleat graece, mentitum conclusionemque vis ut.
+Ignota signiferumque ei sea. Legimus liberavisse ne est, ex has appareat phaedrum. Est eius facilis in, noster dictas cu sea, nam altera invenire disputationi ne. Tota inani est at, oratio primis contentiones mel ex. Ea eam velit apeirian senserit, te movet moderatius interesset per. Eam ex sale simul concludaturque.
+Ne deleniti oporteat voluptaria eos, vis suas definitionem mediocritatem an, has copiosae inciderint delicatissimi cu. His nobis animal at, usu id putent vidisse malorum. Suas iusto qui ad. Ut dico mentitum quaerendum mea, latine quaeque sanctus at sed. Habeo expetenda interpretaris ut nam, vix virtute ponderum no.
+At nam aliquid commune, dicta fastidii iracundia ei sed. Vix molestie vulputate at, ne maiorum voluptaria qui, simul partiendo ex nec. At eam tempor euripidis. Nostrud deserunt an cum.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame1" class="col-lg-6">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise2">
+		<div id="editorContainer2" class = "col-lg-12 panel" style = "background-color:#ecf0f1; padding-bottom:10px;">
+			<i id="indicator2" style="color:#ff5d06;position:relative;left:-5%;display:none;" class="fa fa-times fa-5x" aria-hidden="true"></i><h3 style="display:block;color:#e74c3c;">Two-Column Split</h3>
+			<p style="color:red">Sometimes it is desirable to have two separate columns of elements on a page. Do this by using position and the directional properties on the two named divs. Also, don't forget to give the divs widths that add up to the full width of the screen (hint: use percents)</p>
+			<p hidden id="answer2">#left\s*{(?=[\s\S]*position:\s*absolute)(?=[\s\S]*left:|[\s\S]*right:)(?=[\s\S]*width:)[\s\S]+#right\s*{(?=[\s\S]*position:\s*absolute)(?=[\s\S]*left:|[\s\S]*right:)(?=[\s\S]*width:)</p>
+			<div id="editor2" class='editor col-lg-6'>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			#left {
+				/* add the position, directional, and width properties */
+				
+				padding:10px;
+				background-color:lightgray;
+			}
+			#right {
+				/* add the position, directional, and width properties */
+				
+				color:white;
+				padding:10px;
+				background-color:slategray;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id='left'&gt;
+			&lt;p&gt;Hello&lt;/p&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, mea an alienum quaestio. In nisl eripuit voluptatibus vis. Quo sonet dolor fastidii ad. Volutpat dignissim ad eos, qui intellegat moderatius intellegam ex, docendi blandit similique duo in. Ne pri debitis menandri. Quo an legimus mnesarchum incorrupte. Vidisse persecuti scribentur at sed, vidit patrioque prodesset pri at.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div id='right'&gt;
+			&lt;p&gt;Goodbye&lt;/p&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, mel vide vituperata comprehensam ut, eos probo legere neglegentur ea. Malis salutatus te mea, his ad illum senserit explicari. Usu ei putant convenire. Mundi voluptaria id usu. Liber delenit et vim, vis dicta delicatissimi id, eam alii viris apeirian ex. Vim ei tempor fabellas luptatum, minimum omnesque voluptatibus sea te, ex vim novum aeterno integre.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</div>
+			<p hidden id="defaultCode2">&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;My Website&lt;/title&gt;
+		&lt;style&gt;
+			#left {
+				/* add the position, directional, and width properties */
+				
+				padding:10px;
+				background-color:lightgray;
+			}
+			#right {
+				/* add the position, directional, and width properties */
+				
+				color:white;
+				padding:10px;
+				background-color:slategray;
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id='left'&gt;
+			&lt;p&gt;Hello&lt;/p&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, mea an alienum quaestio. In nisl eripuit voluptatibus vis. Quo sonet dolor fastidii ad. Volutpat dignissim ad eos, qui intellegat moderatius intellegam ex, docendi blandit similique duo in. Ne pri debitis menandri. Quo an legimus mnesarchum incorrupte. Vidisse persecuti scribentur at sed, vidit patrioque prodesset pri at.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div id='right'&gt;
+			&lt;p&gt;Goodbye&lt;/p&gt;
+			&lt;p&gt;Lorem ipsum dolor sit amet, mel vide vituperata comprehensam ut, eos probo legere neglegentur ea. Malis salutatus te mea, his ad illum senserit explicari. Usu ei putant convenire. Mundi voluptaria id usu. Liber delenit et vim, vis dicta delicatissimi id, eam alii viris apeirian ex. Vim ei tempor fabellas luptatum, minimum omnesque voluptatibus sea te, ex vim novum aeterno integre.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</p>
+			<div id="frame2" class="col-lg-6">
+				<iframe id="iframe2"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-danger">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "advancedTopics.html" class="btn btn-lg btn-block btn-danger" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+ 	$(document).ready(function(){
+ 		activateWebEditor(1);
+ 		activateWebEditor(2);
+ 		$("#fixed").click(function(){
+ 			if ($(this).css('position')=='fixed'){
+ 				$(this).css('position', 'static');
+ 				$(this).html("Position: <span class='codeText'>static</span>. Click to toggle. Try scrolling.");
+ 			} else {
+ 				$(this).css('position', 'fixed');
+ 				$(this).html("Position: <span class='codeText'>fixed</span>. Click to toggle. Try scrolling.");
+ 			}
+ 		})
+ 	});
+</script>
+{% endblock %}
