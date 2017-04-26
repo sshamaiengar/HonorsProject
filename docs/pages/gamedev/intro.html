@@ -3,6 +3,7 @@
 {% block css %}
 <link href="../css/gamedev.css" rel="stylesheet">
 <link href="../css/ocean.dark.css" rel="stylesheet">
+<script type='text/javascript' src='../js/phaser.min.js'></script>
 {% endblock %}
 
 {% block pageContent %}
@@ -11,21 +12,23 @@
 		<div class="col-lg-12">
 			<h1 class="page-header">Game Development</h1>  
 			<p class = "lead">Games are ubiquitous in today's world. From computers and consoles to mobile devices, games are sources of immense joy and entertainment for players...and immense revenue for developers. Not to mention creating your own game is like having the ultimate cheat code!
-			<br>These lessons will introduce you to game development through making your own classic arcade game clone, using the JavaScript programming language and <a href = "http://www.phaser.io">Phaser</a> game engine.</p>
+			<br>These lessons will introduce you to game development through making your own classic arcade game clone, using the JavaScript programming language and <a href = "http://www.phaser.io">Phaser</a> game engine. The images, code snippets, and other assets used within this tutorial are from the sample found <a href="http://www.phaser.io/examples/v2/games/breakout">here</a>.</p>
 		</div>
 	
 	</div>
 
 	<div class='row'>
 
-		<figure class ='col-lg-12 col-md-12'>
+		<!-- <figure class ='col-lg-12 col-md-12'>
 			<img class = "figure-img img-fluid col-lg-4 center-block" alt='A Breakout game clone' src ="http://static.tvtropes.org/pmwiki/pub/images/breakout.jpg"/>
 			<figcaption class='figure-caption col-lg-12 col-md-12 col-sm-12'>Besides learning how to make this with Phaser, you will learn the basics of JavaScript, a language used by nearly all websites to make them more interactive. An example is below.</figcaption>
-		</figure>
+		</figure> -->
+		<iframe id='demo' frameBorder='0' height=600 width=800 src='demo.html'></iframe>
 	</div>
 
 	<div class='row'>
 		<div id="demo1" class = "col-lg-12">
+			<p class='lead'>Below is the basic structure of the code that we will use to make the above game:</p>
 			<code>game.js</code>
 			<div id="demo1editor">var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 function preload(){
@@ -40,10 +43,16 @@ function create(){
 			</div>
 		</div>
 	</div>
-			
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>To get started, follow the download and setup instructions <a href='http://phaser.io/tutorials/getting-started'>here</a>.</p>
+		</div>
+	
+	</div>	
 
 	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "#" class="btn btn-lg btn-block btn-warning" style="text-decoration:none;"><h4>Coming Soon</h4></a>
+		<a href = "helloWorld.html" class="btn btn-lg btn-block btn-warning" style="text-decoration:none;"><h4>Get Started</h4></a>
 	</div>
 	
 </div>
