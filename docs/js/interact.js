@@ -119,20 +119,25 @@ function activateGameEditor(number){
 		$("#editorContent"+number).html(editor.getValue());
 	});
 
-	var templateStart = "<html><head></head><body><scr"+"ipt type='text/javascript'>";
+	// var templateStart = "<html><head><base href='https://sshamaiengar.github.io/HonorsProject/gamedev/'><scr"+"ipt type = 'text/javascript' src='https://sshamaiengar.github.io/HonorsProject/js/phaser.min.js'></scr"+"ipt></head><body><scr"+"ipt type='text/javascript'>";
+	var templateStart = "<html><head><base href='file:///Users/shamaiengar/HonorsProject/docs/gamedev/'><scr"+"ipt type = 'text/javascript' src='https://sshamaiengar.github.io/HonorsProject/js/phaser.min.js'></scr"+"ipt></head><body><scr"+"ipt type='text/javascript'>";
+	
 	var templateEnd = "</scr"+"ipt></body></html>";
 
 	// reset iframe using default code
 	$("#iframe"+number).remove();
 	var iframe = document.createElement("iframe");
 	iframe.id = "iframe"+number;
-	// $("iframe"+number).load(function(){
-	// 	$(this).contents().find('body').append(templateStart+editor.getValue() + templateEnd);
-	// 	console.log('load');
-	// });
 	iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(templateStart + editor.getValue() + templateEnd);
 	iframe.setAttribute("name", "iframe"+number);
 	document.getElementById("frame"+number).appendChild(iframe);
+
+	// // create Phaser script
+	// var phaserScript = iframe.contentWindow.document.createElement("script");
+	// phaserScript.type = 'text/Javascript';
+	// phaserScript.src = "phaser.min.js";
+	// iframe.contentWindow.document.body.appendChild(phaserScript);
+	// console.log(phaserScript);
 
 	$("#run"+number).click(function(){
 		
@@ -142,6 +147,13 @@ function activateGameEditor(number){
 		iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(templateStart + editor.getValue() + templateEnd);
 		iframe.setAttribute("name", "iframe"+number);
 		document.getElementById("frame"+number).appendChild(iframe);
+
+		// // create Phaser script
+		// var phaserScript = iframe.contentWindow.document.createElement("script");
+		// phaserScript.type = 'text/Javascript';
+		// phaserScript.src = "phaser.min.js";
+		// iframe.contentWindow.document.body.appendChild(phaserScript);
+		// console.log(phaserScript);
 
 		var answerRegex = new RegExp($("#answer"+number).text());
 		// var correct = editor.getValue().indexOf($("#answer"+number).text()) != -1 ? true : false;
