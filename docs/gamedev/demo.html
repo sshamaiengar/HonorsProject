@@ -5,12 +5,9 @@
 	<body>
 		<script type='text/javascript'>
 			
-			var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+			var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 			function preload() {
-
-			    game.load.atlas('breakout', 'breakout.png', 'breakout.json');
-			    game.load.image('starfield', 'starfield.jpg');
 
 			}
 
@@ -30,49 +27,64 @@
 			var s;
 
 			function create() {
-
+			    //  Enable Box2d physics
 			    game.physics.startSystem(Phaser.Physics.ARCADE);
-
-			    //  We check bounds collisions against all walls other than the bottom one
 			    game.physics.arcade.checkCollision.down = false;
+			    
+			    
+			    //create textures for ball, bricks, paddle
+			    var graphics = game.add.graphics(0, 0);
+			    graphics.beginFill(0x68b0fd, 1);
+			    graphics.drawCircle(400, 550, 20);
+			    ball = game.add.sprite(game.world.centerX, 520, graphics.generateTexture());
+			    graphics.destroy();
+			    
+			    //paddle
+			    graphics = game.add.graphics(0, 0);
+			    graphics.beginFill(0xFFFFFF, 1);
+			    graphics.drawRect(350, 560, 100, 20);
+			    paddle = game.add.sprite(game.world.centerX,ball.y+20, graphics.generateTexture());
+			    graphics.destroy();
 
-			    s = game.add.tileSprite(0, 0, 800, 600, 'starfield');
 
 			    bricks = game.add.group();
 			    bricks.enableBody = true;
 			    bricks.physicsBodyType = Phaser.Physics.ARCADE;
-
+			    // graphics = game.add.graphics(0, 0);
+			    // graphics.beginFill(0x0000ff, 1);
+			    // graphics.drawRect(350, 560, 60, 20);
 			    var brick;
-
+			    var colors = [0x0000ff, 0x00ff00, 0xff0000, 0xf0f0f0];
 			    for (var y = 0; y < 4; y++)
 			    {
-			        for (var x = 0; x < 15; x++)
+			    	graphics = game.add.graphics(0, 0);
+			    	graphics.beginFill(colors[y], 1);
+			    	graphics.drawRect(350, 560, 40, 20);
+			        for (var x = 0; x < 13; x++)
 			        {
-			            brick = bricks.create(120 + (x * 36), 100 + (y * 52), 'breakout', 'brick_' + (y+1) + '_1.png');
+			            brick = bricks.create(104 + (x * 46), 100 + (y * 52), graphics.generateTexture());
 			            brick.body.bounce.set(1);
 			            brick.body.immovable = true;
 			        }
+			        graphics.destroy();
 			    }
-
-			    paddle = game.add.sprite(game.world.centerX, 500, 'breakout', 'paddle_big.png');
-			    paddle.anchor.setTo(0.5, 0.5);
-
-			    game.physics.enable(paddle, Phaser.Physics.ARCADE);
-
-			    paddle.body.collideWorldBounds = true;
-			    paddle.body.bounce.set(1);
-			    paddle.body.immovable = true;
-
-			    ball = game.add.sprite(game.world.centerX, paddle.y - 16, 'breakout', 'ball_1.png');
+			    // game.physics.arcade.gravity.y = 200;
+			    
+			    //create ball body
 			    ball.anchor.set(0.5);
 			    ball.checkWorldBounds = true;
-
 			    game.physics.enable(ball, Phaser.Physics.ARCADE);
-
 			    ball.body.collideWorldBounds = true;
-			    ball.body.bounce.set(1);
-
-			    // ball.animations.add('spin', [ 'ball_1.png', 'ball_2.png', 'ball_3.png', 'ball_4.png', 'ball_5.png' ], 50, true, false);
+				ball.body.bounce.set(1);
+				
+				//create paddle
+				paddle.anchor.setTo(0.5,0.5);
+				game.physics.enable(paddle, Phaser.Physics.ARCADE);
+				paddle.body.collideWorldBounds = true;
+			    paddle.body.bounce.set(1);
+			    paddle.body.immovable = true;
+			    paddle.body.allowGravity = false;
+			    paddle.body.enable = true;
 
 			    ball.events.onOutOfBounds.add(ballLost, this);
 
@@ -82,23 +94,19 @@
 			    introText.anchor.setTo(0.5, 0.5);
 
 			    game.input.onDown.add(releaseBall, this);
-
+			    
 			}
 
-			function update () {
-
-			    //  Fun, but a little sea-sick inducing :) Uncomment if you like!
-			    // s.tilePosition.x += (game.input.speed.x / 2);
-
+			function update() {
 			    paddle.x = game.input.x;
 
-			    if (paddle.x < 24)
+			    if (paddle.x < 50)
 			    {
-			        paddle.x = 24;
+			        paddle.x = 50;
 			    }
-			    else if (paddle.x > game.width - 24)
+			    else if (paddle.x > game.width - 50)
 			    {
-			        paddle.x = game.width - 24;
+			        paddle.x = game.width - 50;
 			    }
 
 			    if (ballOnPaddle)
@@ -110,7 +118,6 @@
 			        game.physics.arcade.collide(ball, paddle, ballHitPaddle, null, this);
 			        game.physics.arcade.collide(ball, bricks, ballHitBrick, null, this);
 			    }
-
 			}
 
 			function releaseBall () {
@@ -127,23 +134,19 @@
 			}
 
 			function ballLost () {
-
 			    lives--;
 			    livesText.text = 'lives: ' + lives;
-
 			    if (lives === 0)
 			    {
-			        gameOver();
+			        ball.body.velocity.setTo(0, 0);
+				    introText.text = 'Game Over!';
+				    introText.visible = true;
 			    }
 			    else
 			    {
 			        ballOnPaddle = true;
-
-			        ball.reset(paddle.body.x + 16, paddle.y - 16);
-			        
-			        ball.animations.stop();
+			        ball.reset(paddle.body.x, paddle.y - 20);
 			    }
-
 			}
 
 			function gameOver () {
@@ -174,9 +177,8 @@
 			        //  Let's move the ball back to the paddle
 			        ballOnPaddle = true;
 			        ball.body.velocity.set(0);
-			        ball.x = paddle.x + 16;
-			        ball.y = paddle.y - 16;
-			        ball.animations.stop();
+			        ball.x = paddle.x;
+			        ball.y = paddle.y - 20;
 
 			        //  And bring the bricks back from the dead :)
 			        bricks.callAll('revive');
@@ -188,17 +190,11 @@
 
 			    var diff = 0;
 
-			    if (_ball.x < _paddle.x)
+			    if (_ball.x != _paddle.x)
 			    {
 			        //  Ball is on the left-hand side of the paddle
 			        diff = _paddle.x - _ball.x;
 			        _ball.body.velocity.x = (-10 * diff);
-			    }
-			    else if (_ball.x > _paddle.x)
-			    {
-			        //  Ball is on the right-hand side of the paddle
-			        diff = _ball.x -_paddle.x;
-			        _ball.body.velocity.x = (10 * diff);
 			    }
 			    else
 			    {

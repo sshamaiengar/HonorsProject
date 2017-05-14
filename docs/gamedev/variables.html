@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>THE ART OF CODE</title>
+
+		<!-- Bootstrap -->
+
+		<link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- 		<link href="../node_modules/flat-ui/css/flat-ui.css" rel = "stylesheet">
+-->		<link href="../css/sidebar.css" rel="stylesheet">
+		
+		
+<link href="../css/gamedev.css" rel="stylesheet">
+<link href="../css/ocean.dark.css" rel="stylesheet">
+<script type='text/javascript' src='../js/phaser.min.js'></script>
+
+		<!-- <link href="../css/sidebar.css" rel="stylesheet">
+		<link href="../css/page-content.css" rel="stylesheet"> -->
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script src="../node_modules/brython/www/src/brython.js"></script>
+
+		<!-- Ace Editor -->
+		<script src="../node_modules/ace-editor-builds/src/ace.js"></script>
+
+		<!-- CodeMirror -->
+		<script src="../node_modules/codemirror/lib/codemirror.js"></script>
+		<script src="../node_modules/codemirror/addon/edit/closebrackets.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src = "../node_modules/jquery/dist/jquery.min.js" type = "text/javascript"></script>
+
+		<script src="../node_modules/jq-console/jqconsole.min.js"></script>
+
+		<link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="../node_modules/codemirror/theme/rubyblue.css">
+		<link rel="stylesheet" href="../node_modules/codemirror/theme/mdn-like.css">
+		<script src="../node_modules/codemirror/mode/python/python.js"></script>
+		<script src="../node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="../node_modules/codemirror/mode/css/css.js"></script>
+		<script src="../node_modules/codemirror/mode/clike/clike.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div class="overlay"></div>
+			<!-- Sidebar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+	<ul class="nav sidebar-nav">
+		<li class="sidebar-brand">
+			<a href="../index.html"><strong>
+				The Art <br>of Code
+				</strong>
+			</a>
+		</li>
+		<li>
+			<a href="../index.html">Home</a>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Problem-Solving
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="../probsolve/intro.html">Introduction</a></li>
+				<li><a href="../probsolve/helloWorld.html">Hello, World!</a></li>
+				<li><a href="../probsolve/variables.html">Variables and Types</a></li>
+				<li><a href="../probsolve/math.html">Basic Math</a></li>
+				<li><a href="../probsolve/controlFlow.html">Control Flow</a></li>
+				<li><a href="../probsolve/loops.html">Loops</a></li>
+				<li><a href="../probsolve/dataStructures.html">Data Structures</a></li>
+				<li><a href="../probsolve/functions.html">Functions</a></li>
+				<li><a href="../probsolve/advancedTopics.html">Advanced Topics</a></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Web Development
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="../webdev/intro.html">Introduction</a></li>
+				<li><a href="../webdev/helloWorld.html">Hello, World!</a></li>
+				<li><a href="../webdev/basicElements.html">Basic Elements</a></li>
+				<li><a href="../webdev/otherElements.html">More Elements</a></li>
+				<li><a href="../webdev/attributes.html">HTML Attributes</a></li>
+				<li><a href="../webdev/style.html">Style</a></li>
+				<li><a href="../webdev/textStyle.html">Text Styles</a></li>
+				<li><a href="../webdev/blockStyle.html">Block Element Styles</a></li>
+				<li><a href="../webdev/layout.html">Layout and Position</a></li>
+				<li><a href="../webdev/advancedTopics.html">Advanced Topics</a></li>
+			</ul>
+		</li>
+		
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				Game Development
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="../gamedev/intro.html">Introduction</a></li>
+				<li><a href="../gamedev/helloWorld.html">Hello, World!</a></li>
+				<li><a href="../gamedev/variables.html">Variables + Game Initialization</a></li>
+				<li><a href="../gamedev/loops.html">Loops + Scene Setup</a></li>
+				<li><a href="../gamedev/controlFlow.html">Control Flow + State Changes</a></li>
+				<li><a href="../gamedev/functions.html">Functions + Game Events</a></li>
+				<li><a href="../gamedev/advancedTopics.html">Advanced Topics</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Further Resources</a>
+		</li>
+		<li>
+			<a href="#">About</a>
+		</li>
+	</ul>
+</nav>
+<!-- /#sidebar-wrapper -->
+
+			<div id="page-content-wrapper">
+				<button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
+					<span class="hamb-top"></span>
+					<span class="hamb-middle"></span>
+					<span class="hamb-bottom"></span>
+				</button>
+				
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Variables + Game Initialization</h1>
+			<p class='lead'>Variables are elements common to all programming languages. They can be described as named containers for storing different types of data, such as numbers, words, <b>objects</b>, <b>booleans</b>, and others. These will be explained more in depth later.<br><br><br>
+			Variables in JavaScript are <b>declared</b> and assigned using the following syntax:</p>
+			<pre>var variableName = value;</pre>
+			<p class='lead'><span class='codeText'>variableName</span> is whatever you want to call the variable. This should be something that is somewhat descriptive of what data the variable stores. <span class='codeText'>value</span> is replaced with the data that will be assigned to the variable. For example:</p>
+			<pre>var myAge = 18;
+var mySchool = "Jamestown High School";
+var canDrive = true;</pre>
+			<p class='lead'>In this example, all of the variable names describe what each of its values means. Notice that words or text are surrounded by quotes. These values are called <b>strings</b>, like a string of letters or characters. If they were not surrounded by quotes, the program would try to set <span class='codeText'>mySchool</span> equal to the value of some nonexistent variable named <span class='codeText'>Jamestown</span>, causing it to crash. Also, notice that each line ends with a semicolon. As stated before, this is recommended for all lines including statements, and variable declarations/assignments count as statements.<br><br>
+			Also, note that variables can be re-assigned (given a new value) after they have been declared. This is done by simply referring to the variable by name (without <span class='codeText'>var</span>) and setting it equal to something. To change my age to 21 I would write:</p>
+			<pre>myAge = 21;</pre>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise1">
+		<div id="editorContainer1" class = "col-lg-12" style = "background-color:#ecf0f1; padding-top:10px; padding-bottom:10px;">
+			<p style='color:#7f8c8d;'>Like the example above, declare and assign several variables of different types. See that you did it correctly by printing them to the console and checking it.<br>
+			To print a variable to the console, simply place the variable name within the parentheses after <span class='codeText'>console.log</span></p>
+			<div id="editor1" class='editor col-lg-12'>// write your code below
+
+// print your variables below
+</div>
+			<p hidden id='defaultCode1'>// write your code below
+
+// print your variables below
+</p>
+			<div id="frame1" class="col-lg-12">
+				<iframe id="iframe1"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run1" class="btn btn-med btn-warning">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>Another important thing to know regarding variables is that operations can be done using them, such as addition or subtraction between numbers and <b>concatenation</b> (the combining of two strings into one) between strings.<br><br>
+			Arithmetic is done using the following symbols: <span class='codeText'>+</span> (addition), <span class='codeText'>-</span> (subtraction), <span class='codeText'>*</span> (multiplication), <span class='codeText'>/</span> (division). These operations can be done between numeric variables (like <span class='codeText'>myAge + yourAge</span>), between variables and numeric values (like <span class='codeText'>myAge + 2</span>), and between numeric values (like <span class='codeText'>2 + 2</span>). Often you will want to assign the result of a mathematical operation to a variable. This is done simply by writing the mathematical expression after the <span class='codeText'>=</span> sign in a normal variable assignment, like so:</p>
+			<pre>var myAge = 18;
+myAge = myAge + 2;</pre>
+			<p class='lead'>In the above example, the original value of <span class='codeText'>myAge</span> (18), is taken and increased by 2, and then re-assigned to itself. If the variable were printed after running the above code, you would see 20 in the console.
+			<br><br>
+			The operation on strings called <b>concatenation</b> is done just like addition:</p>
+			<pre>var firstName = "John";
+var lastName = "Doe";
+var fullName = firstName + " " + lastName;</pre>
+			<p class='lead'>The above example would result in the value of <span class='codeText'>fullName</span> being <b>John Doe</b>.</p>
+			<br><br>
+			<p class='lead'>An important part of learning how to program in most languages is learning about <b>object-oriented programming</b>. In this paradigm, a programmer can define <b>objects</b> that have <b>properties</b>/<b>attributes</b>—variables that describe the object—as well as <b>methods</b>—actions that the object can do. In JavaScript especially, objects are thought of as <b>prototypes</b> from which individual instances are created. <br>
+			For example, you could define an object called <span class='codeText'>Dog</span>, give it properties such as <span class='codeText'>name</span> and <span class='codeText'>breed</span>, and give it actions such as <span class='codeText'>bark</span> and <span class='codeText'>rollOver</span>. Then you could create multiple instances of this Dog object, as if you have multiple Dogs. One instance could be a "German Shepherd" named "Rex", and the other a "Siberian Husky" named "Akira". Each dog is unique but shares types of attributes and actions based on the prototype Dog.<br>
+			For more details about creating and using your own objects in JavaScript, see <a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects'>here</a>. <br><br>
+			In these lessons, it is most important that you understand the use of objected-oriented programming. Phaser, the game engine we will begin using in this lesson, is comprised almost entirely of different types of objects which we will use as we build the game.</p>
+			<br><br>
+			<pre>var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+function preload(){
+
+}
+
+function create(){
+
+}
+
+function update(){
+
+}</pre>
+			<p class='lead'>This is the basic template of any Phaser game. In the first line, a variable called <span class='codeText'>game</span> is created and given a value. When you see the <span class='codeText'>new</span> keyword in JavaScript, that means a new instance of an object is being created. So this variable is being assigned the value of a <b>Phaser.Game</b> object that has certain specifications which are placed inside the parentheses. 
+			<br><br>
+			The first two numbers are the height and width in pixels of the game window.<br>Next, is the <b>rendering context</b>, a choice of which technology you want the game to be drawn on the page with. This choice is not important for this game. <br><br>The fourth parameter is an empty set of quotes. Within the quotes, you could specify the location on the page where you want the game window to be placed. This is also unimportant for our purposes, so it should be left empty.<br><br>Finally, the last parameter is everything within the set of curly braces. The values after the colons, <span class='codeText'>preload</span>, <span class='codeText'>create</span>, and <span class='codeText'>update</span>, correspond to the names of the <b>functions</b> defined in the following lines. This allows the Game object to execute the actions that you specify in order to run the game properly. These functions will be explained in depth later.<br><br>You will now use this template to begin building the game, and you will use your knowledge of variables to define a few that will be needed to make the game.</p>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise2">
+		<div id="editorContainer2" class = "col-lg-12" style = "background-color:#ecf0f1; padding-top:10px; padding-bottom:10px;">
+			<p style='color:#7f8c8d;'>The basic template code for the game has been pasted below for you. Your job is to <b>declare</b> a few variables (without assignment; you do not need to set them equal to anything yet). These variables need to be declared outside of all the <b>function</b> blocks. Create variables for the following:</p>
+			<ul>
+			<li><p style='color:#7f8c8d;'>the paddle</p></li>
+			<li><p style='color:#7f8c8d;'>the ball</p></li>
+			<li><p style='color:#7f8c8d;'>the bricks (one variable for the entire group)</p></li>
+			<li><p style='color:#7f8c8d;'>the number of lives remaining</p></li>
+			<li><p style='color:#7f8c8d;'>the score</p></li>
+			<li><p style='color:#7f8c8d;'>whether or not the ball is on the paddle at a given time</p></li></ul><br>
+			<p style='color:#7f8c8d;'>If your code works properly, the window below should be black because Phaser created the Game there. Also, you should be able to add console.log statements on each variable at the bottom of the code which show up without errors in your browser console.</p>
+			<div id="editor2" class='editor col-lg-12'>var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+// add variables here
+
+
+function preload(){
+
+}
+
+function create(){
+
+}
+
+function update(){
+
+}
+// print out the value of your variables, including game, below, and check them in the console
+</div>
+			<p hidden id='defaultCode1'>var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+// add variables here
+
+
+function preload(){
+
+}
+
+function create(){
+
+}
+
+function update(){
+
+}
+// print out the value of your variables, including game, below, and check them in the console
+</p>
+			<div id="frame2" class="col-lg-12">
+				<iframe id="iframe2"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run2" class="btn btn-med btn-warning">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset2" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent2" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class="row">
+		<div class="col-lg-12">
+			<p class='lead'>There are several steps that must occur while the game is loading, immediately before it can be played. These steps include creating the ball, the paddle, and the bricks, and ensuring that each can behave properly. These steps all occur within the <span class='codeText'>create</span> function because the actions in that function are executed in order to load the game.<br><br>
+			First, the <b>physics engine</b> must be initialized. Phaser provides several different types of physics engines, but for our purposes the Arcade physics engine is best. To initialize the physics engine, use this line:</p>
+			<pre>game.physics.startSystem(Phaser.Physics.ARCADE);</pre>
+			<p class='lead'>Here, <span class='codeText'>game</span> is our original Phaser game object. It has another object within it called <span class='codeText'>physics</span>, from which we can call an action to start the physics system (an specify the system we want within parentheses).<br><br>
+			By default, our game will let objects collide with all four sides of the window and bounce back. However, we want the ball to go out of the screen if we fail to hit it along the bottom, so we must disable collisions on the bottom edge using this line:</p>
+			<pre>game.physics.arcade.checkCollision.down = false;</pre>
+			<p class='lead'>Next, we want to actually create objects we can see on screen. All objects in Phaser (and most game engines for that matter) are called <b>sprites</b> and include a <b>texture</b>, the graphic representing the object, and a <b>body</b>, the actual object that interacts with others in the physics system. In Phaser, it is often easy to generate textures for sprites using built-in functions, rather than having to create images. We will do this for the ball, paddle, and bricks.<br><br>
+			The Phaser Graphics module basically acts as a slate that can be painted on. We can create this slate and position at the origin (top left corner) of the screen using this line:</p>
+			<pre>var graphics = game.add.graphics(0, 0);</pre>
+			<p class='lead'>Then, we can set a fill color (light blue) and draw a circle with radius 20 on this slate:</p>
+			<pre>graphics.beginFill(0x68b0fd, 1);
+graphics.drawCircle(400, 550, 20);</pre>
+			<p class='lead'>We can turn this graphic on the screen into a sprite placed where we want using the following:</p>
+			<pre>ball = game.add.sprite(game.world.centerX, 520, graphics.generateTexture());</pre>
+			<p class='lead'>Notice how <span class='codeText'>var</span> is not included at the beginning of the line, as we already defined it above in the code. This line takes the content of the current graphical slate and uses it as a texture when creating the ball at the center of the screen, 520 pixels from the top.</span></p>
+			<p class='lead'>We want to follow this same process for creating the paddle and bricks, but first we must clear the graphical slate:</p>
+			<pre>graphics.destroy();</pre>
+			<p class='lead'>The code to create the paddle sprite is very similar, except for the paddle we draw a rectangle for the texture, color it white, and place the new sprite slightly below (higher Y coordinate than) the ball.</p>
+			<pre>graphics = game.add.graphics(0, 0);
+graphics.beginFill(0xFFFFFF, 1);
+graphics.drawRect(350, 560, 100, 20);
+paddle = game.add.sprite(game.world.centerX,ball.y+20, graphics.generateTexture());
+graphics.destroy();</pre>
+			<p class='lead'>Lastly, to set up the ball to use physics, add the following code. This will give the sprite a physics body, allow it to bounce, collide with the "walls" of the game, broadcast a message when it has gone off the bottom of the screen, and be positioned based on the center of the circle.</p>
+			<pre>ball.anchor.set(0.5);
+ball.checkWorldBounds = true;
+game.physics.enable(ball, Phaser.Physics.ARCADE);
+ball.body.collideWorldBounds = true;
+ball.body.bounce.set(1);</pre>
+			<p class='lead'>Similarly, for the paddle we add the physics body, allow it to collide and bounce, prevent it from moving on its own when the ball hits it, and force it to be positioned around the center of the rectangle.</p>
+			<pre>paddle.anchor.setTo(0.5,0.5);
+game.physics.enable(paddle, Phaser.Physics.ARCADE);
+paddle.body.collideWorldBounds = true;
+paddle.body.bounce.set(1);
+paddle.body.immovable = true;
+paddle.body.allowGravity = false;
+paddle.body.enable = true;</pre>
+		</div>
+	</div>
+
+	<!-- EXERCISE -->
+	<div class="row" id = "exercise3">
+		<div id="editorContainer3" class = 'col-lg-12' style = "background-color:#ecf0f1; padding-top:10px; padding-bottom:10px;">
+			<p style='color:#7f8c8d;'>Using the code described above in the <b>create</b> function block below, initialize the physics system, prevent downward collisions, and create the ball and paddle sprites, and set up their physical properties.<br>
+			Additionally, assign some initial values to the variables you previously created (add = and a value following the declaration). Specifically, set the score to 0, the lives to the number of lives you want the player to have (such as 3), and the variable for whether or not the ball is on the paddle to true.</p>
+			<br>
+			<p style='color:#7f8c8d;'>If your code works properly, the ball and paddle should appear on screen. Also, you should be able to add console.log statements on each variable at the bottom of the code which show up without errors in your browser console.</p>
+			<div id="editor3" class='editor col-lg-12'>var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+// add variables here
+var ball;
+var paddle;
+var bricks;
+
+// assign values to these variables
+var ballOnPaddle;
+var lives;
+var score;
+
+function preload(){
+
+}
+
+function create(){
+	// add the initializing code here
+
+}
+
+function update(){
+
+}
+// print out the value of your variables, including game, below, and check them in the console
+</div>
+			<p hidden id='defaultCode1'>var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+// add variables here
+var ball;
+var paddle;
+var bricks;
+
+// assign values to these variables
+var ballOnPaddle;
+var lives;
+var score;
+
+function preload(){
+
+}
+
+function create(){
+	// add the initializing code here
+
+}
+
+function update(){
+
+}
+// print out the value of your variables, including game, below, and check them in the console
+</p>
+			<div id="frame3" class='col-lg-12'>
+				<iframe id="iframe3"></iframe>
+			</div>
+			<div class = "btn-group" role="group" aria-label="Editor Buttons">
+				<button id="run3" class="btn btn-med btn-warning">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
+				<button id="reset3" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
+			</div>
+			<p id = "editorContent3" style = "visibility:hidden;width:0px;height:0px;"></p>
+		</div>
+	</div>
+	<!-- END EXERCISE -->
+
+	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
+		<a href = "loops.html" class="btn btn-lg btn-block btn-warning" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
+	</div>
+
+</div>
+
+			</div>
+			<!-- /#page-content-wrapper -->
+
+			
+		</div>
+		<!-- /#wrapper -->
+
+		
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		
+<script type="text/javascript">
+	$(document).ready(function(){
+		activateGameEditor(1);
+		activateGameEditor(2);
+		activateGameEditor(3);
+		// window.Phaser = Phaser;
+	});
+	
+</script>
+
+		<script type='text/javascript' src='../js/interact.js'></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				var trigger = $('.hamburger'),
+				overlay = $('.overlay'),
+				isClosed = false;
+
+				trigger.click(function () {
+					hamburger_cross();      
+				});
+
+				function hamburger_cross() {
+
+					if (isClosed == true) {          
+						overlay.hide();
+						trigger.removeClass('is-open');
+						trigger.addClass('is-closed');
+						isClosed = false;
+					} else {   
+						overlay.show();
+						trigger.removeClass('is-closed');
+						trigger.addClass('is-open');
+						isClosed = true;
+					}
+				}
+
+				$('[data-toggle="offcanvas"]').click(function () {
+					$('#wrapper').toggleClass('toggled');
+				});
+			});
+			$('.navbar .dropdown').click(function() {
+			    $(this).find('.dropdown-menu').first().stop(true, true).slideToggle();
+			});
+		</script>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur stdDeviation="5" />
+				</filter>
+			</defs>
+		</svg>
+	</body>
+</html>

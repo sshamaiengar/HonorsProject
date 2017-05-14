@@ -62,7 +62,10 @@ figcaption {
 
 iframe:not(#demo) {
 	position:relative;
-	margin:10px;
+	margin:auto;
+	display:block;
+	margin-top:10px;
+	margin-bottom:10px;
 	padding: 0px;
 	border: none;
 	width: 800px;
@@ -73,4 +76,13 @@ iframe:not(#demo) {
 .codeText {
 	font-family: Menlo, Consolas, monospace;
 	font-size:1em;
+}
+
+pre {
+	background-color: #ecf0f1;
+	border-radius:0px;
+	border:none;
+	font-family: Menlo, Consolas, monospace;
+	font-size:1em;
+	color:#555555;
 }

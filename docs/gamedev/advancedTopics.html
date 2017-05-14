@@ -134,45 +134,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Hello, World!</h1>
-			<p class='lead'>As is the norm when learning most programming languages, you will start by learning how to output the sentence "Hello, World!" to the <b>console</b> using JavaScript. JavaScript is unique in that, unlike other programming languages, it is usually run on web pages inside web browsers. So, rather than display the output from your code in a console on the page, you will view it in the built-in console on your web browser. See <a href='https://webmasters.stackexchange.com/a/77337'>here</a> for instructions on how to use this tool in various web browsers.
-			<br><br>
-			In JavaScript, printing text to the console is done using a <b>function</b> called <span class='codeText'>console.log</span>.For example:</p>
-			<pre>console.log("This is a sentence.");</pre>
-			<p class='lead'>This code would result in "<b>This is a sentence.</b>" being printed to the console. Notice how the text you want printed goes between quotes and between parentheses after <span class='codeText'>console.log</span>. Also notice that there is a semicolon at the end of the line. In JavaScript, it is recommended but not required that all lines containing <b>statements</b> end in semicolons. This will be explained further in the next lessons.</p>
+			<h1 class="page-header">Advanced Topics</h1>
+			<p class='lead'>This lesson only scratches the surface of what can be done with JavaScript and the Phaser game engine. For more game examples, tutorials, and references about Phaser, click <a href='https://phaser.io/learn' target="_blank">here</a>.<br><br>
+			Game development is a very broad field because of the large variety of games that can be made and the many platforms available to publish games on. While Phaser is mainly aimed at web games, there are other tools that support more platforms. In particular, <a href='https://unity3d.com' target="_blank">Unity 3D</a> is another game engine for 3D and 2D game development. Games made in Unity can be published across multiple platforms, including websites, iOS and Android devices, Mac OS, Windows, XBox, PlayStation, Steam, and many more. Also, programming with Unity can be done in JavaScript, so you already have a head start!</p>
 		</div>
 	</div>
-
-	<!-- EXERCISE -->
-	<div class="row" id = "exercise1">
-		<div id="editorContainer1" class = "col-lg-12" style = "background-color:#ecf0f1; padding-top:10px; padding-bottom:10px;">
-			<p style='color:#7f8c8d;'>Print "Hello, World!" to the console using console.log(). Open your browser's console to confirm you did it properly.</p>
-			<div id="editor1" class='editor col-lg-12'>// write your code below
-</div>
-			<p hidden id='defaultCode1'>// write your code below
-</p>
-			<div id="frame1" class="col-lg-12">
-				<iframe id="iframe1"></iframe>
-			</div>
-			<div class = "btn-group" role="group" aria-label="Editor Buttons">
-				<button id="run1" class="btn btn-med btn-warning">Update <i class="fa fa-play fa-fw" aria-hidden="true"></i></button>
-				<button id="reset1" class="btn btn-med btn-default">Reset <i class="fa fa-repeat fa-fw" aria-hidden="true"></i></button>
-			</div>
-			<p id = "editorContent1" style = "visibility:hidden;width:0px;height:0px;"></p>
-		</div>
-	</div>
-	<!-- END EXERCISE -->
-
-	<div class="row">
-		<div class="col-lg-12">
-			<p class='lead'>When you are satisfied that your code is printing to the console properly, click the button below to continue. Also, if you are curious, the empty white box below the code editor is where the game will appear once you begin making it in the next lesson.</p>			
-		</div>
-	</div>
-
-	<div class = "col-lg-4 col-lg-offset-4" style = "margin-top:40px;">
-		<a href = "variables.html" class="btn btn-lg btn-block btn-warning" style="color:white;text-decoration:none;"><h4>Next<i class="fa fa-caret-right fa-fw" aria-hidden="true"></i></h4></a>
-	</div>
-
 </div>
 
 			</div>
@@ -190,10 +156,8 @@
 		
 <script type="text/javascript">
 	$(document).ready(function(){
-		activateGameEditor(1);
-		window.Phaser = Phaser;
+		
 	});
-	
 </script>
 
 		<script type='text/javascript' src='../js/interact.js'></script>
